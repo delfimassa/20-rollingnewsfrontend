@@ -1,25 +1,44 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Header></Header>
+      <Switch>
+        <Route exact path="/">
+          <Inicio></Inicio>
+        </Route>
+        <Route exact path="/:idCategoria">
+          <Noticias></Noticias>
+        </Route>
+        <Route exact path="/:idNoticia">
+          <Admin></Admin>
+        </Route>
+        <Route exact path="/admin/agregarnoticia">
+          <Admin></Admin>
+        </Route>
+        <Route exact path="/admin/editarnoticia/:idNoticia">
+          <Admin></Admin>
+        </Route>
+        <Route exact path="/admin/agregarcategoria">
+          <Admin></Admin>
+        </Route>
+        <Route exact path="/admin/editarcategoria/:idCategoria">
+          <Admin></Admin>
+        </Route>
+        <Route exact path="/admin">
+          <Admin></Admin>
+        </Route>
+        <Route exact path="/admin/noticias">
+          <Noticias></Noticias>
+        </Route>
+        <Route exact path="*">
+          <PaginaError></PaginaError>
+        </Route>
+      </Switch>
+      <Footer></Footer>
+    </Router>
   );
 }
 
