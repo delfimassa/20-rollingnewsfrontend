@@ -1,5 +1,7 @@
 import React from "react";
 import "./App.css";
+import "./bootstrap.min.css";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
   return (
@@ -10,22 +12,22 @@ function App() {
           <Inicio></Inicio>
         </Route>
         <Route exact path="/:idCategoria">
-          <Noticias></Noticias>
+          <CategoriaDinamica></CategoriaDinamica>
         </Route>
         <Route exact path="/:idNoticia">
-          <Admin></Admin>
+          <DetalleNoticia></DetalleNoticia>
         </Route>
         <Route exact path="/admin/agregarnoticia">
-          <Admin></Admin>
+          <AgregarNoticia></AgregarNoticia>
         </Route>
         <Route exact path="/admin/editarnoticia/:idNoticia">
-          <Admin></Admin>
+          <EditarNoticia></EditarNoticia>
         </Route>
         <Route exact path="/admin/agregarcategoria">
-          <Admin></Admin>
+          <AgregarCategoria></AgregarCategoria>
         </Route>
         <Route exact path="/admin/editarcategoria/:idCategoria">
-          <Admin></Admin>
+          <EditarCategoria></EditarCategoria>
         </Route>
         <Route exact path="/admin">
           <Admin></Admin>
