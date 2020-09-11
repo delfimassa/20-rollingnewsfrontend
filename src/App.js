@@ -1,8 +1,8 @@
 import React from "react";
 import "./App.css";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Inicio from "./Components/Principal/Inicio"
+import Inicio from "./Components/Principal/Inicio";
 import CategoriaDinamica from "./Components/CategoriaDinamica/CategoriaDinamica";
 import DetalleNoticia from "./Components/DetalleNoticia/DetalleNoticia";
 import Header from "./Components/Common/Header";
@@ -14,6 +14,7 @@ import EditarCategoria from "./Components/CategoriaDinamica/EditarCategoria";
 import Admin from "./Components/Admin/Admin";
 import Noticias from "./Components/Noticias/Noticias";
 import PaginaError from "./Components/Error404/PaginaError";
+import ModalLogin from "./Components/Common/ModalLogin";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
       <Switch>
         <Route exact path="/">
           <Inicio></Inicio>
+          <ModalLogin></ModalLogin>
         </Route>
         <Route exact path="/:idCategoria">
           <CategoriaDinamica></CategoriaDinamica>
