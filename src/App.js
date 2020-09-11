@@ -26,10 +26,10 @@ function App() {
         <Route exact path="/">
           <Inicio></Inicio>
         </Route>
-        <Route exact path="/:idCategoria">
+        <Route exact path="/categoria/:idCategoria">
           <CategoriaDinamica></CategoriaDinamica>
         </Route>
-        <Route exact path="/:idNoticia">
+        <Route exact path="/noticia/:idNoticia">
           <DetalleNoticia></DetalleNoticia>
         </Route>
         <Route exact path="/admin/agregarnoticia">

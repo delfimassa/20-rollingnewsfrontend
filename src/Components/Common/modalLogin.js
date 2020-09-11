@@ -14,11 +14,11 @@ const ModalLogin = () => {
     <>
       {/*Forma de acceder al modal - EJEMPLO CON UN BUTTON*/}
 
-      {/* 
+      
       <Button variant="primary" onClick={handleShowLogin}>
       Login
       </Button> 
-      */}
+     
 
       <Modal
         show={show}
