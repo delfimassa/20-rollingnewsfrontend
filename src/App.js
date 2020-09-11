@@ -16,6 +16,8 @@ import Noticias from "./Components/Noticias/Noticias";
 import PaginaError from "./Components/Error404/PaginaError";
 import ModalLogin from "./Components/Common/ModalLogin";
 
+
+
 function App() {
   return (
     <Router>
@@ -23,7 +25,6 @@ function App() {
       <Switch>
         <Route exact path="/">
           <Inicio></Inicio>
-          <ModalLogin></ModalLogin>
         </Route>
         <Route exact path="/:idCategoria">
           <CategoriaDinamica></CategoriaDinamica>

@@ -7,18 +7,22 @@ import "./modalLogin.css";
 const ModalLogin = () => {
   const [show, setShow] = useState(false);
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const handleCloseLogin = () => setShow(false);
+  const handleShowLogin = () => setShow(true);
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
-        Login
-      </Button>
+      {/*Forma de acceder al modal - EJEMPLO CON UN BUTTON*/}
+
+      {/* 
+      <Button variant="primary" onClick={handleShowLogin}>
+      Login
+      </Button> 
+      */}
 
       <Modal
         show={show}
-        onHide={handleClose}
+        onHide={handleCloseLogin}
         dialogClassName="custom-modal-login"
       >
         <Modal.Header closeButton>
