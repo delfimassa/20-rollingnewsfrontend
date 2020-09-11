@@ -1,7 +1,19 @@
 import React from "react";
 import "./App.css";
-import "./bootstrap.min.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Inicio from "./Components/Principal/Inicio"
+import CategoriaDinamica from "./Components/CategoriaDinamica/CategoriaDinamica";
+import DetalleNoticia from "./Components/DetalleNoticia/DetalleNoticia";
+import Header from "./Components/Common/Header";
+import Footer from "./Components/Common/Footer";
+import AgregarNoticia from "./Components/Noticias/AgregarNoticia";
+import EditarNoticia from "./Components/Noticias/EditarNoticia";
+import AgregarCategoria from "./Components/CategoriaDinamica/AgregarCategoria";
+import EditarCategoria from "./Components/CategoriaDinamica/EditarCategoria";
+import Admin from "./Components/Admin/Admin";
+import Noticias from "./Components/Noticias/Noticias";
+import PaginaError from "./Components/Error404/PaginaError";
 
 function App() {
   return (
