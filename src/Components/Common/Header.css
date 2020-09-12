@@ -1,0 +1,23 @@
+/*Estilos para el contenedor donde va nuestro logo y la api del clima*/
+.fondo{
+    background-color: #EC172D;
+}
+
+/*Estilos para la lista desplegable*/
+#fondo-categoria{
+    background:none;
+    box-shadow: 0px 3px 0px #333;
+    border:none;
+
+}
+
+.fondoLista{
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+
+}
+
+.hover:hover{
+    background-color: forestgreen;
+}
