@@ -26,6 +26,7 @@ function App() {
       <Switch>
         <Route exact path="/">
           <Inicio></Inicio>
+          <ModalLogin></ModalLogin>
         </Route>
         <Route exact path="/categoria/:idCategoria">
           <CategoriaDinamica></CategoriaDinamica>

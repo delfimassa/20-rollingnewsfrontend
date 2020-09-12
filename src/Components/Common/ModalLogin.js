@@ -5,17 +5,36 @@ import Form from "react-bootstrap/Form";
 import "./modalLogin.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUsers } from "@fortawesome/free-solid-svg-icons";
+import Alert from "react-bootstrap/Alert";
 
 const ModalLogin = () => {
   const [show, setShow] = useState(false);
+  const [nombreUsuario, setNombreUsuario] = useState("");
+  const [passwordUsuario, setPasswordUsuario] = useState("");
+  const [error, setError] = useState(false);
 
   const handleCloseLogin = () => setShow(false);
   const handleShowLogin = () => setShow(true);
 
+  /*Funcion ejecutada al presionar el boton Iniciar Sesion*/
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    //Validacion de los campos requeridos
+    if (nombreUsuario.trim() === "" || passwordUsuario === "") {
+      setError(true);
+      return;
+    }
+    setError(false);
+
+    //Enviar datos a la API
+    //Recibir respuesta
+    //Redireccionar a alguna pagina
+  };
+
   return (
     <>
       {/*Forma de acceder al modal - EJEMPLO CON UN BUTTON*/}
-
       <Button variant="primary" onClick={handleShowLogin}>
         Login
       </Button>
@@ -41,14 +60,22 @@ const ModalLogin = () => {
         </Modal.Header>
         <Modal.Body>
           <p class="lead">Inicia sesion con tus datos para continuar</p>
-          <Form>
-            <Form.Group controlId="formBasicEmail">
-              <Form.Label>Email</Form.Label>
-              <Form.Control type="email" placeholder="Ingresa tu email" />
+          {error ? (
+            <Alert variant={"warning"}>Todos los campos son obligatorios</Alert>
+          ) : null}
+          <Form onSubmit={handleSubmit}>
+            <Form.Group controlId="formBasicUser">
+              <Form.Label>Nombre de Usuario</Form.Label>
+              <Form.Control
+                onChange={(e) => setNombreUsuario(e.target.value)}
+                type="text"
+                placeholder="Ingresa tu nombre de usuario"
+              />
             </Form.Group>
             <Form.Group controlId="formBasicPassword">
               <Form.Label>Contraseña</Form.Label>
               <Form.Control
+                onChange={(e) => setPasswordUsuario(e.target.value)}
                 type="password"
                 placeholder="Ingresa tu contraseña"
               />
