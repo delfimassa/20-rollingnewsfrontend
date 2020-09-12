@@ -15,6 +15,7 @@ import Admin from "./Components/Admin/Admin";
 import Noticias from "./Components/Noticias/Noticias";
 import PaginaError from "./Components/Error404/PaginaError";
 import ModalLogin from "./Components/Common/ModalLogin";
+import ModalSubscribirse from "./Components/Common/ModalSubscribirse";
 
 
 
@@ -25,6 +26,7 @@ function App() {
       <Switch>
         <Route exact path="/">
           <Inicio></Inicio>
+          <ModalSubscribirse></ModalSubscribirse>
         </Route>
         <Route exact path="/categoria/:idCategoria">
           <CategoriaDinamica></CategoriaDinamica>
