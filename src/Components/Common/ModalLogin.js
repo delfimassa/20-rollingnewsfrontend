@@ -3,6 +3,8 @@ import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import "./modalLogin.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUsers } from "@fortawesome/free-solid-svg-icons";
 
 const ModalLogin = () => {
   const [show, setShow] = useState(false);
@@ -14,11 +16,9 @@ const ModalLogin = () => {
     <>
       {/*Forma de acceder al modal - EJEMPLO CON UN BUTTON*/}
 
-      
       <Button variant="primary" onClick={handleShowLogin}>
-      Login
-      </Button> 
-     
+        Login
+      </Button>
 
       <Modal
         show={show}
@@ -26,7 +26,18 @@ const ModalLogin = () => {
         dialogClassName="custom-modal-login"
       >
         <Modal.Header closeButton>
-          <Modal.Title>Login</Modal.Title>
+          <div className="d-flex flex-row flex-wrap w-100">
+            <div className="col-xs-12 col-sm-12 col-md-2 text-center align-self-center">
+              <FontAwesomeIcon
+                icon={faUsers}
+                className=""
+                size="2x"
+              ></FontAwesomeIcon>
+            </div>
+            <div className="col-xs-12 col-sm-12 col-md-2 text-center">
+              <Modal.Title>Login</Modal.Title>
+            </div>
+          </div>
         </Modal.Header>
         <Modal.Body>
           <p class="lead">Inicia sesion con tus datos para continuar</p>
