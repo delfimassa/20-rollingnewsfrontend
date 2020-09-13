@@ -5,7 +5,6 @@ import Alert from "react-bootstrap/Alert";
 import Col from "react-bootstrap/Col";
 import "./agregarnoticia.css";
 
-
 const AgregarNoticia = () => {
   const [validated, setValidated] = useState(false);
   const [error, setError] = useState(false);
@@ -14,11 +13,10 @@ const AgregarNoticia = () => {
   const [noticiaDescripcionBreve, setNoticiaDescripcionBreve] = useState("");
   const [noticiaDescripcionFull, setNoticiaDescripcionFull] = useState("");
   const [noticiaImg, setNoticiaImg] = useState("");
-  const [noticiaCategoria, setNoticiaCategoria] = useState("")
-  const [noticiaAutor, setNoticiaAutor] = useState("")
-  const [noticiaFecha, setNoticiaFecha] = useState("")
+  const [noticiaCategoria, setNoticiaCategoria] = useState("");
+  const [noticiaAutor, setNoticiaAutor] = useState("");
+  const [noticiaFecha, setNoticiaFecha] = useState("");
   const [noticiaPublicada, setNoticiaPublicada] = useState();
-
 
   const checkboxPublicar = (e) => {
     setNoticiaPublicada(e.target.value);
@@ -31,11 +29,12 @@ const AgregarNoticia = () => {
       event.preventDefault();
       event.stopPropagation();
       setError(true);
+      setValidated(true);
+      return;
     } else {
       setError(false);
+      setValidated(true);
     }
-
-    setValidated(true);
   };
 
   //Validacion especifica
@@ -134,8 +133,13 @@ const AgregarNoticia = () => {
           </Col>
         </Form.Row>
         <Form.Group className="ml-2">
-          <Form.Check type="checkbox" id="publicarCheckBox" label="Publicar" value="true"
-              onChange={checkboxPublicar}/>
+          <Form.Check
+            type="checkbox"
+            id="publicarCheckBox"
+            label="Publicar"
+            value="true"
+            onChange={checkboxPublicar}
+          />
         </Form.Group>
 
         <div className="text-right my-4">

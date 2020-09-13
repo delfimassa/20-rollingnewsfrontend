@@ -1,56 +1,56 @@
 {
-    "users": [
-        {
-            "id": 1,
-            "nombreUsuario": "admin",
-            "passwordUsuario": "admin"
-        }
-    ],
-    "categorias": [
-        {
-            "id": 1,
-            "nombreCategoria": "Actualidad"
-        },
-        {
-            "id": 2,
-            "nombreCategoria": "Espectaculos"
-        },
-        {
-            "id": 3,
-            "nombreCategoria": "Tecnologia"
-        },
-        {
-            "id": 4,
-            "nombreCategoria": "Deportes"
-        },
-        {
-            "id": 5,
-            "nombreCategoria": "Politica"
-        },
-        {
-            "id": 6,
-            "nombreCategoria": "Economia"
-        },
-        {
-            "id": 7,
-            "nombreCategoria": "Salud"
-        },
-        {
-            "id": 8,
-            "nombreCategoria": "Fotografia"
-        }
-    ],
-    "noticias":[
-        {
-            "id":1,
-            "noticiaTitulo":"Noticia para testing",
-            "noticiaDescripcionBreve":"Esta es una noticia realizada para testear los componentes",
-            "noticiaDescripcionFull":"Esta es una noticia realizada para testear los componentes",
-            "noticiaImg":"https://cadenaser05.epimg.net/ser/imagenes/2020/04/17/internacional/1587104508_702379_1587106943_noticia_normal_recorte1.jpg",
-            "noticiaCategoria":"Actualidad",
-            "noticiaAutor":"Maximiliano Diaz",
-            "noticiaFecha":"2020-09-13",
-            "noticiaPublicada":true
-        }
-    ]
+  "users": [
+    {
+      "id": 1,
+      "nombreUsuario": "admin",
+      "passwordUsuario": "admin"
+    }
+  ],
+  "categorias": [
+    {
+      "id": 1,
+      "nombreCategoria": "Actualidad"
+    },
+    {
+      "id": 2,
+      "nombreCategoria": "Espectaculos"
+    },
+    {
+      "id": 3,
+      "nombreCategoria": "Tecnologia"
+    },
+    {
+      "id": 4,
+      "nombreCategoria": "Deportes"
+    },
+    {
+      "id": 5,
+      "nombreCategoria": "Politica"
+    },
+    {
+      "id": 6,
+      "nombreCategoria": "Economia"
+    },
+    {
+      "id": 7,
+      "nombreCategoria": "Salud"
+    },
+    {
+      "id": 8,
+      "nombreCategoria": "Fotografia"
+    }
+  ],
+  "noticias": [
+    {
+      "id": 1,
+      "noticiaTitulo": "Noticia para testing",
+      "noticiaDescripcionBreve": "Esta es una noticia realizada para testear los componentes",
+      "noticiaDescripcionFull": "Esta es una noticia realizada para testear los componentes",
+      "noticiaImg": "https://cadenaser05.epimg.net/ser/imagenes/2020/04/17/internacional/1587104508_702379_1587106943_noticia_normal_recorte1.jpg",
+      "noticiaCategoria": "Actualidad",
+      "noticiaAutor": "Maximiliano Diaz",
+      "noticiaFecha": "2020-09-13",
+      "noticiaPublicada": true
+    }
+  ]
 }
