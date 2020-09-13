@@ -1,6 +1,7 @@
 /*Estilos para el contenedor donde va nuestro logo y la api del clima*/
 .fondo{
     background-color: #EC172D;
+    border: none;
 }
 
 /*Estilos para la lista desplegable*/
@@ -22,3 +23,6 @@
 .hover:hover{
     background-color: forestgreen;
 }
+
+/*Estilos para CarClima*/
+

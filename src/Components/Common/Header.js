@@ -7,6 +7,7 @@ import Button from "react-bootstrap/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faBars } from "@fortawesome/free-solid-svg-icons";
 import Fecha from "./Fecha";
+import Clima from './Clima';
 
 const Header = () => {
   return (
@@ -14,10 +15,13 @@ const Header = () => {
       <div className="container-fluid fondo">
         <div className="row">
           <div className="col-sm-12 col-md-4 col-lg-4 text-center">
-            <h1 className="ml-3 text-light">Logo</h1>
+          <img
+          src={process.env.PUBLIC_URL + "LogoNavBar.png"}
+          alt="logo del NavBar"
+        ></img>
           </div>
           <div className="text-light col-sm-12 col-md-4 col-lg-4 text-center">
-            <h1>Api clima</h1>
+            <Clima></Clima>
           </div>
           <div className="col-sm-12 col-md-4 col-lg-4 text-center">
             <Fecha></Fecha>
