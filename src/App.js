@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -16,10 +16,60 @@ import Noticias from "./Components/Noticias/Noticias";
 import PaginaError from "./Components/Error404/PaginaError";
 import ModalLogin from "./Components/Common/ModalLogin";
 import ModalSubscribirse from "./Components/Common/ModalSubscribirse";
-
-
+import Swal from "sweetalert2";
 
 function App() {
+  const [recargarTodo, setRecargarTodo] = useState(true);
+  const [categorias, setCategorias] = useState({});
+  const [noticias, setNoticias] = useState({});
+  const [adminUser, setAdminUser] = useState(false);
+
+  useEffect(() => {
+    if (recargarTodo) {
+      consultarAPI();
+      setRecargarTodo(false);
+    }
+  }, [recargarTodo]);
+
+  const consultarAPI = async () => {
+    try {
+      //obtener lista de categorias
+      const consulta = await fetch("http://localhost:4000/categorias");
+      console.log(consulta);
+      const respuesta = await consulta.json();
+      console.log(respuesta);
+      if ((await consulta.status) !== 200) {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Ocurrio un error, intentelo nuevamente",
+        });
+      }
+      //Guardar en el state
+      setCategorias(respuesta);
+    } catch (error) {
+      console.log(error);
+    }
+    try {
+      //obtener lista de noticias
+      const consulta = await fetch("http://localhost:4000/noticias");
+      console.log(consulta);
+      const respuesta = await consulta.json();
+      console.log(respuesta);
+      if ((await consulta.status) !== 200) {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Ocurrio un error, intentelo nuevamente",
+        });
+      }
+      //Guardar en el state
+      setNoticias(respuesta);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <Router>
       <Header></Header>
