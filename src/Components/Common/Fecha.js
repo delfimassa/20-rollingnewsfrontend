@@ -1,4 +1,5 @@
 import React from 'react';
+import "./Header.css";
 
 const Fecha = () => {
 
@@ -10,7 +11,7 @@ const Fecha = () => {
 
     
     return (
-        <div className="text-light pr-3 my-3">
+        <div className="text-light letraFecha my-auto">
            {fechaActual}
         </div>
     );

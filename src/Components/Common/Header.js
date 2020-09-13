@@ -14,16 +14,14 @@ const Header = () => {
     <div>
       <div className="container-fluid fondo">
         <div className="row">
-          <div className="col-sm-12 col-md-4 col-lg-4 text-center">
-          <img
-          src={process.env.PUBLIC_URL + "LogoNavBar.png"}
-          alt="logo del NavBar"
-        ></img>
+          <div className="col-sm-12 col-md-4 col-lg-4 text-center logo p-0 m-0 align-self-center">
+          <img src={process.env.PUBLIC_URL + "LogoNavBar.png"}
+          alt="logo del NavBar"></img>
           </div>
-          <div className="text-light col-sm-12 col-md-4 col-lg-4 text-center">
+          <div className="text-light col-sm-12 col-md-4 col-lg-4 text-center align-self-center">
             <Clima></Clima>
           </div>
-          <div className="col-sm-12 col-md-4 col-lg-4 text-center">
+          <div className="col-sm-12 col-md-4 col-lg-4 text-center p-0 m-0 align-self-center">
             <Fecha></Fecha>
           </div>
         </div>

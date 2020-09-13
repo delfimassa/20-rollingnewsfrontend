@@ -22,7 +22,7 @@ const Clima = () => {
   };
 
   return (
-    <div>
+    <div className="d-none d-md-block">
       {Object.entries(resultado).length !== 0 ? (
         <CardClima resultado={resultado}></CardClima>
       ) : null}

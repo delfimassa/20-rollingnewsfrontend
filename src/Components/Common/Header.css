@@ -2,6 +2,7 @@
 .fondo{
     background-color: #EC172D;
     border: none;
+    
 }
 
 /*Estilos para la lista desplegable*/
@@ -26,3 +27,19 @@
 
 /*Estilos para CarClima*/
 
+.Letra{
+    font-size: 15px;
+}
+
+/*SMALL DEVICES*/
+@media all and (min-width: 576px) and (max-width: 768px) {
+}
+
+/*MEDIUM DEVICES*/
+@media all and (min-width: 768px) and (max-width: 991px) {
+}
+
+/*LARGE DEVICES*/
+@media all and (min-width: 991px) and (max-width: 1200px) {
+    
+}
