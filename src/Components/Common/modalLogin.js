@@ -1,10 +1,11 @@
 import React from 'react';
 
-const Inicio = () => {
+const modalLogin = () => {
     return (
         <div>
+            
         </div>
     );
 };
 
-export default Inicio;
+export default modalLogin;

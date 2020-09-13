@@ -1,0 +1,45 @@
+/*Estilos para el contenedor donde va nuestro logo y la api del clima*/
+.fondo{
+    background-color: #EC172D;
+    border: none;
+    
+}
+
+/*Estilos para la lista desplegable*/
+#fondo-categoria{
+    background:none;
+    box-shadow: 0px 3px 0px #333;
+    border:none;
+    margin-bottom: 10px;
+
+}
+
+.fondoLista{
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+
+}
+
+.hover:hover{
+    background-color: forestgreen;
+}
+
+/*Estilos para CarClima*/
+
+.Letra{
+    font-size: 15px;
+}
+
+/*SMALL DEVICES*/
+@media all and (min-width: 576px) and (max-width: 768px) {
+}
+
+/*MEDIUM DEVICES*/
+@media all and (min-width: 768px) and (max-width: 991px) {
+}
+
+/*LARGE DEVICES*/
+@media all and (min-width: 991px) and (max-width: 1200px) {
+    
+}
