@@ -16,7 +16,7 @@ import Noticias from "./Components/Noticias/Noticias";
 import PaginaError from "./Components/Error404/PaginaError";
 import ModalLogin from "./Components/Common/ModalLogin";
 import ModalSubscribirse from "./Components/Common/ModalSubscribirse";
-
+import Categorias from "./Components/CategoriaDinamica/Categorias"
 
 
 function App() {
@@ -50,6 +50,9 @@ function App() {
         </Route>
         <Route exact path="/admin/noticias">
           <Noticias></Noticias>
+        </Route>
+        <Route exact path="/admin/categorias">
+          <Categorias></Categorias>
         </Route>
         <Route exact path="*">
           <PaginaError></PaginaError>
