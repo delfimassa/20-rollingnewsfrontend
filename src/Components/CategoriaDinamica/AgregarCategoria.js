@@ -43,7 +43,7 @@ const AgregarCategoria = (props) => {
       );
       console.log(resultado);
       //Si la operacion fue exitosa, entonces...
-      if ((await resultado.status) === 201) {
+      if ((resultado.status) === 201) {
         Swal.fire(
           "Categoria agregada!",
           "La categoria se agrego correctamente",
