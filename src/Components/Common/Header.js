@@ -2,6 +2,7 @@ import React from "react";
 import "./Header.css";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
+import NavLink from 'react-bootstrap/NavLink'
 import Dropdown from "react-bootstrap/Dropdown";
 import Button from "react-bootstrap/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -15,8 +16,10 @@ const Header = () => {
       <div className="container-fluid fondo">
         <div className="row">
           <div className="col-sm-12 col-md-4 col-lg-4 text-center logo p-0 m-0 align-self-center">
+          <NavLink href="*">
           <img src={process.env.PUBLIC_URL + "LogoNavBar.png"}
           alt="logo del NavBar"></img>
+          </NavLink>
           </div>
           <div className="text-light col-sm-12 col-md-4 col-lg-4 text-center align-self-center">
             <Clima></Clima>
