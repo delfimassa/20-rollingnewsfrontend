@@ -38,19 +38,60 @@
     {
       "id": 8,
       "nombreCategoria": "Fotografia"
+    },
+    {
+      "nombreCategoria": "Testing",
+      "id": 9
     }
   ],
   "noticias": [
     {
       "id": 1,
       "noticiaTitulo": "Noticia para testing",
-      "noticiaDescripcionBreve": "Esta es una noticia realizada para testear los componentes",
+      "noticiaDescripcionBreve": "Esta es una noticia realizada para testear los componentesaaaaaaaa aaaaaaaaaaaaa aaaaaaaaaaaaaaa aaaaaaaaaaaa aaaaaaaaaaaaaaa",
       "noticiaDescripcionFull": "Esta es una noticia realizada para testear los componentes",
       "noticiaImg": "https://cadenaser05.epimg.net/ser/imagenes/2020/04/17/internacional/1587104508_702379_1587106943_noticia_normal_recorte1.jpg",
       "noticiaCategoria": "Actualidad",
       "noticiaAutor": "Maximiliano Diaz",
       "noticiaFecha": "2020-09-13",
-      "noticiaPublicada": true
+      "noticiaPublicada": true,
+      "noticiaDestacada": true
+    },
+    {
+      "id": 2,
+      "noticiaTitulo": "Noticia para testing",
+      "noticiaDescripcionBreve": "Esta es una noticia realizada para testear los componentesaaaaaaaa aaaaaaaaaaaaa aaaaaaaaaaaaaaa aaaaaaaaaaaa aaaaaaaaaaaaaaa",
+      "noticiaDescripcionFull": "Esta es una noticia realizada para testear los componentes",
+      "noticiaImg": "https://www.rosario3.com/__export/1600099336883/sites/rosario3/img/2020/09/14/balacera_la_piedad.jpg_227831130.jpg",
+      "noticiaCategoria": "Actualidad",
+      "noticiaAutor": "Maximiliano Diaz",
+      "noticiaFecha": "2020-09-13",
+      "noticiaPublicada": true,
+      "noticiaDestacada": true
+    },
+    {
+      "id": 3,
+      "noticiaTitulo": "Noticia para testing",
+      "noticiaDescripcionBreve": "Esta es una noticia realizada para testear los componentesaaaaaaaa aaaaaaaaaaaaa aaaaaaaaaaaaaaa aaaaaaaaaaaa aaaaaaaaaaaaaaa",
+      "noticiaDescripcionFull": "Esta es una noticia realizada para testear los componentes",
+      "noticiaImg": "https://s3.amazonaws.com/wordpress-production/wp-content/uploads/sites/19/2016/11/trucos-de-fotografia-que-los-pros-no-te-habian-contado.jpg",
+      "noticiaCategoria": "Actualidad",
+      "noticiaAutor": "Maximiliano Diaz",
+      "noticiaFecha": "2020-09-13",
+      "noticiaPublicada": true,
+      "noticiaDestacada": true
+    },
+    {
+      "noticiaTitulo": "Testing2",
+      "noticiaDescripcionBreve": "Testing2",
+      "noticiaDescripcionFull": "Testing2",
+      "noticiaImg": "http://localhost:3000/admin/agregarnoticia",
+      "noticiaCategoria": "Testing",
+      "noticiaAutor": "Testing2",
+      "noticiaFecha": "2020-09-08",
+      "noticiaPublicada": false,
+      "noticiaDestacada": true,
+      "id": 4
     }
   ]
 }

@@ -20,9 +20,14 @@ const AgregarNoticia = (props) => {
   const [noticiaAutor, setNoticiaAutor] = useState("");
   const [noticiaFecha, setNoticiaFecha] = useState("");
   const [noticiaPublicada, setNoticiaPublicada] = useState(false);
+  const [noticiaDestacada, setNoticiaDestacada] = useState(false);
 
   const checkboxPublicar = (e) => {
     setNoticiaPublicada(e.target.checked);
+  };
+
+  const checkboxDestacar = (e) => {
+    setNoticiaDestacada(e.target.checked);
   };
 
   const handleSubmit = async (event) => {
@@ -49,6 +54,7 @@ const AgregarNoticia = (props) => {
       noticiaAutor: noticiaAutor,
       noticiaFecha: noticiaFecha,
       noticiaPublicada: noticiaPublicada,
+      noticiaDestacada: noticiaDestacada,
     };
     //Estructura para peticiones
     try {
@@ -194,6 +200,15 @@ const AgregarNoticia = (props) => {
             label="Publicar"
             value="true"
             onChange={checkboxPublicar}
+          />
+        </Form.Group>
+        <Form.Group className="ml-2">
+          <Form.Check
+            type="checkbox"
+            id="destacarCheckBox"
+            label="Destacar"
+            value="true"
+            onChange={checkboxDestacar}
           />
         </Form.Group>
 
