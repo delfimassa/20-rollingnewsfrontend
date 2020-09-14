@@ -29,6 +29,7 @@ function App() {
     if (recargarTodo) {
       consultarAPI();
       setRecargarTodo(false);
+      console.log("Datos de categorias y noticias recargados")
     }
   }, [recargarTodo]);
 
@@ -36,9 +37,7 @@ function App() {
     try {
       //obtener lista de categorias
       const consulta = await fetch("http://localhost:4000/categorias");
-      console.log(consulta);
       const respuesta = await consulta.json();
-      console.log(respuesta);
       if (consulta.status !== 200) {
         Swal.fire({
           icon: "error",
@@ -54,9 +53,7 @@ function App() {
     try {
       //obtener lista de noticias
       const consulta = await fetch("http://localhost:4000/noticias");
-      console.log(consulta);
       const respuesta = await consulta.json();
-      console.log(respuesta);
       if (consulta.status !== 200) {
         Swal.fire({
           icon: "error",
@@ -85,13 +82,13 @@ function App() {
           <DetalleNoticia></DetalleNoticia>
         </Route>
         <Route exact path="/admin/agregarnoticia">
-          <AgregarNoticia></AgregarNoticia>
+          <AgregarNoticia setRecargarTodo={setRecargarTodo} categorias={categorias}></AgregarNoticia>
         </Route>
         <Route exact path="/admin/editarnoticia/:idNoticia">
           <EditarNoticia></EditarNoticia>
         </Route>
         <Route exact path="/admin/agregarcategoria">
-          <AgregarCategoria></AgregarCategoria>
+          <AgregarCategoria setRecargarTodo={setRecargarTodo}></AgregarCategoria>
         </Route>
         <Route exact path="/admin/editarcategoria/:idCategoria">
           <EditarCategoria></EditarCategoria>
