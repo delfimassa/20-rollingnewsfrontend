@@ -20,8 +20,8 @@ import Swal from "sweetalert2";
 
 function App() {
   const [recargarTodo, setRecargarTodo] = useState(true);
-  const [categorias, setCategorias] = useState({});
-  const [noticias, setNoticias] = useState({});
+  const [categorias, setCategorias] = useState([]);
+  const [noticias, setNoticias] = useState([]);
   const [adminUser, setAdminUser] = useState(false);
 
   useEffect(() => {
@@ -81,7 +81,7 @@ function App() {
           <DetalleNoticia></DetalleNoticia>
         </Route>
         <Route exact path="/admin/agregarnoticia">
-          <AgregarNoticia></AgregarNoticia>
+          <AgregarNoticia setRecargarTodo={setRecargarTodo} categorias={categorias}></AgregarNoticia>
         </Route>
         <Route exact path="/admin/editarnoticia/:idNoticia">
           <EditarNoticia></EditarNoticia>
