@@ -54,7 +54,7 @@ function App() {
           <PaginaError></PaginaError>
         </Route>
       </Switch>
-      <Footer></Footer>
+          <Footer></Footer>
     </Router>
   );
 }
