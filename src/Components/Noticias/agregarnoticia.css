@@ -1,12 +1,9 @@
-.formContainer{
-    background-color: #ec172c07;
-}
-.botonEditar{
+.botonNegro{
     background-color: black;
     color: white;
     border: none;
 }
-.botonEliminar{
+.botonRojo{
     background-color:#EC172D;
     color: white;
     border: none;

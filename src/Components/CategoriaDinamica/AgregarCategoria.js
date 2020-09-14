@@ -70,7 +70,7 @@ const AgregarCategoria = (props) => {
     <div className="container my-3">
       <h1 className="text-center my-5">Agregar Nueva Categoria</h1>
       <Form
-        className="border border-dark rounded formContainer p-4"
+        className="fondoLi rounded formContainer p-4"
         noValidate
         validated={validated}
         onSubmit={handleSubmit}
@@ -94,7 +94,7 @@ const AgregarCategoria = (props) => {
           podra sumar noticias a la misma.
         </Form.Text>
         <div className="text-right my-4">
-          <Button variant="danger" type="submit" className="ml-auto">
+          <Button variant="danger" type="submit" className="ml-auto botonRojo">
             Agregar categoria
           </Button>
         </div>
