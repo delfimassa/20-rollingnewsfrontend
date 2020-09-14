@@ -1,9 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-<<<<<<< HEAD
-import "./bootstrap.min.css";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-=======
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Inicio from "./Components/Principal/Inicio";
@@ -22,7 +18,6 @@ import ModalLogin from "./Components/Common/ModalLogin";
 import ModalSubscribirse from "./Components/Common/ModalSubscribirse";
 import Categorias from "./Components/CategoriaDinamica/Categorias";
 import Swal from "sweetalert2";
->>>>>>> 99aaa86a275ec6372f81c3547f219999ee81eb47
 
 function App() {
   const [recargarTodo, setRecargarTodo] = useState(true);
@@ -80,18 +75,12 @@ function App() {
         <Route exact path="/">
           <Inicio></Inicio>
         </Route>
-<<<<<<< HEAD
-        <Route exact path="/:idCategoria">
-          <CategoriaDinamica></CategoriaDinamica>
-        </Route>
-        <Route exact path="/:idNoticia">
-=======
         <Route exact path="/categoria/:idCategoria">
           <CategoriaDinamica></CategoriaDinamica>
         </Route>
         <Route exact path="/noticia/:idNoticia">
->>>>>>> 99aaa86a275ec6372f81c3547f219999ee81eb47
-          <DetalleNoticia></DetalleNoticia>
+          <DetalleNoticia
+          noticias={noticias}></DetalleNoticia>
         </Route>
         <Route exact path="/admin/agregarnoticia">
           <AgregarNoticia setRecargarTodo={setRecargarTodo} categorias={categorias}></AgregarNoticia>
@@ -100,11 +89,7 @@ function App() {
           <EditarNoticia></EditarNoticia>
         </Route>
         <Route exact path="/admin/agregarcategoria">
-<<<<<<< HEAD
-          <AgregarCategoria></AgregarCategoria>
-=======
           <AgregarCategoria setRecargarTodo={setRecargarTodo}></AgregarCategoria>
->>>>>>> 99aaa86a275ec6372f81c3547f219999ee81eb47
         </Route>
         <Route exact path="/admin/editarcategoria/:idCategoria">
           <EditarCategoria></EditarCategoria>
