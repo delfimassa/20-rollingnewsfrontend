@@ -1,3 +1,9 @@
-.btn-custom{
-    background-color: 000000;
-}
+.btn-flat {
+    background-color: black;
+    color: white;
+  }
+
+  .btn-flatb {
+    background-color:#EC172D;
+    color: white;
+  }

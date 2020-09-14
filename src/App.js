@@ -16,13 +16,13 @@ import Noticias from "./Components/Noticias/Noticias";
 import PaginaError from "./Components/Error404/PaginaError";
 import ModalLogin from "./Components/Common/ModalLogin";
 import ModalSubscribirse from "./Components/Common/ModalSubscribirse";
-import Categorias from "./Components/CategoriaDinamica/Categorias"
+import Categorias from "./Components/CategoriaDinamica/Categorias";
 import Swal from "sweetalert2";
 
 function App() {
   const [recargarTodo, setRecargarTodo] = useState(true);
-  const [categorias, setCategorias] = useState({});
-  const [noticias, setNoticias] = useState({});
+  const [categorias, setCategorias] = useState([]);
+  const [noticias, setNoticias] = useState([]);
   const [adminUser, setAdminUser] = useState(false);
 
   useEffect(() => {
@@ -39,7 +39,7 @@ function App() {
       console.log(consulta);
       const respuesta = await consulta.json();
       console.log(respuesta);
-      if ((await consulta.status) !== 200) {
+      if (consulta.status !== 200) {
         Swal.fire({
           icon: "error",
           title: "Oops...",
@@ -57,7 +57,7 @@ function App() {
       console.log(consulta);
       const respuesta = await consulta.json();
       console.log(respuesta);
-      if ((await consulta.status) !== 200) {
+      if (consulta.status !== 200) {
         Swal.fire({
           icon: "error",
           title: "Oops...",
@@ -99,11 +99,17 @@ function App() {
         <Route exact path="/admin">
           <Admin></Admin>
         </Route>
-        <Route exact path="/admin/noticias">
-          <Noticias></Noticias>
+        <Route exact path="/noticias">
+          <Noticias
+            noticias={noticias}
+            setRecargarTodo={setRecargarTodo}
+          ></Noticias>
         </Route>
-        <Route exact path="/admin/categorias">
-          <Categorias></Categorias>
+        <Route exact path="/categorias">
+          <Categorias
+            categorias={categorias}
+            setRecargarTodo={setRecargarTodo}
+          ></Categorias>
         </Route>
         <Route exact path="*">
           <PaginaError></PaginaError>

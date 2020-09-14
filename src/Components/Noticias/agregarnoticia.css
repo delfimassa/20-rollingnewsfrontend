@@ -1,3 +1,16 @@
 .formContainer{
     background-color: #ec172c07;
 }
+.botonEditar{
+    background-color: black;
+    color: white;
+    border: none;
+}
+.botonEliminar{
+    background-color:#EC172D;
+    color: white;
+    border: none;
+}
+.fondoLi{
+    background-color: #E5E5E5;
+}
