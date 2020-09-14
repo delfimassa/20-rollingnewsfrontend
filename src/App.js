@@ -20,6 +20,7 @@ import Noticias from "./Components/Noticias/Noticias";
 import PaginaError from "./Components/Error404/PaginaError";
 import ModalLogin from "./Components/Common/ModalLogin";
 import ModalSubscribirse from "./Components/Common/ModalSubscribirse";
+import Categorias from "./Components/CategoriaDinamica/Categorias";
 import Swal from "sweetalert2";
 >>>>>>> 99aaa86a275ec6372f81c3547f219999ee81eb47
 
@@ -42,7 +43,7 @@ function App() {
       //obtener lista de categorias
       const consulta = await fetch("http://localhost:4000/categorias");
       const respuesta = await consulta.json();
-      if ((consulta.status) !== 200) {
+      if (consulta.status !== 200) {
         Swal.fire({
           icon: "error",
           title: "Oops...",
@@ -58,7 +59,7 @@ function App() {
       //obtener lista de noticias
       const consulta = await fetch("http://localhost:4000/noticias");
       const respuesta = await consulta.json();
-      if ((consulta.status) !== 200) {
+      if (consulta.status !== 200) {
         Swal.fire({
           icon: "error",
           title: "Oops...",
@@ -111,8 +112,17 @@ function App() {
         <Route exact path="/admin">
           <Admin></Admin>
         </Route>
-        <Route exact path="/admin/noticias">
-          <Noticias></Noticias>
+        <Route exact path="/noticias">
+          <Noticias
+            noticias={noticias}
+            setRecargarTodo={setRecargarTodo}
+          ></Noticias>
+        </Route>
+        <Route exact path="/categorias">
+          <Categorias
+            categorias={categorias}
+            setRecargarTodo={setRecargarTodo}
+          ></Categorias>
         </Route>
         <Route exact path="*">
           <PaginaError></PaginaError>

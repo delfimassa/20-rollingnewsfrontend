@@ -99,7 +99,7 @@ const AgregarNoticia = (props) => {
     <div className="container my-3">
       <h1 className="text-center my-5">Agregar Nueva Noticia</h1>
       <Form
-        className="border border-dark rounded formContainer p-4"
+        className=" rounded fondoLi p-4"
         noValidate
         validated={validated}
         onSubmit={handleSubmit}
@@ -198,7 +198,7 @@ const AgregarNoticia = (props) => {
         </Form.Group>
 
         <div className="text-right my-4">
-          <Button variant="danger" type="submit" className="ml-auto">
+          <Button variant="danger" type="submit" className="ml-auto botonRojo">
             Agregar noticia
           </Button>
         </div>
