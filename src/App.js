@@ -1,9 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-<<<<<<< HEAD
-import "./bootstrap.min.css";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-=======
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Inicio from "./Components/Principal/Inicio";
@@ -21,7 +17,6 @@ import PaginaError from "./Components/Error404/PaginaError";
 import ModalLogin from "./Components/Common/ModalLogin";
 import ModalSubscribirse from "./Components/Common/ModalSubscribirse";
 import Swal from "sweetalert2";
->>>>>>> 99aaa86a275ec6372f81c3547f219999ee81eb47
 
 function App() {
   const [recargarTodo, setRecargarTodo] = useState(true);
@@ -79,17 +74,10 @@ function App() {
         <Route exact path="/">
           <Inicio></Inicio>
         </Route>
-<<<<<<< HEAD
-        <Route exact path="/:idCategoria">
-          <CategoriaDinamica></CategoriaDinamica>
-        </Route>
-        <Route exact path="/:idNoticia">
-=======
         <Route exact path="/categoria/:idCategoria">
           <CategoriaDinamica></CategoriaDinamica>
         </Route>
         <Route exact path="/noticia/:idNoticia">
->>>>>>> 99aaa86a275ec6372f81c3547f219999ee81eb47
           <DetalleNoticia></DetalleNoticia>
         </Route>
         <Route exact path="/admin/agregarnoticia">
@@ -99,11 +87,7 @@ function App() {
           <EditarNoticia></EditarNoticia>
         </Route>
         <Route exact path="/admin/agregarcategoria">
-<<<<<<< HEAD
-          <AgregarCategoria></AgregarCategoria>
-=======
           <AgregarCategoria setRecargarTodo={setRecargarTodo}></AgregarCategoria>
->>>>>>> 99aaa86a275ec6372f81c3547f219999ee81eb47
         </Route>
         <Route exact path="/admin/editarcategoria/:idCategoria">
           <EditarCategoria></EditarCategoria>
