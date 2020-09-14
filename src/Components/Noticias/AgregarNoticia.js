@@ -4,8 +4,11 @@ import Form from "react-bootstrap/Form";
 import Alert from "react-bootstrap/Alert";
 import Col from "react-bootstrap/Col";
 import "./agregarnoticia.css";
+import Swal from "sweetalert2";
+import { withRouter } from "react-router-dom"; //Sirve para redireccionar a una pagina
+import AgregarNoticiaCategorias from "./AgregarNoticiaCategorias";
 
-const AgregarNoticia = () => {
+const AgregarNoticia = (props) => {
   const [validated, setValidated] = useState(false);
   const [error, setError] = useState(false);
   const [caracterCount, setCaracterCount] = useState(0);
@@ -16,17 +19,17 @@ const AgregarNoticia = () => {
   const [noticiaCategoria, setNoticiaCategoria] = useState("");
   const [noticiaAutor, setNoticiaAutor] = useState("");
   const [noticiaFecha, setNoticiaFecha] = useState("");
-  const [noticiaPublicada, setNoticiaPublicada] = useState();
+  const [noticiaPublicada, setNoticiaPublicada] = useState(false);
 
   const checkboxPublicar = (e) => {
-    setNoticiaPublicada(e.target.value);
+    setNoticiaPublicada(e.target.checked);
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
+    event.preventDefault();
     //Validacion general
     const form = event.currentTarget;
     if (form.checkValidity() === false) {
-      event.preventDefault();
       event.stopPropagation();
       setError(true);
       setValidated(true);
@@ -34,6 +37,51 @@ const AgregarNoticia = () => {
     } else {
       setError(false);
       setValidated(true);
+    }
+    //Enviar producto a la API
+    //Construir un objeto con los datos a enviar
+    const datos = {
+      noticiaTitulo: noticiaTitulo,
+      noticiaDescripcionBreve: noticiaDescripcionBreve,
+      noticiaDescripcionFull: noticiaDescripcionFull,
+      noticiaImg: noticiaImg,
+      noticiaCategoria: noticiaCategoria,
+      noticiaAutor: noticiaAutor,
+      noticiaFecha: noticiaFecha,
+      noticiaPublicada: noticiaPublicada,
+    };
+    //Estructura para peticiones
+    try {
+      const cabecera = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(datos),
+      };
+      const resultado = await fetch("http://localhost:4000/noticias", cabecera);
+      console.log(resultado);
+      //Si la operacion fue exitosa, entonces...
+      if (resultado.status === 201) {
+        Swal.fire(
+          "Noticia agregada!",
+          "La noticia se agrego correctamente",
+          "success"
+        );
+      } else {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Ocurrio un error, intentelo nuevamente",
+        });
+        return;
+      }
+      //Actualizamos nuestra lista de noticias
+      props.setRecargarTodo(true);
+      //Redireccionar a alguna pagina
+      props.history.push("/admin");
+    } catch (error) {
+      console.log(error);
     }
   };
 
@@ -62,6 +110,7 @@ const AgregarNoticia = () => {
         <Form.Group controlId="tituloNoticia">
           <Form.Label>Titulo de la noticia</Form.Label>
           <Form.Control
+            onChange={(e) => setNoticiaTitulo(e.target.value)}
             required
             type="text"
             placeholder="Ejemplo: Nuevas medidas contra el corona virus"
@@ -74,7 +123,9 @@ const AgregarNoticia = () => {
             rows="2"
             className="descripcionBreveForm"
             onKeyUp={(e) => descripcionBreveValidator(e.target)}
+            onChange={(e) => setNoticiaDescripcionBreve(e.target.value)}
             required
+            maxLength="200"
             type="text"
             placeholder="Ejemplo: La OMS brinda un conjunto de acciones eficientes a tomar para prevenir el contagio"
           />
@@ -86,6 +137,7 @@ const AgregarNoticia = () => {
           <Form.Label>Descripcion completa</Form.Label>
           <Form.Control
             required
+            onChange={(e) => setNoticiaDescripcionFull(e.target.value)}
             as="textarea"
             rows="8"
             type="text"
@@ -96,20 +148,17 @@ const AgregarNoticia = () => {
           <Form.Label>Imagen relevante</Form.Label>
           <Form.Control
             required
+            onChange={(e) => setNoticiaImg(e.target.value)}
             type="url"
             placeholder="Introduzca la direccion URL que lleva a la imagen a utilizar"
           />
         </Form.Group>
         <Form.Group controlId="listaCategoria">
           <Form.Label>Categoria</Form.Label>
-          <Form.Control as="select" required>
-            <option></option>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-          </Form.Control>
+          <AgregarNoticiaCategorias
+            setNoticiaCategoria={setNoticiaCategoria}
+            categorias={props.categorias}
+          ></AgregarNoticiaCategorias>
           <Form.Text id="listaCategoriaHelpBlock" muted>
             Seleccione una categoria
           </Form.Text>
@@ -119,6 +168,7 @@ const AgregarNoticia = () => {
             <Form.Group controlId="autorNoticia">
               <Form.Label>Autor</Form.Label>
               <Form.Control
+                onChange={(e) => setNoticiaAutor(e.target.value)}
                 required
                 type="text"
                 placeholder="Ejemplo: Maximiliano Costa"
@@ -128,7 +178,12 @@ const AgregarNoticia = () => {
           <Col xl={3} lg={3} md={3}>
             <Form.Group controlId="fechaNoticia">
               <Form.Label>Fecha</Form.Label>
-              <Form.Control required placeholder="dd/mm/aaaa" type="date" />
+              <Form.Control
+                onChange={(e) => setNoticiaFecha(e.target.value)}
+                required
+                placeholder="dd/mm/aaaa"
+                type="date"
+              />
             </Form.Group>
           </Col>
         </Form.Row>
@@ -152,4 +207,4 @@ const AgregarNoticia = () => {
   );
 };
 
-export default AgregarNoticia;
+export default withRouter(AgregarNoticia);
