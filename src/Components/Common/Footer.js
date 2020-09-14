@@ -10,14 +10,14 @@ const Footer = () => {
 
             <div className="container d-none d-xl-block">
                 <div className="row">
-                    <div className="col-4">
+                    <div className="col-4 text-center">
                         <img src={process.env.PUBLIC_URL + "LogoFooter.png"}
                             alt="logo del Footer"></img>
                     </div>
                     <div className="col-8">
                         <h4 className="text-danger">Contacto</h4>
                         <hr className="bg-white" />
-                        <div className="row">
+                        <div className="row ">
                             <div className="col">
                                 <p className="text-danger">RN Redacción</p>
                                 <p>Gral Paz 576 - Piso 9|S.M. Tucumán|Argentina</p>
@@ -34,7 +34,7 @@ const Footer = () => {
                     </div>
 
                     <div className="w-100"></div>
-                    <div className="col-4 py-2">
+                    <div className="col-4 py-2 text-center">
                     <a href="https://www.facebook.com"><FontAwesomeIcon className="mx-3" icon={faFacebook} color="#fff" size="3x" /></a>
                         <a href="https://www.instagram.com/"><FontAwesomeIcon className="mx-3" icon={faInstagram} color="#fff" size="3x" /></a>
                         <a href="https://www.youtube.com"><FontAwesomeIcon className="mx-3" icon={faYoutube} color="#fff" size="3x" /></a>
@@ -51,15 +51,15 @@ const Footer = () => {
 
             <div className="container d-xl-none ">
                 <div className="row ">
-                    <div className="col-12 col-sm-6">
+                    <div className="col-12 text-center col-sm-6">
                         <img src={process.env.PUBLIC_URL + "LogoFooter.png"}
                             alt="logo del Footer"></img>
                     </div>
-                    <div className="col-12 py-2 col-sm-6">
-                        <a href="https://www.facebook.com"><FontAwesomeIcon className="mx-3" icon={faFacebook} color="#fff" size="3x" /></a>
-                        <a href="https://www.instagram.com/"><FontAwesomeIcon className="mx-3" icon={faInstagram} color="#fff" size="3x" /></a>
-                        <a href="https://www.youtube.com"><FontAwesomeIcon className="mx-3" icon={faYoutube} color="#fff" size="3x" /></a>
-                        <a href="https://twitter.com"><FontAwesomeIcon className="mx-3" icon={faTwitter} color="#fff" size="3x" /></a>
+                    <div className="col-12 text-center pt-4 col-sm-6">
+                        <a href="https://www.facebook.com"><FontAwesomeIcon className="mx-3" icon={faFacebook} color="#fff" size="2x" /></a>
+                        <a href="https://www.instagram.com/"><FontAwesomeIcon className="mx-3" icon={faInstagram} color="#fff" size="2x" /></a>
+                        <a href="https://www.youtube.com"><FontAwesomeIcon className="mx-3" icon={faYoutube} color="#fff" size="2x" /></a>
+                        <a href="https://twitter.com"><FontAwesomeIcon className="mx-3" icon={faTwitter} color="#fff" size="2x" /></a>
                     </div>
                 </div>
             </div>
