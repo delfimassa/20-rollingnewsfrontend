@@ -2,7 +2,7 @@ import React from "react";
 import "./Header.css";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-import NavLink from 'react-bootstrap/NavLink'
+import {NavLink} from 'react-router-dom'
 import Dropdown from "react-bootstrap/Dropdown";
 import Button from "react-bootstrap/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -16,7 +16,7 @@ const Header = () => {
       <div className="container-fluid fondo">
         <div className="row">
           <div className="col-sm-12 col-md-4 col-lg-4 text-center logo p-0 m-0 align-self-center">
-          <NavLink href="*">
+          <NavLink exact={true} to="/">
           <img src={process.env.PUBLIC_URL + "LogoNavBar.png"}
           alt="logo del NavBar"></img>
           </NavLink>
@@ -35,35 +35,35 @@ const Header = () => {
         </Navbar.Toggle>
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link href="#" className="text-light">
+            <NavLink exact={true} to="" className="text-light nav-link">
               Actualidad
-            </Nav.Link>
-            <Nav.Link href="#" className="text-light">
+            </NavLink>
+            <NavLink exact={true} to="" className="text-light nav-link">
               Espectaculos
-            </Nav.Link>
-            <Nav.Link href="#" className="text-light">
+            </NavLink>
+            <NavLink exact={true} to="" className="text-light nav-link">
               Tecnoloigia
-            </Nav.Link>
-            <Nav.Link href="#" className="text-light">
+            </NavLink>
+            <NavLink exact={true} to="" className="text-light nav-link">
               Deportes
-            </Nav.Link>
+            </NavLink>
             <Dropdown>
-              <Dropdown.Toggle id="fondo-categoria">
+              <Dropdown.Toggle id="fondo-categoria" className="ml-3">
                 <FontAwesomeIcon icon={faPlus}></FontAwesomeIcon>
               </Dropdown.Toggle>
               <Dropdown.Menu className="fondoLista">
-                <Dropdown.Item eventKey="1" className="text-light hover">
+                <NavLink exact={true} to="" eventKey="1" className="text-light hover nav-link">
                   Politica
-                </Dropdown.Item>
-                <Dropdown.Item eventKey="2" className="text-light hover">
+                </NavLink>
+                <NavLink exact={true} to="" eventKey="2" className="text-light hover nav-link">
                   Economia
-                </Dropdown.Item>
-                <Dropdown.Item eventKey="3" className="text-light hover">
+                </NavLink>
+                <NavLink exact={true} to="" eventKey="3" className="text-light hover nav-link">
                   Salud
-                </Dropdown.Item>
-                <Dropdown.Item eventKey="4" className="text-light hover">
+                </NavLink>
+                <NavLink exact={true} to="" eventKey="4" className="text-light hover nav-link">
                   Fotografia
-                </Dropdown.Item>
+                </NavLink>
               </Dropdown.Menu>
             </Dropdown>
           </Nav>
