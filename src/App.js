@@ -16,18 +16,20 @@ import Noticias from "./Components/Noticias/Noticias";
 import PaginaError from "./Components/Error404/PaginaError";
 import ModalLogin from "./Components/Common/ModalLogin";
 import ModalSubscribirse from "./Components/Common/ModalSubscribirse";
+import Categorias from "./Components/CategoriaDinamica/Categorias";
 import Swal from "sweetalert2";
 
 function App() {
   const [recargarTodo, setRecargarTodo] = useState(true);
-  const [categorias, setCategorias] = useState({});
-  const [noticias, setNoticias] = useState({});
+  const [categorias, setCategorias] = useState([]);
+  const [noticias, setNoticias] = useState([]);
   const [adminUser, setAdminUser] = useState(false);
 
   useEffect(() => {
     if (recargarTodo) {
       consultarAPI();
       setRecargarTodo(false);
+      console.log("Datos de categorias y noticias recargados")
     }
   }, [recargarTodo]);
 
@@ -35,10 +37,8 @@ function App() {
     try {
       //obtener lista de categorias
       const consulta = await fetch("http://localhost:4000/categorias");
-      console.log(consulta);
       const respuesta = await consulta.json();
-      console.log(respuesta);
-      if ((await consulta.status) !== 200) {
+      if (consulta.status !== 200) {
         Swal.fire({
           icon: "error",
           title: "Oops...",
@@ -53,10 +53,8 @@ function App() {
     try {
       //obtener lista de noticias
       const consulta = await fetch("http://localhost:4000/noticias");
-      console.log(consulta);
       const respuesta = await consulta.json();
-      console.log(respuesta);
-      if ((await consulta.status) !== 200) {
+      if (consulta.status !== 200) {
         Swal.fire({
           icon: "error",
           title: "Oops...",
@@ -84,13 +82,13 @@ function App() {
           <DetalleNoticia></DetalleNoticia>
         </Route>
         <Route exact path="/admin/agregarnoticia">
-          <AgregarNoticia></AgregarNoticia>
+          <AgregarNoticia setRecargarTodo={setRecargarTodo} categorias={categorias}></AgregarNoticia>
         </Route>
         <Route exact path="/admin/editarnoticia/:idNoticia">
           <EditarNoticia></EditarNoticia>
         </Route>
         <Route exact path="/admin/agregarcategoria">
-          <AgregarCategoria></AgregarCategoria>
+          <AgregarCategoria setRecargarTodo={setRecargarTodo}></AgregarCategoria>
         </Route>
         <Route exact path="/admin/editarcategoria/:idCategoria">
           <EditarCategoria></EditarCategoria>
@@ -98,8 +96,17 @@ function App() {
         <Route exact path="/admin">
           <Admin></Admin>
         </Route>
-        <Route exact path="/admin/noticias">
-          <Noticias></Noticias>
+        <Route exact path="/noticias">
+          <Noticias
+            noticias={noticias}
+            setRecargarTodo={setRecargarTodo}
+          ></Noticias>
+        </Route>
+        <Route exact path="/categorias">
+          <Categorias
+            categorias={categorias}
+            setRecargarTodo={setRecargarTodo}
+          ></Categorias>
         </Route>
         <Route exact path="*">
           <PaginaError></PaginaError>
