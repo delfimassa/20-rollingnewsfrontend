@@ -6,7 +6,7 @@ import { faFacebook, faInstagram, faYoutube, faTwitter } from "@fortawesome/free
 
 const Footer = () => {
     return (
-        <div className="bg-black text-white" >
+        <div className="bg-black text-white pt-3 pb-1" >
 
             <div className="container d-none d-xl-block">
                 <div className="row">
