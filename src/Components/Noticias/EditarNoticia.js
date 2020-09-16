@@ -5,7 +5,7 @@ import Alert from "react-bootstrap/Alert";
 import Col from "react-bootstrap/Col";
 import Swal from "sweetalert2";
 import { withRouter } from "react-router-dom";
-import AgregarNoticiaCategorias from "./AgregarNoticiaCategorias";
+import EditarNoticiaCategorias from "./EditarNoticiaCategorias";
 
 const EditarNoticia = (props) => {
   const [noticia, setNoticia] = useState({});
@@ -160,16 +160,16 @@ const EditarNoticia = (props) => {
             type="url"
             placeholder="Introduzca la direccion URL que lleva a la imagen a utilizar"
             ref={noticiaImgRef}
-            defaultValue={props.noticia?.noticiaImgFull || ""}
+            defaultValue={props.noticia?.noticiaImg || ""}
           />
         </Form.Group>
         <Form.Group controlId="listaCategoria">
           <Form.Label>Categoria</Form.Label>
-          <AgregarNoticiaCategorias
+          <EditarNoticiaCategorias
             setNoticiaCategoria={setNoticiaCategoria}
             categorias={props.categorias}
             defaultValue = {noticiaCategoria}
-          ></AgregarNoticiaCategorias>
+          ></EditarNoticiaCategorias>
           <Form.Text id="listaCategoriaHelpBlock" muted>
             Seleccione una categoria
           </Form.Text>

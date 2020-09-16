@@ -11,3 +11,41 @@
 .fondoLi{
     background-color: #E5E5E5;
 }
+
+/*X-SMALL DEVICES PUBLICIDAD*/
+@media all and (max-width: 576px) {
+    .botonEditar{
+        width: 38px;
+        height: 37px;
+    }
+}
+/*SMALL DEVICES*/
+@media all and (min-width: 576px) and (max-width: 768px) {
+    .botonEditar{
+        width: 38px;
+        height: 38px;
+    }
+}
+/*MEDIUM DEVICES*/
+@media all and (min-width: 768px) and (max-width: 991px) {
+    .botonEditar{
+        width: 38px;
+        height: 37px;
+    }
+}
+
+/*LARGE DEVICES*/
+@media all and (min-width: 991px) and (max-width: 1200px) {
+    .botonEditar{
+        width: 38px;
+        height: 37px;
+    }  
+}
+  
+  /*XTRA LARGE DEVICES*/
+@media all and (min-width: 1200px) {
+    .botonEditar{
+        width: 38px;
+        height: 37px;
+    }
+}

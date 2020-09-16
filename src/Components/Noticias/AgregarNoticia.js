@@ -20,6 +20,8 @@ const AgregarNoticia = (props) => {
   const [noticiaAutor, setNoticiaAutor] = useState("");
   const [noticiaFecha, setNoticiaFecha] = useState("");
 
+  console.log(noticiaCategoria);
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     //Validacion general

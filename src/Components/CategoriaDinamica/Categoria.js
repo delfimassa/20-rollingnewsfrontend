@@ -64,13 +64,13 @@ const Categoria = (props) => {
       <p>{props.categoria.nombreCategoria}</p>
       <div>
         <Link
-          className="btn btn-dark mr-2 botonNegro"
+          className="btn btn-dark botonNegro botonEditar mb-1 ml-1"
           to={`/admin/editarnoticia/:idNoticia${props.categoria.id}`}
         >
           <FontAwesomeIcon icon={faEdit}></FontAwesomeIcon>
         </Link>
         <Button
-          className="botonRojo"
+          className="botonRojo botonEditar mb-1 ml-1"
           variant="danger"
           type="button"
           onClick={() => eliminarCategoria(props.categoria.id)}
