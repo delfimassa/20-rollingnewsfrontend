@@ -60,7 +60,7 @@ const EditarNoticia = (props) => {
     // enviar cambios a la api
     try {
       const respuesta = await fetch(
-        `/admin/editarnoticia/${props.noticia.id}`,
+        `http://localhost:4000/noticias/${props.noticia.id}`,
         {
           method: "PUT",
           headers: {
@@ -205,7 +205,7 @@ const EditarNoticia = (props) => {
 
         <div className="text-right my-4">
           <Button variant="danger" type="submit" className="ml-auto botonRojo">
-            Agregar noticia
+            Editar noticia
           </Button>
         </div>
       </Form>
