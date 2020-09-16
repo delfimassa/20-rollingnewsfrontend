@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
+import DetallesCovid from "./DetallesCovid";
 import NoticiasDestacadas from "./NoticiasDestacadas";
 import TipoDeCambio from "./TipoDeCambio";
 
 const Inicio = (props) => {
   const [noticiasDestacadas, setNoticiasDestacadas] = useState([]);
+  const [showBannerCovid, setShowBannerCovid] = useState([true]);
 
   useEffect(() => {
     const filtrarNoticias = () => {
@@ -24,12 +26,13 @@ const Inicio = (props) => {
   }, [props.noticias]);
 
   return (
-    <div className="text-center container">
+    <div>
       {/* <TipoDeCambio></TipoDeCambio> */}
       <NoticiasDestacadas
         key={noticiasDestacadas.length}
         noticiasDestacadas={noticiasDestacadas}
       ></NoticiasDestacadas>
+      {showBannerCovid ? <DetallesCovid setShowBannerCovid={setShowBannerCovid}></DetallesCovid> : null}
     </div>
   );
 };
