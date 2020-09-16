@@ -64,7 +64,7 @@
       "noticiaPublicada": true
     },
     {
-      "id": 2,
+      "id": 3,
       "noticiaTitulo": "Tercera noticia para testing",
       "noticiaDescripcionBreve": "Esta es una noticia realizada para testear los componentes",
       "noticiaDescripcionFull": "Esta es una noticia realizada para testear los componentes",
@@ -75,15 +75,16 @@
       "noticiaPublicada": true
     },
     {
+      "id": 4,
       "noticiaTitulo": "Tucumán superó los 8.000 casos de coronavirus desde que comenzó la pandemia",
       "noticiaDescripcionBreve": "La provincia registró 577 contagios en las últimas 24 horas.",
-      "noticiaDescripcionFull": "Tucumán sumó 577 nuevos contagios de covid-19 en las ultimas 24 horas y llegó a los 8.091 casos confirmados desde que comenzó la pandemia, informó el Ministerio de Salud de la Provincia.\n",
+      "noticiaDescripcionFull": "Tucumán sumó 577 nuevos contagios de covid-19 en las ultimas 24 horas y llegó a los 8.091 casos confirmados desde que comenzó la pandemia, informó el Ministerio de Salud de la Provincia.",
       "noticiaImg": "https://img.lagaceta.com.ar/fotos/notas/2020/09/14/ministerio-de-salud-pblica-de-la-provincia-860494-183522.jpg?_ga=2.243858629.1155574805.1600123280-748976915.1588117706",
       "noticiaCategoria": "Salud",
       "noticiaAutor": "Juan Perez",
       "noticiaFecha": "2020-09-14",
-      "noticiaPublicada": true,
-      "id": 3
+      "noticiaPublicada": true
+      
     }
   ]
 }

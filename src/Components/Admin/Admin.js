@@ -17,34 +17,34 @@ const Admin = () => {
       <section className="container">
         <div className="row">
           <div className="col-sm-12 col-md-6">
-            <Button variant="flat" className="btn m-2" size="lg" block>
-              <Link className="text-light" to={"/noticias"}>
+            <Link className="text-light" to={"/noticias"}>
+              <Button variant="flat" className="btn m-2 text-light" size="lg" block>
                 Noticias
-              </Link>
-            </Button>
+              </Button>
+            </Link>
           </div>
           <div className="col-sm-12 col-md-6">
-            <Button variant="flatb" className="btn m-2" size="lg" block>
-              <Link className="text-light" to={"/admin/agregarnoticia"}>
+            <Link className="text-light" to={"/admin/agregarnoticia"}>
+              <Button variant="flatb" className="btn m-2 text-light" size="lg" block>
                 Nueva Noticia
-              </Link>
-            </Button>
+              </Button>
+            </Link>
           </div>
         </div>
         <div className="row">
           <div className="col-sm-12 col-md-6">
-            <Button variant="flat" className="btn m-2" size="lg" block>
               <Link className="text-light" to={"/categorias"}>
+                <Button variant="flat" className="btn m-2 text-light" size="lg" block>
                 Categorías
-              </Link>
-            </Button>
+              </Button>
+            </Link>
           </div>
           <div className="col-sm-12 col-md-6">
-            <Button variant="flatb" className="btn m-2" size="lg" block>
               <Link className="text-light" to={"/admin/agregarcategoria"}>
+                <Button variant="flatb" className="btn m-2 text-light" size="lg" block>
                 Nueva Categoría
-              </Link>
-            </Button>
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
