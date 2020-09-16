@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import "./ModalLogin.css";
+import "./modalLogin.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUsers } from "@fortawesome/free-solid-svg-icons";
 import Alert from "react-bootstrap/Alert";
