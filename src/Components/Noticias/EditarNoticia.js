@@ -99,9 +99,9 @@ const EditarNoticia = (props) => {
 
   return (
     <div className="container">
-      <h1 className="text-center my-5">Editar Noticia</h1>
+      <h1 className="text-center my-4">Editar Noticia</h1>
       <Form
-        className="rounded fondoLi p-4"
+        className="rounded fondoLi p-4 mb-4"
         noValidate
         validated={validated}
         onSubmit={handleSubmit}
