@@ -82,6 +82,7 @@
       "noticiaDestacada": true
     },
     {
+      "id": 4,
       "noticiaTitulo": "Testing2",
       "noticiaDescripcionBreve": "Testing2",
       "noticiaDescripcionFull": "Testing2",
@@ -90,8 +91,55 @@
       "noticiaAutor": "Testing2",
       "noticiaFecha": "2020-09-08",
       "noticiaPublicada": false,
-      "noticiaDestacada": true,
-      "id": 4
+      "noticiaDestacada": true
+    },
+    {
+      "id": 5,
+      "noticiaTitulo": "Noticia para testing",
+      "noticiaDescripcionBreve": "Esta es una noticia realizada para testear los componentesaaaaaaaa aaaaaaaaaaaaa aaaaaaaaaaaaaaa aaaaaaaaaaaa aaaaaaaaaaaaaaa",
+      "noticiaDescripcionFull": "Esta es una noticia realizada para testear los componentes",
+      "noticiaImg": "https://s3.amazonaws.com/wordpress-production/wp-content/uploads/sites/19/2016/11/trucos-de-fotografia-que-los-pros-no-te-habian-contado.jpg",
+      "noticiaCategoria": "Actualidad",
+      "noticiaAutor": "Maximiliano Diaz",
+      "noticiaFecha": "2020-09-13",
+      "noticiaPublicada": true,
+      "noticiaDestacada": true
+    },
+    {
+      "id": 6,
+      "noticiaTitulo": "Noticia para testing",
+      "noticiaDescripcionBreve": "Esta es una noticia realizada para testear los componentesaaaaaaaa aaaaaaaaaaaaa aaaaaaaaaaaaaaa aaaaaaaaaaaa aaaaaaaaaaaaaaa",
+      "noticiaDescripcionFull": "Esta es una noticia realizada para testear los componentes",
+      "noticiaImg": "https://s3.amazonaws.com/wordpress-production/wp-content/uploads/sites/19/2016/11/trucos-de-fotografia-que-los-pros-no-te-habian-contado.jpg",
+      "noticiaCategoria": "Actualidad",
+      "noticiaAutor": "Maximiliano Diaz",
+      "noticiaFecha": "2020-09-13",
+      "noticiaPublicada": true,
+      "noticiaDestacada": true
+    },
+    {
+      "id": 7,
+      "noticiaTitulo": "Noticia para testing",
+      "noticiaDescripcionBreve": "Esta es una noticia realizada para testear los componentesaaaaaaaa aaaaaaaaaaaaa aaaaaaaaaaaaaaa aaaaaaaaaaaa aaaaaaaaaaaaaaa",
+      "noticiaDescripcionFull": "Esta es una noticia realizada para testear los componentes",
+      "noticiaImg": "https://s3.amazonaws.com/wordpress-production/wp-content/uploads/sites/19/2016/11/trucos-de-fotografia-que-los-pros-no-te-habian-contado.jpg",
+      "noticiaCategoria": "Actualidad",
+      "noticiaAutor": "Maximiliano Diaz",
+      "noticiaFecha": "2020-09-13",
+      "noticiaPublicada": true,
+      "noticiaDestacada": true
+    },
+    {
+      "id": 7,
+      "noticiaTitulo": "Noticia para testing",
+      "noticiaDescripcionBreve": "Esta es una noticia realizada para testear los componentesaaaaaaaa aaaaaaaaaaaaa aaaaaaaaaaaaaaa aaaaaaaaaaaa aaaaaaaaaaaaaaa",
+      "noticiaDescripcionFull": "Esta es una noticia realizada para testear los componentes",
+      "noticiaImg": "https://s3.amazonaws.com/wordpress-production/wp-content/uploads/sites/19/2016/11/trucos-de-fotografia-que-los-pros-no-te-habian-contado.jpg",
+      "noticiaCategoria": "Politica",
+      "noticiaAutor": "Maximiliano Diaz",
+      "noticiaFecha": "2020-09-13",
+      "noticiaPublicada": true,
+      "noticiaDestacada": true
     }
   ]
 }

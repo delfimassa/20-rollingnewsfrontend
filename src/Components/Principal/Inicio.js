@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import DetallesCovid from "./DetallesCovid";
 import NoticiasDestacadas from "./NoticiasDestacadas";
+import NoticiasInicio from "./NoticiasInicio";
 import TipoDeCambio from "./TipoDeCambio";
 
 const Inicio = (props) => {
@@ -32,7 +33,10 @@ const Inicio = (props) => {
         key={noticiasDestacadas.length}
         noticiasDestacadas={noticiasDestacadas}
       ></NoticiasDestacadas>
-      {showBannerCovid ? <DetallesCovid setShowBannerCovid={setShowBannerCovid}></DetallesCovid> : null}
+      {/* {showBannerCovid ? (
+        <DetallesCovid setShowBannerCovid={setShowBannerCovid}></DetallesCovid>
+      ) : null} */}
+      <NoticiasInicio noticias={props.noticias}></NoticiasInicio>
     </div>
   );
 };
