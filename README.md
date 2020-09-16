@@ -1,68 +1,100 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Título del Proyecto
 
-## Available Scripts
+_Acá va un párrafo que describa lo que es el proyecto_
 
-In the project directory, you can run:
+## Comenzando 🚀
 
-### `npm start`
+_Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas._
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Mira **Deployment** para conocer como desplegar el proyecto.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
 
-### `npm test`
+### Pre-requisitos 📋
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+_Que cosas necesitas para instalar el software y como instalarlas_
 
-### `npm run build`
+```
+Da un ejemplo
+```
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Instalación 🔧
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+_Una serie de ejemplos paso a paso que te dice lo que debes ejecutar para tener un entorno de desarrollo ejecutandose_
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+_Dí cómo será ese paso_
 
-### `npm run eject`
+```
+Da un ejemplo
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+_Y repite_
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+hasta finalizar
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+_Finaliza con un ejemplo de cómo obtener datos del sistema o como usarlos para una pequeña demo_
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Ejecutando las pruebas ⚙️
 
-## Learn More
+_Explica como ejecutar las pruebas automatizadas para este sistema_
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Analice las pruebas end-to-end 🔩
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+_Explica que verifican estas pruebas y por qué_
 
-### Code Splitting
+```
+Da un ejemplo
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+### Y las pruebas de estilo de codificación ⌨️
 
-### Analyzing the Bundle Size
+_Explica que verifican estas pruebas y por qué_
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+```
+Da un ejemplo
+```
 
-### Making a Progressive Web App
+## Despliegue 📦
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+_Agrega notas adicionales sobre como hacer deploy_
 
-### Advanced Configuration
+## Construido con 🛠️
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+_Menciona las herramientas que utilizaste para crear tu proyecto_
 
-### Deployment
+* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - El framework web usado
+* [Maven](https://maven.apache.org/) - Manejador de dependencias
+* [ROME](https://rometools.github.io/rome/) - Usado para generar RSS
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+## Contribuyendo 🖇️
 
-### `npm run build` fails to minify
+Por favor lee el [CONTRIBUTING.md](https://gist.github.com/villanuevand/xxxxxx) para detalles de nuestro código de conducta, y el proceso para enviarnos pull requests.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## Wiki 📖
+
+Puedes encontrar mucho más de cómo utilizar este proyecto en nuestra [Wiki](https://github.com/tu/proyecto/wiki)
+
+## Versionado 📌
+
+Usamos [SemVer](http://semver.org/) para el versionado. Para todas las versiones disponibles, mira los [tags en este repositorio](https://github.com/tu/proyecto/tags).
+
+## Autores ✒️
+
+_Menciona a todos aquellos que ayudaron a levantar el proyecto desde sus inicios_
+
+* **Andrés Villanueva** - *Trabajo Inicial* - [villanuevand](https://github.com/villanuevand)
+* **Fulanito Detal** - *Documentación* - [fulanitodetal](#fulanito-de-tal)
+
+También puedes mirar la lista de todos los [contribuyentes](https://github.com/your/project/contributors) quíenes han participado en este proyecto. 
+
+## Licencia 📄
+
+Este proyecto está bajo la Licencia (Tu Licencia) - mira el archivo [LICENSE.md](LICENSE.md) para detalles
+
+## Expresiones de Gratitud 🎁
+
+* Comenta a otros sobre este proyecto 📢
+* Invita una cerveza 🍺 o un café ☕ a alguien del equipo. 
+* Da las gracias públicamente 🤓.
+* etc.

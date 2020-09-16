@@ -1,0 +1,14 @@
+
+.body{
+    min-height: 100%;
+    position: relative;
+    }
+    
+.footer{
+    position: absolute;
+    bottom:0;
+    width: 100%; 
+  }
+.bg-black{
+    background-color: black;
+}
