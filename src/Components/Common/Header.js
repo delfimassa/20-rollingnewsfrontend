@@ -31,7 +31,7 @@ const Header = () => {
           </div>
         </div>
       </div>
-      <Navbar bg="dark" expand="lg">
+      <Navbar bg="dark" expand="lg" className="justify-content-center">
         <Navbar.Toggle aria-controls="basic-navbar-nav">
           <FontAwesomeIcon icon={faBars} color="#fff" size="2x" />
         </Navbar.Toggle>
@@ -89,17 +89,25 @@ const Header = () => {
               </Dropdown.Menu>
             </Dropdown>
           </Nav>
-          <Button variant="danger" className="mr-2 my-2">
+          <Button variant="danger" className="mr-2 my-2 col-sm-12 col-md-12 col-lg-2">
             Registrarse
           </Button>
-          <Button variant="danger" className="my-2 mr-2">
+          <Button variant="danger" className="my-2 mr-2 col-sm-12 col-md-12 col-lg-2">
             Entrar
           </Button>
           <Dropdown>
-            <Dropdown.Toggle variant="danger" className="mr-3">
+            <Dropdown.Toggle variant="danger" className="mr-3 col-sm-12 col-md-12 col-lg-12">
               Administrar
             </Dropdown.Toggle>
             <Dropdown.Menu className="fondoLista">
+            <NavLink
+                exact={true}
+                to="/admin"
+                eventKey="1"
+                className="nav-link text-light hover"
+              >
+                Bienvenido
+              </NavLink>
               <NavLink
                 exact={true}
                 to="/noticias"
@@ -122,7 +130,7 @@ const Header = () => {
                 eventKey="3"
                 className="nav-link text-light hover"
               >
-                Categoria
+                Categorias
               </NavLink>
               <NavLink
                 exact={true}
@@ -134,6 +142,7 @@ const Header = () => {
               </NavLink>
             </Dropdown.Menu>
           </Dropdown>
+          
         </Navbar.Collapse>
       </Navbar>
     </div>
