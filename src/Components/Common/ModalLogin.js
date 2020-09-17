@@ -33,19 +33,30 @@ const ModalLogin = (props) => {
     const usuarioSeleccionado = props.usuarios.find(
       (usuario) => usuario.nombreUsuario === nombreUsuario
     );
-    if (usuarioSeleccionado.passwordUsuario === passwordUsuario) {
-      props.setAdminUser(true);
-      //Redireccionar a alguna pagina
-      props.history.push("/admin");
-    } else {
+    if (typeof usuarioSeleccionado === 'undefined') {
       setDatosErroneos(true);
+      return;
+    } else {
+      if (usuarioSeleccionado.passwordUsuario === passwordUsuario) {
+        props.setShowLogin(true);
+        props.setAdminUser(true);
+        handleCloseLogin();
+        //Redireccionar a alguna pagina
+        props.history.push("/");
+      } else {
+        setDatosErroneos(true);
+      }
     }
   };
 
   return (
     <>
       {/*Forma de acceder al modal - EJEMPLO CON UN BUTTON*/}
-      <Button variant="primary" onClick={handleShowLogin}>
+      <Button
+        variant="danger"
+        className="px-0 my-2 mr-1 w-100"
+        onClick={handleShowLogin}
+      >
         Login
       </Button>
 
@@ -69,7 +80,7 @@ const ModalLogin = (props) => {
           </div>
         </Modal.Header>
         <Modal.Body>
-          <p class="lead">Inicia sesion con tus datos para continuar</p>
+          <p className="lead">Inicia sesion con tus datos para continuar</p>
           {error ? (
             <Alert variant={"warning"}>Todos los campos son obligatorios</Alert>
           ) : null}

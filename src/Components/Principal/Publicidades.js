@@ -31,7 +31,7 @@ const Publicidades = () => {
   };
 
   return (
-    <div className="container">
+    <div className="container mt-2 mb-4">
       <div className="row justify-content-center">
         <div
           style={publi1}

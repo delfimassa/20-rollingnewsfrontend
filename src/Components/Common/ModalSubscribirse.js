@@ -31,29 +31,34 @@ const ModalSubscribirse = () => {
       setError(true);
       setValidated(true);
       e.stopPropagation();
+      return;
     } else {
       setError(false);
       setValidated(true);
+      handleCloseSub();
+      Swal.fire(
+        "Enhorabuena!",
+        "Tus datos fueron enviados correctamente. Pronto se contactara un administrador para confirmar la suscripcion.",
+        "success"
+      );
+      console.log(nombreSubscriptor);
+      console.log(direccion);
+      console.log(localidad);
+      console.log(codigoPostal);
+      console.log(telefonoSubscriptor);
+      console.log(emailSubscriptor);
     }
-    Swal.fire(
-      "Enhorabuena!",
-      "Tus datos fueron enviados correctamente. Pronto se contactara un administrador para confirmar la suscripcion.",
-      "success"
-    );
-    console.log(nombreSubscriptor);
-    console.log(direccion);
-    console.log(localidad);
-    console.log(codigoPostal);
-    console.log(telefonoSubscriptor);
-    console.log(emailSubscriptor);
-  
   };
 
   return (
     <>
       {/*Forma de acceder al modal - EJEMPLO CON UN BUTTON*/}
 
-      <Button variant="primary" onClick={handleShowSub}>
+      <Button
+        variant="danger"
+        className="mr-1 my-2 w-100"
+        onClick={handleShowSub}
+      >
         Subscribirse
       </Button>
 

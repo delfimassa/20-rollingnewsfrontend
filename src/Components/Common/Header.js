@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Header.css";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
@@ -9,8 +9,17 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faBars } from "@fortawesome/free-solid-svg-icons";
 import Fecha from "./Fecha";
 import Clima from "./Clima";
+import ModalLogin from "./ModalLogin";
+import HeaderCategorias from "./HeaderCategorias"
+import ModalSubscribirse from "./ModalSubscribirse";
 
-const Header = () => {
+const Header = (props) => {
+  const [showLogin, setShowLogin] = useState(false);
+
+  const cerrarSesion = () => {
+    setShowLogin(false);
+    props.setAdminUser(false);
+  };
   return (
     <div>
       <div className="container-fluid fondo">
@@ -37,16 +46,16 @@ const Header = () => {
         </Navbar.Toggle>
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto text-center">
-            <NavLink exact={true} to="" className="text-light nav-link">
+            <NavLink exact={true} to="/categoria/Actualidad" className="text-light nav-link">
               Actualidad
             </NavLink>
-            <NavLink exact={true} to="" className="text-light nav-link">
+            <NavLink exact={true} to="/categoria/Espectaculos" className="text-light nav-link">
               Espectaculos
             </NavLink>
-            <NavLink exact={true} to="" className="text-light nav-link">
+            <NavLink exact={true} to="/categoria/Tecnologia" className="text-light nav-link">
               Tecnologia
             </NavLink>
-            <NavLink exact={true} to="" className="text-light nav-link">
+            <NavLink exact={true} to="/categoria/Deportes" className="text-light nav-link">
               Deportes
             </NavLink>
             <Dropdown className="text-center">
@@ -54,100 +63,84 @@ const Header = () => {
                 <FontAwesomeIcon icon={faPlus}></FontAwesomeIcon>
               </Dropdown.Toggle>
               <Dropdown.Menu className="fondoLista">
-                <NavLink
-                  exact={true}
-                  to=""
-                  eventKey="1"
-                  className="text-light hover nav-link text-center"
-                >
-                  Politica
-                </NavLink>
-                <NavLink
-                  exact={true}
-                  to=""
-                  eventKey="2"
-                  className="text-light hover nav-link text-center"
-                >
-                  Economia
-                </NavLink>
-                <NavLink
-                  exact={true}
-                  to=""
-                  eventKey="3"
-                  className="text-light hover nav-link text-center"
-                >
-                  Salud
-                </NavLink>
-                <NavLink
-                  exact={true}
-                  to=""
-                  eventKey="4"
-                  className="text-light hover nav-link text-center"
-                >
-                  Fotografia
-                </NavLink>
+                <HeaderCategorias categorias={props.categorias}></HeaderCategorias>
               </Dropdown.Menu>
             </Dropdown>
           </Nav>
-          <div className="row col-12 col-sm-12 col-md-12 col-lg-5 mx-0">
+          <div className="row col-12 col-sm-12 col-md-12 col-lg-5 mx-0 justify-content-center">
+          {props.adminUser ? (
+              <div className="col-12 col-sm-12 col-md-12 col-lg-4 px-1">
+                <Dropdown className="text-center">
+                  <Dropdown.Toggle
+                    variant="danger"
+                    className="px-0 mr-1 my-2 w-100"
+                  >
+                    Admin
+                  </Dropdown.Toggle>
+                  <Dropdown.Menu className="fondoLista">
+                    <NavLink
+                      exact={true}
+                      to="/admin"
+                      eventKey="1"
+                      className="nav-link text-light hover text-center"
+                    >
+                      Central
+                    </NavLink>
+                    <NavLink
+                      exact={true}
+                      to="/noticias"
+                      eventKey="1"
+                      className="nav-link text-light hover text-center"
+                    >
+                      Noticias
+                    </NavLink>
+                    <NavLink
+                      exact={true}
+                      to="/admin/agregarnoticia"
+                      eventKey="2"
+                      className="nav-link text-light hover text-center"
+                    >
+                      Nueva noticia
+                    </NavLink>
+                    <NavLink
+                      exact={true}
+                      to="/categorias"
+                      eventKey="3"
+                      className="nav-link text-light hover text-center"
+                    >
+                      Categorias
+                    </NavLink>
+                    <NavLink
+                      exact={true}
+                      to="/admin/agregarcategoria"
+                      eventKey="4"
+                      className="nav-link text-light hover text-center"
+                    >
+                      Nueva categoria
+                    </NavLink>
+                  </Dropdown.Menu>
+                </Dropdown>
+              </div>
+            ) : null}
             <div className="col-12 col-sm-12 col-md-12 col-lg-4 px-1">
-              <Button variant="danger" className="mr-1 my-2 w-100">
-                Suscribirse
-              </Button>
+              <ModalSubscribirse></ModalSubscribirse>
             </div>
             <div className="col-12 col-sm-12 col-md-12 col-lg-4 px-1">
-              <Button variant="danger" className="px-0 my-2 mr-1 w-100">
-                Login
-              </Button>
-            </div>
-            <div className="col-12 col-sm-12 col-md-12 col-lg-4 px-1">
-              <Dropdown className="text-center">
-                <Dropdown.Toggle variant="danger" className="px-0 mr-1 mt-2 w-100">
-                  Admin
-                </Dropdown.Toggle>
-                <Dropdown.Menu className="fondoLista">
-                  <NavLink
-                    exact={true}
-                    to="/admin"
-                    eventKey="1"
-                    className="nav-link text-light hover text-center"
-                  >
-                   Central
-                  </NavLink>
-                  <NavLink
-                    exact={true}
-                    to="/noticias"
-                    eventKey="1"
-                    className="nav-link text-light hover text-center"
-                  >
-                    Noticias
-                  </NavLink>
-                  <NavLink
-                    exact={true}
-                    to="/admin/agregarnoticia"
-                    eventKey="2"
-                    className="nav-link text-light hover text-center"
-                  >
-                    Nueva noticia
-                  </NavLink>
-                  <NavLink
-                    exact={true}
-                    to="/categorias"
-                    eventKey="3"
-                    className="nav-link text-light hover text-center"
-                  >
-                    Categorias
-                  </NavLink>
-                  <NavLink
-                    exact={true}
-                    to="/admin/agregarcategoria"
-                    eventKey="4"
-                    className="nav-link text-light hover text-center"
-                  >
-                    Nueva categoria
-                  </NavLink>
-                </Dropdown.Menu>
-              </Dropdown>
+              {showLogin ? (
+                <Button
+                  variant="danger"
+                  className="mr-1 my-2 w-100"
+                  onClick={cerrarSesion}
+                >
+                  Salir
+                </Button>
+              ) : (
+                <ModalLogin
+                  setShowLogin={setShowLogin}
+                  usuarios={props.usuarios}
+                  setAdminUser={props.setAdminUser}
+                ></ModalLogin>
+              )}
             </div>
           </div>
         </Navbar.Collapse>

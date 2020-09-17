@@ -24,7 +24,7 @@ function App() {
   const [categorias, setCategorias] = useState([]);
   const [noticias, setNoticias] = useState([]);
   const [usuarios, setUsuarios] = useState([]);
-  const [adminUser, setAdminUser] = useState(false);
+  const [adminUser, setAdminUser] = useState();
 
   useEffect(() => {
     if (recargarTodo) {
@@ -87,7 +87,7 @@ function App() {
 
   return (
     <Router>
-      <Header></Header>
+      <Header categorias={categorias} adminUser={adminUser} usuarios={usuarios} setAdminUser={setAdminUser}></Header>
       <Switch>
         <Route exact path="/">
           <Inicio noticias={noticias}></Inicio>

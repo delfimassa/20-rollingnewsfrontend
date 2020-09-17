@@ -52,7 +52,9 @@
       "noticiaDescripcionFull": "Esta es una noticia realizada para testear los componentes",
       "noticiaImg": "https://img.lagaceta.com.ar/fotos/notas/2020/09/14/ministerio-de-salud-pblica-de-la-provincia-860494-183522.jpg?_ga=2.243858629.1155574805.1600123280-748976915.1588117706",
       "noticiaAutor": "Maximiliano Diaz2",
-      "noticiaFecha": "2020-09-13"
+      "noticiaFecha": "2020-09-13",
+      "noticiaCategoria":"Actualidad",
+      "noticiaDestacada":true
     },
     {
       "noticiaTitulo": "Segunda noticia para testingeditada2",
@@ -62,7 +64,8 @@
       "noticiaAutor": "Maximiliano Diaz",
       "noticiaFecha": "2020-09-13",
       "noticiaCategoria": "Espectaculos",
-      "id": 2
+      "id": 2,
+      "noticiaDestacada":true
     },
     {
       "noticiaTitulo": "Tercera noticia para testinggggg",
@@ -72,7 +75,8 @@
       "noticiaAutor": "Maximiliano Diaz2",
       "noticiaFecha": "2020-09-13",
       "noticiaCategoria": "Deportes",
-      "id": 3
+      "id": 3,
+      "noticiaDestacada":true
     },
     {
       "id": 4,

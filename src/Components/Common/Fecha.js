@@ -14,8 +14,8 @@ const Fecha = () => {
   const fechaActual = event.toLocaleDateString(undefined, options);
 
   return (
-    <div className="text-light letraFecha my-2">
-      <p className="my-0">San Miguel de Tucuman,</p>
+    <div className="text-light letraFecha my-2 font-weight-bold">
+      <p className="my-0 font-weight-bold">San Miguel de Tucuman</p>
       {fechaActual}
     </div>
   );
