@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const NoticiasInicio = (props) => {
   const noticiasReversed = props.noticias
     .slice()
-    .sort((a, b) => (b.id > a.id ? 1 : -1));
+    .sort((a, b) => (b.noticiaFecha > a.noticiaFecha ? 1 : -1));
 
   return (
     <div className="container my-4">

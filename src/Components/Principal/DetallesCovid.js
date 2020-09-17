@@ -36,7 +36,7 @@ const DetallesCovid = (props) => {
   return (
     <div className="detallesCovid container my-2">
       <div className="row">
-        <div className="m-0 col-xs-12 col-sm-12 cold-md-12 col-lg-4 row align-items-center justify-content-center">
+        <div className="m-0 px-0 col-xs-12 col-sm-12 cold-md-12 col-lg-4 row align-items-center justify-content-center">
           <FontAwesomeIcon
             icon={faVirus}
             className="mr-3 ml-4 my-3"
@@ -44,7 +44,7 @@ const DetallesCovid = (props) => {
           ></FontAwesomeIcon>
           <span className="textCoronaVirus">Coronavirus</span>
         </div>
-        <div className="col-xs-12 col-sm-12 cold-md-12 col-lg-4 datosArgentina">
+        <div className="px-0 col-xs-12 col-sm-12 cold-md-12 col-lg-4 datosArgentina">
           <p className="textoRojo text-center mt-2 mb-0">ARGENTINA</p>
           <div className="row">
             <div className="col-4 conteoCasos text-center">
@@ -61,7 +61,7 @@ const DetallesCovid = (props) => {
             </div>
           </div>
         </div>
-        <div className="d-none d-md-block col-xs-12 col-sm-12 cold-md-12 col-lg-4">
+        <div className="px-0 d-none d-md-block col-xs-12 col-sm-12 cold-md-12 col-lg-4">
           <p className="textoRojo text-center mt-2 mb-0">MUNDO</p>
           <div className="row">
             <div className="col-4 conteoCasos text-center">
