@@ -1,0 +1,58 @@
+.tituloDestacado{
+    background-color: rgba(0, 0, 0, 0.411);
+}
+
+.categoriaDestacado{
+    background-color: rgba(0, 0, 0, 0.411);
+}
+
+/*MEDIUM DEVICES*/
+@media all and (min-width: 768px) and (max-width: 991px) {
+    .itemDestacado1{
+        min-height: 250px;
+    }
+
+    .itemDestacado2{
+        max-width: 49.2%;
+        min-height: 250px;
+    }
+
+    .itemDestacado3{
+        max-width: 49.2%;
+        min-height: 250px;
+    }
+}
+
+/*LARGE DEVICES*/
+@media all and (min-width: 991px) and (max-width: 1200px) {
+    .itemDestacado1{
+        min-height: 290px;
+    }
+
+    .itemDestacado2{
+        max-width: 49.2%;
+        min-height: 270px;
+    }
+
+    .itemDestacado3{
+        max-width: 49.2%;
+        min-height: 270px;
+    }
+}
+  
+  /*XTRA LARGE DEVICES*/
+@media all and (min-width: 1200px) {
+    .itemDestacado1{
+        min-height: 300px;
+    }
+
+    .itemDestacado2{
+        max-width: 49.2%;
+        min-height: 280px;
+    }
+
+    .itemDestacado3{
+        max-width: 49.2%;
+        min-height: 280px;
+    }
+}
