@@ -6,12 +6,14 @@ import "./modalLogin.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUsers } from "@fortawesome/free-solid-svg-icons";
 import Alert from "react-bootstrap/Alert";
+import { withRouter } from "react-router-dom"; //Sirve para redireccionar a una pagina
 
-const ModalLogin = () => {
+const ModalLogin = (props) => {
   const [show, setShow] = useState(false);
   const [nombreUsuario, setNombreUsuario] = useState("");
   const [passwordUsuario, setPasswordUsuario] = useState("");
   const [error, setError] = useState(false);
+  const [datosErroneos, setDatosErroneos] = useState(false);
 
   const handleCloseLogin = () => setShow(false);
   const handleShowLogin = () => setShow(true);
@@ -24,12 +26,20 @@ const ModalLogin = () => {
     if (nombreUsuario.trim() === "" || passwordUsuario === "") {
       setError(true);
       return;
+    } else {
+      setError(false);
     }
-    setError(false);
-
-    //Enviar datos a la API
-    //Recibir respuesta
-    //Redireccionar a alguna pagina
+    //Verificar que el usuario sea valido
+    const usuarioSeleccionado = props.usuarios.find(
+      (usuario) => usuario.nombreUsuario === nombreUsuario
+    );
+    if (usuarioSeleccionado.passwordUsuario === passwordUsuario) {
+      props.setAdminUser(true);
+      //Redireccionar a alguna pagina
+      props.history.push("/admin");
+    } else {
+      setDatosErroneos(true);
+    }
   };
 
   return (
@@ -63,6 +73,11 @@ const ModalLogin = () => {
           {error ? (
             <Alert variant={"warning"}>Todos los campos son obligatorios</Alert>
           ) : null}
+          {datosErroneos ? (
+            <Alert variant={"danger"}>
+              El usuario y/o la contraseña son incorrectos
+            </Alert>
+          ) : null}
           <Form onSubmit={handleSubmit}>
             <Form.Group controlId="formBasicUser">
               <Form.Label>Nombre de Usuario</Form.Label>
@@ -95,4 +110,4 @@ const ModalLogin = () => {
   );
 };
 
-export default ModalLogin;
+export default withRouter(ModalLogin);

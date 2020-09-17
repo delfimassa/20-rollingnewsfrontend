@@ -23,6 +23,7 @@ function App() {
   const [recargarTodo, setRecargarTodo] = useState(true);
   const [categorias, setCategorias] = useState([]);
   const [noticias, setNoticias] = useState([]);
+  const [usuarios, setUsuarios] = useState([]);
   const [adminUser, setAdminUser] = useState(false);
 
   useEffect(() => {
@@ -63,6 +64,22 @@ function App() {
       }
       //Guardar en el state
       setNoticias(respuesta);
+    } catch (error) {
+      console.log(error);
+    }
+    try {
+      //obtener lista de usuarios
+      const consulta = await fetch("http://localhost:4000/users");
+      const respuesta = await consulta.json();
+      if (consulta.status !== 200) {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Ocurrio un error, intentelo nuevamente",
+        });
+      }
+      //Guardar en el state
+      setUsuarios(respuesta);
     } catch (error) {
       console.log(error);
     }
