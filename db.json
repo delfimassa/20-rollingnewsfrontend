@@ -103,6 +103,17 @@
       "noticiaAutor": "delfi massa",
       "noticiaFecha": "0022-02-22",
       "id": 6
+    },
+    {
+      "noticiaTitulo": "Testing",
+      "noticiaDescripcionBreve": "Testing",
+      "noticiaDescripcionFull": "Testing",
+      "noticiaImg": "http://localhost:3000/admin/agregarnoticia",
+      "noticiaCategoria": "Actualidad",
+      "noticiaAutor": "asas",
+      "noticiaFecha": "2020-09-15",
+      "noticiaDestacada": false,
+      "id": 7
     }
   ]
 }

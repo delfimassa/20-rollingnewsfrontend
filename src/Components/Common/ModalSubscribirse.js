@@ -6,6 +6,7 @@ import "./modalSubscribirse.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelopeOpenText } from "@fortawesome/free-solid-svg-icons";
 import Alert from "react-bootstrap/Alert";
+import Swal from "sweetalert2";
 
 const ModalSubscribirse = () => {
   const [show, setShow] = useState(false);
@@ -34,11 +35,18 @@ const ModalSubscribirse = () => {
       setError(false);
       setValidated(true);
     }
-
-    ///Validacion especifica en caso de querer - Ejecutar post validacion general mediante llamado de funciones de validacion
-    //Enviar datos a la API
-    //Recibir respuesta
-    //Redireccionar a alguna pagina
+    Swal.fire(
+      "Enhorabuena!",
+      "Tus datos fueron enviados correctamente. Pronto se contactara un administrador para confirmar la suscripcion.",
+      "success"
+    );
+    console.log(nombreSubscriptor);
+    console.log(direccion);
+    console.log(localidad);
+    console.log(codigoPostal);
+    console.log(telefonoSubscriptor);
+    console.log(emailSubscriptor);
+  
   };
 
   return (
