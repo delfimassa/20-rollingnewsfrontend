@@ -9,7 +9,7 @@ const BannerCovid = () => {
   };
 
   return (
-    <div className="container my-2 px-0">
+    <div className="container text-center my-2 px-0">
       <div style={bannerCovid} className="col-12 p-3">
         <div className="text-center">
           <FontAwesomeIcon
