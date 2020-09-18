@@ -14,17 +14,17 @@ const EditarCategoria = (props) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    //Validacion general
-    // const form = event.currentTarget;
-    // if (form.checkValidity() === false) {
-    //   event.stopPropagation();
-    //   setError(true);
-    //   setValidated(true);
-    //   return;
-    // } else {
-    //   setError(false);
-    //   setValidated(true);
-    // }
+    // Validacion general
+    const form = event.currentTarget;
+    if (form.checkValidity() === false) {
+      event.stopPropagation();
+      setError(true);
+      setValidated(true);
+      return;
+    } else {
+      setError(false);
+      setValidated(true);
+    }
 
     if (nombreCategoriaRef.current.value.trim() === "") {
       setError(true);
