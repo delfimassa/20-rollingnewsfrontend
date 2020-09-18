@@ -92,8 +92,23 @@ function App() {
         <Route exact path="/">
           <Inicio noticias={noticias}></Inicio>
         </Route>
-        <Route exact path="/categoria/:idCategoria">
-          <CategoriaDinamica></CategoriaDinamica>
+        <Route exact path="/categoria/:nombreCategoria"
+         render={(props) => {
+            //codigo a ejecutar antes de renderizar el componente
+            //obtener el id de la ruta
+            const nombreCategoria = (props.match.params.nombreCategoria);
+            //buscar el producto que coincida con el id
+            const categoriaSeleccionada = categorias.find(
+              (categoria) => categoria.nombreCategoria === nombreCategoria
+            );
+            //mostrar el componente categoriaSeleccionada
+            return (
+              <CategoriaDinamica
+                categoriaSeleccionada={categoriaSeleccionada}
+                noticias={noticias}
+              ></CategoriaDinamica>
+            );
+          }}>
         </Route>
         <Route exact path="/noticia/:idNoticia">
           <DetalleNoticia></DetalleNoticia>

@@ -10,7 +10,7 @@ const TipoDeCambio = () => {
   useEffect(() => {
     //Consulta la API
     const consultarAPI = async () => {
-      const apikey = "80f90ecd7278fb4ed1520b54";
+      const apikey = "68aaed9c163709c3badacd1e";
       const url = `https://v6.exchangerate-api.com/v6/${apikey}/latest/ARS`;
       const respuesta = await fetch(url);
       const resultado = await respuesta.json();
