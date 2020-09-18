@@ -1,0 +1,59 @@
+.detallesCovid{
+background-color: #C4C4C4;
+}
+
+.textCoronaVirus{
+    font-weight: 700;
+    font-size: 25px;
+}
+
+.textoRojo{
+    color: #EC172D;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.conteoCasos p{
+    color: black;
+    font-weight: 550;
+    font-size: 14px;
+}
+
+/*MEDIA QUERIES*/
+
+/*X-SMALL DEVICES PUBLICIDAD*/
+@media all and (max-width: 576px) {
+    .datosArgentina{
+        border: 0;
+    }
+}
+
+/*SMALL DEVICES*/
+@media all and (min-width: 576px) and (max-width: 768px) {
+    .datosArgentina{
+        border: 0;
+    }
+}
+
+/*MEDIUM DEVICES*/
+@media all and (min-width: 768px) and (max-width: 991px) {
+    .datosArgentina{
+        border-top: 1px solid #343a40;
+        border-bottom: 1px solid #343a40;
+    }
+}
+
+/*LARGE DEVICES*/
+@media all and (min-width: 991px) and (max-width: 1200px) {
+    .datosArgentina{
+        border-right: 1px solid #343a40;
+    }
+    
+}
+  
+  /*XTRA LARGE DEVICES*/
+@media all and (min-width: 1200px) {
+    .datosArgentina{
+        border-right: 1px solid #343a40;
+    }
+}

@@ -6,6 +6,7 @@ import "./modalSubscribirse.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelopeOpenText } from "@fortawesome/free-solid-svg-icons";
 import Alert from "react-bootstrap/Alert";
+import Swal from "sweetalert2";
 
 const ModalSubscribirse = () => {
   const [show, setShow] = useState(false);
@@ -30,22 +31,34 @@ const ModalSubscribirse = () => {
       setError(true);
       setValidated(true);
       e.stopPropagation();
+      return;
     } else {
       setError(false);
       setValidated(true);
+      handleCloseSub();
+      Swal.fire(
+        "Enhorabuena!",
+        "Tus datos fueron enviados correctamente. Pronto se contactara un administrador para confirmar la suscripcion.",
+        "success"
+      );
+      console.log(nombreSubscriptor);
+      console.log(direccion);
+      console.log(localidad);
+      console.log(codigoPostal);
+      console.log(telefonoSubscriptor);
+      console.log(emailSubscriptor);
     }
-
-    ///Validacion especifica en caso de querer - Ejecutar post validacion general mediante llamado de funciones de validacion
-    //Enviar datos a la API
-    //Recibir respuesta
-    //Redireccionar a alguna pagina
   };
 
   return (
     <>
       {/*Forma de acceder al modal - EJEMPLO CON UN BUTTON*/}
 
-      <Button variant="primary" onClick={handleShowSub}>
+      <Button
+        variant="danger"
+        className="mr-1 my-2 w-100"
+        onClick={handleShowSub}
+      >
         Subscribirse
       </Button>
 

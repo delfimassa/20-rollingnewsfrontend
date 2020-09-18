@@ -6,12 +6,14 @@ import "./modalLogin.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUsers } from "@fortawesome/free-solid-svg-icons";
 import Alert from "react-bootstrap/Alert";
+import { withRouter } from "react-router-dom"; //Sirve para redireccionar a una pagina
 
-const ModalLogin = () => {
+const ModalLogin = (props) => {
   const [show, setShow] = useState(false);
   const [nombreUsuario, setNombreUsuario] = useState("");
   const [passwordUsuario, setPasswordUsuario] = useState("");
   const [error, setError] = useState(false);
+  const [datosErroneos, setDatosErroneos] = useState(false);
 
   const handleCloseLogin = () => setShow(false);
   const handleShowLogin = () => setShow(true);
@@ -24,18 +26,37 @@ const ModalLogin = () => {
     if (nombreUsuario.trim() === "" || passwordUsuario === "") {
       setError(true);
       return;
+    } else {
+      setError(false);
     }
-    setError(false);
-
-    //Enviar datos a la API
-    //Recibir respuesta
-    //Redireccionar a alguna pagina
+    //Verificar que el usuario sea valido
+    const usuarioSeleccionado = props.usuarios.find(
+      (usuario) => usuario.nombreUsuario === nombreUsuario
+    );
+    if (typeof usuarioSeleccionado === 'undefined') {
+      setDatosErroneos(true);
+      return;
+    } else {
+      if (usuarioSeleccionado.passwordUsuario === passwordUsuario) {
+        props.setShowLogin(true);
+        props.setAdminUser(true);
+        handleCloseLogin();
+        //Redireccionar a alguna pagina
+        props.history.push("/");
+      } else {
+        setDatosErroneos(true);
+      }
+    }
   };
 
   return (
     <>
       {/*Forma de acceder al modal - EJEMPLO CON UN BUTTON*/}
-      <Button variant="primary" onClick={handleShowLogin}>
+      <Button
+        variant="danger"
+        className="px-0 my-2 mr-1 w-100"
+        onClick={handleShowLogin}
+      >
         Login
       </Button>
 
@@ -59,9 +80,14 @@ const ModalLogin = () => {
           </div>
         </Modal.Header>
         <Modal.Body>
-          <p class="lead">Inicia sesion con tus datos para continuar</p>
+          <p className="lead">Inicia sesion con tus datos para continuar</p>
           {error ? (
             <Alert variant={"warning"}>Todos los campos son obligatorios</Alert>
+          ) : null}
+          {datosErroneos ? (
+            <Alert variant={"danger"}>
+              El usuario y/o la contraseña son incorrectos
+            </Alert>
           ) : null}
           <Form onSubmit={handleSubmit}>
             <Form.Group controlId="formBasicUser">
@@ -95,4 +121,4 @@ const ModalLogin = () => {
   );
 };
 
-export default ModalLogin;
+export default withRouter(ModalLogin);

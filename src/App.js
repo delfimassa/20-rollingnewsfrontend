@@ -23,7 +23,8 @@ function App() {
   const [recargarTodo, setRecargarTodo] = useState(true);
   const [categorias, setCategorias] = useState([]);
   const [noticias, setNoticias] = useState([]);
-  const [adminUser, setAdminUser] = useState(false);
+  const [usuarios, setUsuarios] = useState([]);
+  const [adminUser, setAdminUser] = useState();
 
   useEffect(() => {
     if (recargarTodo) {
@@ -66,17 +67,48 @@ function App() {
     } catch (error) {
       console.log(error);
     }
+    try {
+      //obtener lista de usuarios
+      const consulta = await fetch("http://localhost:4000/users");
+      const respuesta = await consulta.json();
+      if (consulta.status !== 200) {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Ocurrio un error, intentelo nuevamente",
+        });
+      }
+      //Guardar en el state
+      setUsuarios(respuesta);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
     <Router>
-      <Header></Header>
+      <Header categorias={categorias} adminUser={adminUser} usuarios={usuarios} setAdminUser={setAdminUser}></Header>
       <Switch>
         <Route exact path="/">
-          <Inicio></Inicio>
+          <Inicio noticias={noticias}></Inicio>
         </Route>
-        <Route exact path="/categoria/:idCategoria">
-          <CategoriaDinamica></CategoriaDinamica>
+        <Route exact path="/categoria/:nombreCategoria"
+         render={(props) => {
+            //codigo a ejecutar antes de renderizar el componente
+            //obtener el id de la ruta
+            const nombreCategoria = (props.match.params.nombreCategoria);
+            //buscar el producto que coincida con el id
+            const categoriaSeleccionada = categorias.find(
+              (categoria) => categoria.nombreCategoria === nombreCategoria
+            );
+            //mostrar el componente categoriaSeleccionada
+            return (
+              <CategoriaDinamica
+                categoriaSeleccionada={categoriaSeleccionada}
+                noticias={noticias}
+              ></CategoriaDinamica>
+            );
+          }}>
         </Route>
         <Route exact path="/noticia/:idNoticia">
           <DetalleNoticia></DetalleNoticia>

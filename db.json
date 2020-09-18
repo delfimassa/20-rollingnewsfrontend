@@ -38,17 +38,23 @@
     {
       "id": 8,
       "nombreCategoria": "Fotografia"
+    },
+    {
+      "nombreCategoria": "Testing",
+      "id": 9
     }
   ],
   "noticias": [
     {
-      "noticiaTitulo": "Noticia para testingeditada",
-      "noticiaDescripcionBreve": "Esta es una noticia realizada para testear los componentes",
+      "id": 1,
+      "noticiaTitulo": "Noticia para testing",
+      "noticiaDescripcionBreve": "Esta es una noticia realizada para testear los componentesaaaaaaaa aaaaaaaaaaaaa aaaaaaaaaaaaaaa aaaaaaaaaaaa aaaaaaaaaaaaaaa",
       "noticiaDescripcionFull": "Esta es una noticia realizada para testear los componentes",
       "noticiaImg": "https://img.lagaceta.com.ar/fotos/notas/2020/09/14/ministerio-de-salud-pblica-de-la-provincia-860494-183522.jpg?_ga=2.243858629.1155574805.1600123280-748976915.1588117706",
       "noticiaAutor": "Maximiliano Diaz2",
       "noticiaFecha": "2020-09-13",
-      "id": 1
+      "noticiaCategoria":"Actualidad",
+      "noticiaDestacada":true
     },
     {
       "noticiaTitulo": "Segunda noticia para testingeditada2",
@@ -57,8 +63,9 @@
       "noticiaImg": "https://img.lagaceta.com.ar/fotos/notas/2020/09/14/ministerio-de-salud-pblica-de-la-provincia-860494-183522.jpg?_ga=2.243858629.1155574805.1600123280-748976915.1588117706",
       "noticiaAutor": "Maximiliano Diaz",
       "noticiaFecha": "2020-09-13",
-      "categoria": "Espectaculos",
-      "id": 2
+      "noticiaCategoria": "Espectaculos",
+      "id": 2,
+      "noticiaDestacada":true
     },
     {
       "noticiaTitulo": "Tercera noticia para testinggggg",
@@ -67,8 +74,9 @@
       "noticiaImg": "https://img.lagaceta.com.ar/fotos/notas/2020/09/14/ministerio-de-salud-pblica-de-la-provincia-860494-183522.jpg?_ga=2.243858629.1155574805.1600123280-748976915.1588117706",
       "noticiaAutor": "Maximiliano Diaz2",
       "noticiaFecha": "2020-09-13",
-      "categoria": "Deportes",
-      "id": 3
+      "noticiaCategoria": "Deportes",
+      "id": 3,
+      "noticiaDestacada":true
     },
     {
       "id": 4,
@@ -78,8 +86,7 @@
       "noticiaImg": "https://img.lagaceta.com.ar/fotos/notas/2020/09/14/ministerio-de-salud-pblica-de-la-provincia-860494-183522.jpg?_ga=2.243858629.1155574805.1600123280-748976915.1588117706",
       "noticiaCategoria": "Salud",
       "noticiaAutor": "Juan Perez",
-      "noticiaFecha": "2020-09-14",
-      "noticiaPublicada": true
+      "noticiaFecha": "2020-09-14"
     },
     {
       "noticiaTitulo": "gggg",
@@ -100,6 +107,50 @@
       "noticiaAutor": "delfi massa",
       "noticiaFecha": "0022-02-22",
       "id": 6
-    }
+    },
+    {
+      "noticiaTitulo": "Testing",
+      "noticiaDescripcionBreve": "Testing",
+      "noticiaDescripcionFull": "Testing",
+      "noticiaImg": "http://localhost:3000/admin/agregarnoticia",
+      "noticiaCategoria": "Actualidad",
+      "noticiaAutor": "asas",
+      "noticiaFecha": "2020-09-15",
+      "noticiaDestacada": false,
+      "id": 7
+    },
+    {
+      "id": 8,
+      "noticiaTitulo": "Noticia para testing",
+      "noticiaDescripcionBreve": "Esta es una noticia realizada para testear los componentesaaaaaaaa aaaaaaaaaaaaa aaaaaaaaaaaaaaa aaaaaaaaaaaa aaaaaaaaaaaaaaa",
+      "noticiaDescripcionFull": "Esta es una noticia realizada para testear los componentes",
+      "noticiaImg": "https://img.lagaceta.com.ar/fotos/notas/2020/09/14/ministerio-de-salud-pblica-de-la-provincia-860494-183522.jpg?_ga=2.243858629.1155574805.1600123280-748976915.1588117706",
+      "noticiaAutor": "Maximiliano Diaz2",
+      "noticiaFecha": "2020-09-13",
+      "noticiaCategoria":"Actualidad",
+      "noticiaDestacada":true
+    },
+    {
+      "id": 9,
+      "noticiaTitulo": "Noticia para testing",
+      "noticiaDescripcionBreve": "Esta es una noticia realizada para testear los componentesaaaaaaaa aaaaaaaaaaaaa aaaaaaaaaaaaaaa aaaaaaaaaaaa aaaaaaaaaaaaaaa",
+      "noticiaDescripcionFull": "Esta es una noticia realizada para testear los componentes",
+      "noticiaImg": "https://img.lagaceta.com.ar/fotos/notas/2020/09/14/ministerio-de-salud-pblica-de-la-provincia-860494-183522.jpg?_ga=2.243858629.1155574805.1600123280-748976915.1588117706",
+      "noticiaAutor": "Maximiliano Diaz2",
+      "noticiaFecha": "2020-09-13",
+      "noticiaCategoria":"Actualidad",
+      "noticiaDestacada":true
+    },
+    {
+      "id": 10,
+      "noticiaTitulo": "Noticia para testing",
+      "noticiaDescripcionBreve": "Esta es una noticia realizada para testear los componentesaaaaaaaa aaaaaaaaaaaaa aaaaaaaaaaaaaaa aaaaaaaaaaaa aaaaaaaaaaaaaaa",
+      "noticiaDescripcionFull": "Esta es una noticia realizada para testear los componentes",
+      "noticiaImg": "https://img.lagaceta.com.ar/fotos/notas/2020/09/14/ministerio-de-salud-pblica-de-la-provincia-860494-183522.jpg?_ga=2.243858629.1155574805.1600123280-748976915.1588117706",
+      "noticiaAutor": "Maximiliano Diaz2",
+      "noticiaFecha": "2020-09-13",
+      "noticiaCategoria":"Actualidad",
+      "noticiaDestacada":true
+    } 
   ]
 }
