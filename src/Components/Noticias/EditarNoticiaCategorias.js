@@ -6,11 +6,6 @@ const EditarNoticiaCategorias = (props) => {
   console.log(listadoCategorias, "CONSOLE LOG DE CATEGORIAS");
   console.log(props.defaultValue);
 
-  const prueba = (e)=>{
-    props.setNoticiaCategoria(e.target.value);
-    console.log(e.target.value)
-  }
-
   return (
     <Form.Control
       as="select"

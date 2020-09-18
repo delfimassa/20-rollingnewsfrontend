@@ -109,8 +109,24 @@ function App() {
         <Route exact path="/admin/agregarcategoria">
           <AgregarCategoria setRecargarTodo={setRecargarTodo}></AgregarCategoria>
         </Route>
-        <Route exact path="/admin/editarcategoria/:idCategoria">
-          <EditarCategoria></EditarCategoria>
+        <Route exact path="/admin/editarcategoria/:idCategoria"
+          render={(props) => {
+            const idCategoria = (props.match.params.idCategoria);
+            console.log(typeof idCategoria);
+            //buscar el producto que coincida con el id
+            const  categoriaSeleccionada = categorias.find(
+              (categoria) => categoria.id === Number(idCategoria)
+            );
+            console.log("=>",categoriaSeleccionada);
+            //mostrar el componente editarProducto
+            return (
+              <EditarCategoria
+                categorias={categorias}
+                categoria={categoriaSeleccionada}
+                setRecargarTodo={setRecargarTodo}
+              ></EditarCategoria>
+            );
+          }}>
         </Route>
         <Route exact path="/admin">
           <Admin></Admin>

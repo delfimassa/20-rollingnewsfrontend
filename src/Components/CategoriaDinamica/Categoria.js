@@ -65,7 +65,7 @@ const Categoria = (props) => {
       <div>
         <Link
           className="btn btn-dark botonNegro botonEditar mb-1 ml-1"
-          to={`/admin/editarnoticia/:idNoticia${props.categoria.id}`}
+          to={`/admin/editarcategoria/${props.categoria.id}`}
         >
           <FontAwesomeIcon icon={faEdit}></FontAwesomeIcon>
         </Link>

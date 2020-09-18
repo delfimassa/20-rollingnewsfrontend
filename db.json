@@ -16,20 +16,20 @@
       "nombreCategoria": "Espectaculos"
     },
     {
-      "id": 3,
-      "nombreCategoria": "Tecnologia"
+      "nombreCategoria": "Tecnología",
+      "id": 3
     },
     {
       "id": 4,
       "nombreCategoria": "Deportes"
     },
     {
-      "id": 5,
-      "nombreCategoria": "Politica"
+      "nombreCategoria": "Política",
+      "id": 5
     },
     {
-      "id": 6,
-      "nombreCategoria": "Economia"
+      "nombreCategoria": "Economía",
+      "id": 6
     },
     {
       "id": 7,
