@@ -21,6 +21,11 @@ const EditarNoticia = (props) => {
   const noticiaFechaRef = useRef("");
   const [noticiaCategoria, setNoticiaCategoria] = useState("");
   const [error, setError] = useState(false);
+  const [noticiaDestacada, setNoticiaDestacada] = useState(false);
+
+  const checkboxDestacar = (e) => {
+    setNoticiaDestacada(e.target.checked);
+  };
 
   useEffect(()=>{
     setNoticiaCategoria(props.noticia?.noticiaCategoria||"")
@@ -202,6 +207,15 @@ const EditarNoticia = (props) => {
             </Form.Group>
           </Col>
         </Form.Row>
+        <Form.Group className="ml-2">
+          <Form.Check
+            type="checkbox"
+            id="destacarCheckBox"
+            label="Destacar"
+            value="true"
+            onChange={checkboxDestacar}
+          />
+        </Form.Group>
 
         <div className="text-right my-4">
           <Button variant="danger" type="submit" className="ml-auto botonRojo">
