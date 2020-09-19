@@ -34,7 +34,7 @@ const Noticia = (props) => {
           );
           console.log(resultado);
 
-          if (resultado.status === 200) {
+          if (resultado.status === 202) {
             props.setRecargarTodo(true);
             Swal.fire(
               "Noticia eliminada",
@@ -60,23 +60,25 @@ const Noticia = (props) => {
     });
   };
   return (
-    <ListGroup.Item className="d-flex justify-content-between fondoLi">
-      <p>{props.noticia.noticiaTitulo}</p>
-      <div>
-        <Link
-          className="btn btn-dark mr-2 botonNegro"
-          to={`/admin/editarnoticia/:idNoticia${props.noticia.id}`}
+    <ListGroup.Item className="fondoLi">
+      <div className="row d-flex justify-content-between m-0 p-0">
+        <div className="col-9 d-flex justify-content-between m-0 p-0"><p>{props.noticia.noticiaTitulo}</p></div>
+        <div className="col-3 m-0 p-0 text-right">
+          <Link
+          className="btn btn-dark botonNegro botonEditar mb-1 ml-1"
+          to={`/admin/editarnoticia/${props.noticia.id}`}
         >
           <FontAwesomeIcon icon={faEdit}></FontAwesomeIcon>
         </Link>
-        <Button
-          className="botonRojo"
+          <Button
+          className="botonRojo botonEditar mb-1 ml-1"
           variant="danger"
           type="button"
           onClick={() => eliminarNoticia(props.noticia.id)}
         >
           <FontAwesomeIcon icon={faTrash}></FontAwesomeIcon>
         </Button>
+        </div>
       </div>
     </ListGroup.Item>
   );

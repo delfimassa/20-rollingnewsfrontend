@@ -16,20 +16,20 @@
       "nombreCategoria": "Espectaculos"
     },
     {
-      "id": 3,
-      "nombreCategoria": "Tecnologia"
+      "nombreCategoria": "Tecnología",
+      "id": 3
     },
     {
-      "id": 4,
-      "nombreCategoria": "Deportes"
+      "nombreCategoria": "Deportes",
+      "id": 4
     },
     {
-      "id": 5,
-      "nombreCategoria": "Politica"
+      "nombreCategoria": "Politica",
+      "id": 5
     },
     {
-      "id": 6,
-      "nombreCategoria": "Economia"
+      "nombreCategoria": "Economía",
+      "id": 6
     },
     {
       "id": 7,
@@ -38,52 +38,119 @@
     {
       "id": 8,
       "nombreCategoria": "Fotografia"
+    },
+    {
+      "nombreCategoria": "Testing",
+      "id": 9
     }
   ],
   "noticias": [
     {
       "id": 1,
       "noticiaTitulo": "Noticia para testing",
-      "noticiaDescripcionBreve": "Esta es una noticia realizada para testear los componentes",
+      "noticiaDescripcionBreve": "Esta es una noticia realizada para testear los componentesaaaaaaaa aaaaaaaaaaaaa aaaaaaaaaaaaaaa aaaaaaaaaaaa aaaaaaaaaaaaaaa",
       "noticiaDescripcionFull": "Esta es una noticia realizada para testear los componentes",
-      "noticiaImg": "https://cadenaser05.epimg.net/ser/imagenes/2020/04/17/internacional/1587104508_702379_1587106943_noticia_normal_recorte1.jpg",
-      "noticiaCategoria": "Actualidad",
-      "noticiaAutor": "Maximiliano Diaz",
+      "noticiaImg": "https://img.lagaceta.com.ar/fotos/notas/2020/09/14/ministerio-de-salud-pblica-de-la-provincia-860494-183522.jpg?_ga=2.243858629.1155574805.1600123280-748976915.1588117706",
+      "noticiaAutor": "Maximiliano Diaz2",
       "noticiaFecha": "2020-09-13",
-      "noticiaPublicada": true
+      "noticiaCategoria": "Actualidad",
+      "noticiaDestacada": true
     },
     {
+      "noticiaTitulo": "Segunda noticia para testingeditada2",
+      "noticiaDescripcionBreve": "Esta es una noticia realizada para testear los componentes",
+      "noticiaDescripcionFull": "Esta es una noticia realizada para testear los componentes",
+      "noticiaImg": "https://img.lagaceta.com.ar/fotos/notas/2020/09/14/ministerio-de-salud-pblica-de-la-provincia-860494-183522.jpg?_ga=2.243858629.1155574805.1600123280-748976915.1588117706",
+      "noticiaAutor": "Maximiliano Diaz",
+      "noticiaFecha": "2020-09-13",
+      "noticiaCategoria": "Espectaculos",
       "id": 2,
-      "noticiaTitulo": "Segunda noticia para testing",
-      "noticiaDescripcionBreve": "Esta es una noticia realizada para testear los componentes",
-      "noticiaDescripcionFull": "Esta es una noticia realizada para testear los componentes",
-      "noticiaImg": "https://cadenaser05.epimg.net/ser/imagenes/2020/04/17/internacional/1587104508_702379_1587106943_noticia_normal_recorte1.jpg",
-      "noticiaCategoria": "Actualidad",
-      "noticiaAutor": "Maximiliano Diaz",
-      "noticiaFecha": "2020-09-13",
-      "noticiaPublicada": true
+      "noticiaDestacada": true
     },
     {
-      "id": 2,
-      "noticiaTitulo": "Tercera noticia para testing",
+      "noticiaTitulo": "Tercera noticia para testinggggg",
       "noticiaDescripcionBreve": "Esta es una noticia realizada para testear los componentes",
       "noticiaDescripcionFull": "Esta es una noticia realizada para testear los componentes",
-      "noticiaImg": "https://cadenaser05.epimg.net/ser/imagenes/2020/04/17/internacional/1587104508_702379_1587106943_noticia_normal_recorte1.jpg",
-      "noticiaCategoria": "Actualidad",
-      "noticiaAutor": "Maximiliano Diaz",
+      "noticiaImg": "https://img.lagaceta.com.ar/fotos/notas/2020/09/14/ministerio-de-salud-pblica-de-la-provincia-860494-183522.jpg?_ga=2.243858629.1155574805.1600123280-748976915.1588117706",
+      "noticiaAutor": "Maximiliano Diaz2",
       "noticiaFecha": "2020-09-13",
-      "noticiaPublicada": true
+      "noticiaCategoria": "Deportes",
+      "id": 3,
+      "noticiaDestacada": true
     },
     {
+      "id": 4,
       "noticiaTitulo": "Tucumán superó los 8.000 casos de coronavirus desde que comenzó la pandemia",
       "noticiaDescripcionBreve": "La provincia registró 577 contagios en las últimas 24 horas.",
-      "noticiaDescripcionFull": "Tucumán sumó 577 nuevos contagios de covid-19 en las ultimas 24 horas y llegó a los 8.091 casos confirmados desde que comenzó la pandemia, informó el Ministerio de Salud de la Provincia.\n",
+      "noticiaDescripcionFull": "Tucumán sumó 577 nuevos contagios de covid-19 en las ultimas 24 horas y llegó a los 8.091 casos confirmados desde que comenzó la pandemia, informó el Ministerio de Salud de la Provincia.",
       "noticiaImg": "https://img.lagaceta.com.ar/fotos/notas/2020/09/14/ministerio-de-salud-pblica-de-la-provincia-860494-183522.jpg?_ga=2.243858629.1155574805.1600123280-748976915.1588117706",
       "noticiaCategoria": "Salud",
       "noticiaAutor": "Juan Perez",
-      "noticiaFecha": "2020-09-14",
-      "noticiaPublicada": true,
-      "id": 3
+      "noticiaFecha": "2020-09-14"
+    },
+    {
+      "noticiaTitulo": "gggg",
+      "noticiaDescripcionBreve": "hhhh",
+      "noticiaDescripcionFull": "jjjjj",
+      "noticiaImg": "https://www.lagaceta.com.ar/",
+      "noticiaCategoria": "Politica",
+      "noticiaAutor": "pepe",
+      "noticiaFecha": "46543-04-05",
+      "id": 5
+    },
+    {
+      "noticiaTitulo": "Nueva noticia delfi",
+      "noticiaDescripcionBreve": "ultima prueba",
+      "noticiaDescripcionFull": "wkflwekflwkeflwfe",
+      "noticiaImg": "https://img.lagaceta.com.ar/fotos/notas/2020/09/14/ministerio-de-salud-pblica-de-la-provincia-860494-183522.jpg?_ga=2.243858629.1155574805.1600123280-748976915.1588117706",
+      "noticiaCategoria": "Deportes",
+      "noticiaAutor": "delfi massa",
+      "noticiaFecha": "0022-02-22",
+      "id": 6
+    },
+    {
+      "noticiaTitulo": "Testing",
+      "noticiaDescripcionBreve": "Testing",
+      "noticiaDescripcionFull": "Testing",
+      "noticiaImg": "http://localhost:3000/admin/agregarnoticia",
+      "noticiaCategoria": "Actualidad",
+      "noticiaAutor": "asas",
+      "noticiaFecha": "2020-09-15",
+      "noticiaDestacada": false,
+      "id": 7
+    },
+    {
+      "id": 8,
+      "noticiaTitulo": "Noticia para testing",
+      "noticiaDescripcionBreve": "Esta es una noticia realizada para testear los componentesaaaaaaaa aaaaaaaaaaaaa aaaaaaaaaaaaaaa aaaaaaaaaaaa aaaaaaaaaaaaaaa",
+      "noticiaDescripcionFull": "Esta es una noticia realizada para testear los componentes",
+      "noticiaImg": "https://img.lagaceta.com.ar/fotos/notas/2020/09/14/ministerio-de-salud-pblica-de-la-provincia-860494-183522.jpg?_ga=2.243858629.1155574805.1600123280-748976915.1588117706",
+      "noticiaAutor": "Maximiliano Diaz2",
+      "noticiaFecha": "2020-09-13",
+      "noticiaCategoria": "Actualidad",
+      "noticiaDestacada": true
+    },
+    {
+      "id": 9,
+      "noticiaTitulo": "Noticia para testing",
+      "noticiaDescripcionBreve": "Esta es una noticia realizada para testear los componentesaaaaaaaa aaaaaaaaaaaaa aaaaaaaaaaaaaaa aaaaaaaaaaaa aaaaaaaaaaaaaaa",
+      "noticiaDescripcionFull": "Esta es una noticia realizada para testear los componentes",
+      "noticiaImg": "https://img.lagaceta.com.ar/fotos/notas/2020/09/14/ministerio-de-salud-pblica-de-la-provincia-860494-183522.jpg?_ga=2.243858629.1155574805.1600123280-748976915.1588117706",
+      "noticiaAutor": "Maximiliano Diaz2",
+      "noticiaFecha": "2020-09-13",
+      "noticiaCategoria": "Actualidad",
+      "noticiaDestacada": true
+    },
+    {
+      "id": 10,
+      "noticiaTitulo": "Noticia para testing",
+      "noticiaDescripcionBreve": "Esta es una noticia realizada para testear los componentesaaaaaaaa aaaaaaaaaaaaa aaaaaaaaaaaaaaa aaaaaaaaaaaa aaaaaaaaaaaaaaa",
+      "noticiaDescripcionFull": "Esta es una noticia realizada para testear los componentes",
+      "noticiaImg": "https://img.lagaceta.com.ar/fotos/notas/2020/09/14/ministerio-de-salud-pblica-de-la-provincia-860494-183522.jpg?_ga=2.243858629.1155574805.1600123280-748976915.1588117706",
+      "noticiaAutor": "Maximiliano Diaz2",
+      "noticiaFecha": "2020-09-13",
+      "noticiaCategoria": "Actualidad",
+      "noticiaDestacada": true
     }
   ]
 }

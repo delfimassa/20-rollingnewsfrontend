@@ -34,7 +34,7 @@ const Categoria = (props) => {
           );
           console.log(resultado);
 
-          if (resultado.status === 200) {
+          if (resultado.status === 202) {
             props.setRecargarTodo(true);
             Swal.fire(
               "Categoría eliminada",
@@ -64,13 +64,13 @@ const Categoria = (props) => {
       <p>{props.categoria.nombreCategoria}</p>
       <div>
         <Link
-          className="btn btn-dark mr-2 botonNegro"
-          to={`/admin/editarnoticia/:idNoticia${props.categoria.id}`}
+          className="btn btn-dark botonNegro botonEditar mb-1 ml-1"
+          to={`/admin/editarcategoria/${props.categoria.id}`}
         >
           <FontAwesomeIcon icon={faEdit}></FontAwesomeIcon>
         </Link>
         <Button
-          className="botonRojo"
+          className="botonRojo botonEditar mb-1 ml-1"
           variant="danger"
           type="button"
           onClick={() => eliminarCategoria(props.categoria.id)}
