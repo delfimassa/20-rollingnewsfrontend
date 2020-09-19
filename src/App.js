@@ -78,7 +78,7 @@ function App() {
           <CategoriaDinamica></CategoriaDinamica>
         </Route>
         <Route exact path="/noticia/:idNoticia">
-          <DetalleNoticia></DetalleNoticia>
+          <DetalleNoticia noticias={noticias}></DetalleNoticia>
         </Route>
         <Route exact path="/admin/agregarnoticia">
           <AgregarNoticia setRecargarTodo={setRecargarTodo} categorias={categorias}></AgregarNoticia>
