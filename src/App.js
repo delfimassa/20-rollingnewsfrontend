@@ -23,12 +23,13 @@ function App() {
   const [noticias, setNoticias] = useState([]);
   const [usuarios, setUsuarios] = useState([]);
   const [adminUser, setAdminUser] = useState();
+  const [datosClima, setDatosClima] = useState({});
 
   useEffect(() => {
     if (recargarTodo) {
       consultarAPI();
       setRecargarTodo(false);
-      console.log("Datos de categorias y noticias recargados")
+      console.log("Datos de categorias y noticias recargados");
     }
   }, [recargarTodo]);
 
@@ -76,8 +77,17 @@ function App() {
           text: "Ocurrio un error, intentelo nuevamente",
         });
       }
-      //Guardar en el state
-      setUsuarios(respuesta);
+    //Guardar en el state
+    setUsuarios(respuesta);
+    } catch (error) {
+      console.log(error);
+    }
+    try {
+      const apikey = "0151d95c40115c254e7086dc68c32c56";
+      const url = `https://api.openweathermap.org/data/2.5/weather?q=San+Miguel+de+Tucuman,AR&appid=${apikey}&units=metric`;
+      const respuesta = await fetch(url);
+      const _resultado = await respuesta.json();
+      setDatosClima(_resultado);
     } catch (error) {
       console.log(error);
     }
@@ -85,16 +95,24 @@ function App() {
 
   return (
     <Router>
-      <Header categorias={categorias} adminUser={adminUser} usuarios={usuarios} setAdminUser={setAdminUser}></Header>
+      <Header
+        datosClima={datosClima}
+        categorias={categorias}
+        adminUser={adminUser}
+        usuarios={usuarios}
+        setAdminUser={setAdminUser}
+      ></Header>
       <Switch>
         <Route exact path="/">
-          <Inicio noticias={noticias}></Inicio>
+          <Inicio datosClima={datosClima} noticias={noticias}></Inicio>
         </Route>
-        <Route exact path="/categoria/:nombreCategoria"
-         render={(props) => {
+        <Route
+          exact
+          path="/categoria/:nombreCategoria"
+          render={(props) => {
             //codigo a ejecutar antes de renderizar el componente
             //obtener el id de la ruta
-            const nombreCategoria = (props.match.params.nombreCategoria);
+            const nombreCategoria = props.match.params.nombreCategoria;
             //buscar el producto que coincida con el id
             const categoriaSeleccionada = categorias.find(
               (categoria) => categoria.nombreCategoria === nombreCategoria
@@ -106,26 +124,30 @@ function App() {
                 noticias={noticias}
               ></CategoriaDinamica>
             );
-          }}>
-        </Route>
+          }}
+        ></Route>
         <Route exact path="/noticia/:idNoticia">
           <DetalleNoticia></DetalleNoticia>
         </Route>
         <Route exact path="/admin/agregarnoticia">
-          <AgregarNoticia setRecargarTodo={setRecargarTodo} categorias={categorias}></AgregarNoticia>
+          <AgregarNoticia
+            setRecargarTodo={setRecargarTodo}
+            categorias={categorias}
+          ></AgregarNoticia>
         </Route>
         <Route
-          exact path="/admin/editarnoticia/:idNoticia"
+          exact
+          path="/admin/editarnoticia/:idNoticia"
           render={(props) => {
             //codigo a ejecutar antes de renderizar el componente
             //obtener el id de la ruta
-            const idNoticia = (props.match.params.idNoticia);
+            const idNoticia = props.match.params.idNoticia;
             console.log(typeof idNoticia);
             //buscar el producto que coincida con el id
             const noticiaSeleccionada = noticias.find(
               (noticia) => noticia.id === Number(idNoticia)
             );
-            console.log("=>",noticiaSeleccionada);
+            console.log("=>", noticiaSeleccionada);
             //mostrar el componente editarProducto
             return (
               <EditarNoticia
@@ -137,17 +159,21 @@ function App() {
           }}
         ></Route>
         <Route exact path="/admin/agregarcategoria">
-          <AgregarCategoria setRecargarTodo={setRecargarTodo}></AgregarCategoria>
+          <AgregarCategoria
+            setRecargarTodo={setRecargarTodo}
+          ></AgregarCategoria>
         </Route>
-        <Route exact path="/admin/editarcategoria/:idCategoria"
+        <Route
+          exact
+          path="/admin/editarcategoria/:idCategoria"
           render={(props) => {
-            const idCategoria = (props.match.params.idCategoria);
+            const idCategoria = props.match.params.idCategoria;
             console.log(typeof idCategoria);
             //buscar el producto que coincida con el id
-            const  categoriaSeleccionada = categorias.find(
+            const categoriaSeleccionada = categorias.find(
               (categoria) => categoria.id === Number(idCategoria)
             );
-            console.log("=>",categoriaSeleccionada);
+            console.log("=>", categoriaSeleccionada);
             //mostrar el componente editarProducto
             return (
               <EditarCategoria
@@ -156,8 +182,8 @@ function App() {
                 setRecargarTodo={setRecargarTodo}
               ></EditarCategoria>
             );
-          }}>
-        </Route>
+          }}
+        ></Route>
         <Route exact path="/admin">
           <Admin></Admin>
         </Route>
@@ -177,7 +203,7 @@ function App() {
           <PaginaError></PaginaError>
         </Route>
       </Switch>
-          <Footer></Footer>
+      <Footer></Footer>
     </Router>
   );
 }

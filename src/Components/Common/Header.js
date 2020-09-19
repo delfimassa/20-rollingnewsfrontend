@@ -32,8 +32,8 @@ const Header = (props) => {
               ></img>
             </NavLink>
           </div>
-          <div className="text-light col-sm-12 col-md-4 col-lg-4 text-center align-self-center">
-            <Clima></Clima>
+          <div className="text-light d-none d-md-block col-md-4 col-lg-4 text-center align-self-center">
+            <Clima datosClima={props.datosClima}></Clima>
           </div>
           <div className="col-sm-12 col-md-4 col-lg-4 text-center p-0 m-0 align-self-center">
             <Fecha></Fecha>
