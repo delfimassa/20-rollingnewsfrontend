@@ -1,28 +1,26 @@
 import React, { useState } from "react";
 import { Container } from "react-bootstrap";
 import Jumbotron from "react-bootstrap/Jumbotron";
+import { withRouter } from "react-router-dom";
 
 
 const DetalleNoticia = async(props) => {
-  console.log(props.noticias)
-  
-
-  const [detalleNoticia, setDetalleNoticia] = useState({})
+  const [detalleNoticia, setDetalleNoticia] = useState({});
   try {
-      //obtener lista de noticias
-      const consulta = await fetch(`http://localhost:4000/noticias/`);
-      const respuesta = await consulta.json();
-      if (consulta.status !== 200) {
-        console.log("redireccionar a error404");
-        }
-      //Guardar en el state
-      setDetalleNoticia(respuesta);
-    } catch (error) {
-      console.log(error);
+    //obtener lista de noticias
+    const consulta = await fetch(`http://localhost:4000/noticia/${props.noticias.id}`);
+    const respuesta = consulta.json();
+    if (consulta.status !== 200) {
+      console.log("redireccionar a error404");
     }
-    console.log(detalleNoticia)
+    //Guardar en el state
+    setDetalleNoticia(respuesta);
+  } catch (error) {
+    console.log(error);
+  }
+  console.log(detalleNoticia);
 
-    return (
+  return (
     <div>
       <Jumbotron fluid>
         <Container>
@@ -35,12 +33,11 @@ const DetalleNoticia = async(props) => {
       </Jumbotron>
 
       <article>
-          <img src="" alt=""></img>
-          <p></p>
-      </article>   
-
+        <img src="" alt=""></img>
+        <p></p>
+      </article>
     </div>
   );
 };
 
-export default DetalleNoticia;
+export default withRouter(DetalleNoticia);

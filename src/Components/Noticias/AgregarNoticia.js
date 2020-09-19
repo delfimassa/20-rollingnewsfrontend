@@ -64,7 +64,7 @@ const AgregarNoticia = (props) => {
       const resultado = await fetch("http://localhost:4000/noticias", cabecera);
       console.log(resultado);
       //Si la operacion fue exitosa, entonces...
-      if (resultado.status === 201) {
+      if (resultado.status === 200) {
         Swal.fire(
           "Noticia agregada!",
           "La noticia se agrego correctamente",
