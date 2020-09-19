@@ -34,7 +34,7 @@ const Noticia = (props) => {
           );
           console.log(resultado);
 
-          if (resultado.status === 200) {
+          if (resultado.status === 202) {
             props.setRecargarTodo(true);
             Swal.fire(
               "Noticia eliminada",

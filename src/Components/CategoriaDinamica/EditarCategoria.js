@@ -48,7 +48,7 @@ const EditarCategoria = (props) => {
           }
         );
         console.log(respuesta);
-        if (respuesta.status === 200) {
+        if (respuesta.status === 201) {
           // actualizar lista de noticias
           props.setRecargarTodo(true);
           Swal.fire(
