@@ -1,6 +1,3 @@
-*{
-  font-family: 'Mulish', sans-serif;
-}
 
 /*MEDIA QUERIES*/
 
@@ -14,13 +11,21 @@
 
 /*MEDIUM DEVICES*/
 @media all and (min-width: 768px) and (max-width: 991px) {
+    .noticiaCard{
+        max-width: 48%;
+    }
 }
 
 /*LARGE DEVICES*/
 @media all and (min-width: 991px) and (max-width: 1200px) {
-    
+    .noticiaCard{
+        max-width: 31%;
+    }
 }
   
   /*XTRA LARGE DEVICES*/
 @media all and (min-width: 1200px) {
+    .noticiaCard{
+        max-width: 31%;
+    }
 }

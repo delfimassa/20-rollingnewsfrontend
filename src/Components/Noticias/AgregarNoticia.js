@@ -19,10 +19,12 @@ const AgregarNoticia = (props) => {
   const [noticiaCategoria, setNoticiaCategoria] = useState("");
   const [noticiaAutor, setNoticiaAutor] = useState("");
   const [noticiaFecha, setNoticiaFecha] = useState("");
-  const [noticiaPublicada, setNoticiaPublicada] = useState(false);
+  const [noticiaDestacada, setNoticiaDestacada] = useState(false);
 
-  const checkboxPublicar = (e) => {
-    setNoticiaPublicada(e.target.checked);
+  console.log(noticiaCategoria);
+
+  const checkboxDestacar = (e) => {
+    setNoticiaDestacada(e.target.checked);
   };
 
   const handleSubmit = async (event) => {
@@ -48,7 +50,7 @@ const AgregarNoticia = (props) => {
       noticiaCategoria: noticiaCategoria,
       noticiaAutor: noticiaAutor,
       noticiaFecha: noticiaFecha,
-      noticiaPublicada: noticiaPublicada,
+      noticiaDestacada: noticiaDestacada,
     };
     //Estructura para peticiones
     try {
@@ -99,7 +101,7 @@ const AgregarNoticia = (props) => {
     <div className="container my-3">
       <h1 className="text-center my-5">Agregar Nueva Noticia</h1>
       <Form
-        className="border border-dark rounded formContainer p-4"
+        className=" rounded fondoLi p-4"
         noValidate
         validated={validated}
         onSubmit={handleSubmit}
@@ -190,15 +192,15 @@ const AgregarNoticia = (props) => {
         <Form.Group className="ml-2">
           <Form.Check
             type="checkbox"
-            id="publicarCheckBox"
-            label="Publicar"
+            id="destacarCheckBox"
+            label="Destacar"
             value="true"
-            onChange={checkboxPublicar}
+            onChange={checkboxDestacar}
           />
         </Form.Group>
 
         <div className="text-right my-4">
-          <Button variant="danger" type="submit" className="ml-auto">
+          <Button variant="danger" type="submit" className="ml-auto botonRojo">
             Agregar noticia
           </Button>
         </div>

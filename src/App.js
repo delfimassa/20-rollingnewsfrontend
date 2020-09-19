@@ -16,13 +16,15 @@ import Noticias from "./Components/Noticias/Noticias";
 import PaginaError from "./Components/Error404/PaginaError";
 import ModalLogin from "./Components/Common/ModalLogin";
 import ModalSubscribirse from "./Components/Common/ModalSubscribirse";
+import Categorias from "./Components/CategoriaDinamica/Categorias";
 import Swal from "sweetalert2";
 
 function App() {
   const [recargarTodo, setRecargarTodo] = useState(true);
   const [categorias, setCategorias] = useState([]);
   const [noticias, setNoticias] = useState([]);
-  const [adminUser, setAdminUser] = useState(false);
+  const [usuarios, setUsuarios] = useState([]);
+  const [adminUser, setAdminUser] = useState();
 
   useEffect(() => {
     if (recargarTodo) {
@@ -37,7 +39,7 @@ function App() {
       //obtener lista de categorias
       const consulta = await fetch("http://localhost:4000/categorias");
       const respuesta = await consulta.json();
-      if ((consulta.status) !== 200) {
+      if (consulta.status !== 200) {
         Swal.fire({
           icon: "error",
           title: "Oops...",
@@ -53,7 +55,7 @@ function App() {
       //obtener lista de noticias
       const consulta = await fetch("http://localhost:4000/noticias");
       const respuesta = await consulta.json();
-      if ((consulta.status) !== 200) {
+      if (consulta.status !== 200) {
         Swal.fire({
           icon: "error",
           title: "Oops...",
@@ -65,44 +67,120 @@ function App() {
     } catch (error) {
       console.log(error);
     }
+    try {
+      //obtener lista de usuarios
+      const consulta = await fetch("http://localhost:4000/users");
+      const respuesta = await consulta.json();
+      if (consulta.status !== 200) {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Ocurrio un error, intentelo nuevamente",
+        });
+      }
+      //Guardar en el state
+      setUsuarios(respuesta);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
     <Router>
-      <Header></Header>
+      <Header categorias={categorias} adminUser={adminUser} usuarios={usuarios} setAdminUser={setAdminUser}></Header>
       <Switch>
         <Route exact path="/">
-          <Inicio></Inicio>
+          <Inicio noticias={noticias}></Inicio>
         </Route>
-        <Route exact path="/categoria/:idCategoria">
-          <CategoriaDinamica></CategoriaDinamica>
+        <Route exact path="/categoria/:nombreCategoria"
+         render={(props) => {
+            //codigo a ejecutar antes de renderizar el componente
+            //obtener el id de la ruta
+            const nombreCategoria = (props.match.params.nombreCategoria);
+            //buscar el producto que coincida con el id
+            const categoriaSeleccionada = categorias.find(
+              (categoria) => categoria.nombreCategoria === nombreCategoria
+            );
+            //mostrar el componente categoriaSeleccionada
+            return (
+              <CategoriaDinamica
+                categoriaSeleccionada={categoriaSeleccionada}
+                noticias={noticias}
+              ></CategoriaDinamica>
+            );
+          }}>
         </Route>
         <Route exact path="/noticia/:idNoticia">
-          <DetalleNoticia noticias={noticias}></DetalleNoticia>
+          <DetalleNoticia
+          noticias={noticias}></DetalleNoticia>
         </Route>
         <Route exact path="/admin/agregarnoticia">
           <AgregarNoticia setRecargarTodo={setRecargarTodo} categorias={categorias}></AgregarNoticia>
         </Route>
-        <Route exact path="/admin/editarnoticia/:idNoticia">
-          <EditarNoticia></EditarNoticia>
-        </Route>
+        <Route
+          exact path="/admin/editarnoticia/:idNoticia"
+          render={(props) => {
+            //codigo a ejecutar antes de renderizar el componente
+            //obtener el id de la ruta
+            const idNoticia = (props.match.params.idNoticia);
+            console.log(typeof idNoticia);
+            //buscar el producto que coincida con el id
+            const noticiaSeleccionada = noticias.find(
+              (noticia) => noticia.id === Number(idNoticia)
+            );
+            console.log("=>",noticiaSeleccionada);
+            //mostrar el componente editarProducto
+            return (
+              <EditarNoticia
+                categorias={categorias}
+                noticia={noticiaSeleccionada}
+                setRecargarTodo={setRecargarTodo}
+              ></EditarNoticia>
+            );
+          }}
+        ></Route>
         <Route exact path="/admin/agregarcategoria">
           <AgregarCategoria setRecargarTodo={setRecargarTodo}></AgregarCategoria>
         </Route>
-        <Route exact path="/admin/editarcategoria/:idCategoria">
-          <EditarCategoria></EditarCategoria>
+        <Route exact path="/admin/editarcategoria/:idCategoria"
+          render={(props) => {
+            const idCategoria = (props.match.params.idCategoria);
+            console.log(typeof idCategoria);
+            //buscar el producto que coincida con el id
+            const  categoriaSeleccionada = categorias.find(
+              (categoria) => categoria.id === Number(idCategoria)
+            );
+            console.log("=>",categoriaSeleccionada);
+            //mostrar el componente editarProducto
+            return (
+              <EditarCategoria
+                categorias={categorias}
+                categoria={categoriaSeleccionada}
+                setRecargarTodo={setRecargarTodo}
+              ></EditarCategoria>
+            );
+          }}>
         </Route>
         <Route exact path="/admin">
           <Admin></Admin>
         </Route>
-        <Route exact path="/admin/noticias">
-          <Noticias></Noticias>
+        <Route exact path="/noticias">
+          <Noticias
+            noticias={noticias}
+            setRecargarTodo={setRecargarTodo}
+          ></Noticias>
+        </Route>
+        <Route exact path="/categorias">
+          <Categorias
+            categorias={categorias}
+            setRecargarTodo={setRecargarTodo}
+          ></Categorias>
         </Route>
         <Route exact path="*">
           <PaginaError></PaginaError>
         </Route>
       </Switch>
-      <Footer></Footer>
+          <Footer></Footer>
     </Router>
   );
 }

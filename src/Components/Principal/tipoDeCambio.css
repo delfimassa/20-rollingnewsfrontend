@@ -1,0 +1,68 @@
+.nombreMoneda {
+  color: #ec172d;
+  margin: 0;
+  width: 70%;
+  font-weight: 700;
+}
+
+.valorMoneda{
+    padding: 8px;
+}
+
+.firstChange {
+  height: 85px;
+  display: flex;
+  align-items: center;
+}
+
+.middleChange {
+  height: 85px;
+  display: flex;
+  align-items: center;
+}
+
+.lastChange {
+  height: 85px;
+  display: flex;
+  align-items: center;
+}
+
+/*MEDIA QUERIES*/
+
+/*X-SMALL DEVICES PUBLICIDAD*/
+@media all and (max-width: 576px) {
+  .firstChange {
+    border: 1px solid #343a40 !important;
+  }
+
+  .middleChange {
+    border: 1px solid #343a40 !important;
+  }
+
+  .lastChange {
+    border: 1px solid #343a40 !important;
+  }
+
+  .nombreMoneda{
+      font-size: 12px;
+  }
+
+  .valorMoneda{
+      font-size: 12px;
+  }
+}
+
+/*SMALL DEVICES*/
+@media all and (min-width: 576px) and (max-width: 768px) {
+  .firstChange {
+    border: 1px solid #343a40 !important;
+  }
+
+  .middleChange {
+    border: 1px solid #343a40 !important;
+  }
+
+  .lastChange {
+    border: 1px solid #343a40 !important;
+  }
+}
