@@ -117,16 +117,15 @@ function App() {
             //obtener el id de la ruta
             const idNoticia = (props.match.params.idNoticia);
             console.log("El ID es: ", idNoticia);
-            //buscar el producto que coincida con el id
+            //buscar la noticia que coincida con el id
             const detalleSeleccionada = noticias.find(
-              (noticia) => noticia.id === idNoticia
+              (noticia) => noticia.idNoticia === (idNoticia)
             );
             console.log("** ", detalleSeleccionada);
             //mostrar el componente DetalleNoticia
             return (
               <DetalleNoticia
-                detalleSeleccionada={detalleSeleccionada}
-                noticias={noticias}
+                detalleSeleccionada={detalleSeleccionada}                
               ></DetalleNoticia>
             );
           }}>
