@@ -14,8 +14,6 @@ import EditarCategoria from "./Components/CategoriaDinamica/EditarCategoria";
 import Admin from "./Components/Admin/Admin";
 import Noticias from "./Components/Noticias/Noticias";
 import PaginaError from "./Components/Error404/PaginaError";
-import ModalLogin from "./Components/Common/ModalLogin";
-import ModalSubscribirse from "./Components/Common/ModalSubscribirse";
 import Categorias from "./Components/CategoriaDinamica/Categorias";
 import Swal from "sweetalert2";
 
