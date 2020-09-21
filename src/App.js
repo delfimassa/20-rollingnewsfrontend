@@ -124,12 +124,29 @@ function App() {
                 noticias={noticias}
               ></CategoriaDinamica>
             );
-          }}
-        ></Route>
-        <Route exact path="/noticia/:idNoticia">
-          <DetalleNoticia
-          noticias={noticias}></DetalleNoticia>
+          }}>
         </Route>
+       
+        <Route exact path="/noticia/:idNoticia"
+            render={(props) => {
+            //codigo a ejecutar antes de renderizar el componente
+            //obtener el id de la ruta
+            const idNoticia = (props.match.params.idNoticia);
+            console.log("El ID es: ", idNoticia);
+            //buscar la noticia que coincida con el id
+            const detalleSeleccionada = noticias.find(
+              (noticia) => noticia.id === Number (idNoticia)
+            );
+            console.log("** ", detalleSeleccionada);
+            //mostrar el componente DetalleNoticia
+            return (
+              <DetalleNoticia
+                detalleSeleccionada={detalleSeleccionada}
+              ></DetalleNoticia>
+            );
+          }}>
+        </Route>
+    
         <Route exact path="/admin/agregarnoticia">
           <AgregarNoticia
             setRecargarTodo={setRecargarTodo}
