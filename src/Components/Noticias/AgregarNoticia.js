@@ -59,9 +59,9 @@ const AgregarNoticia = (props) => {
         },
         body: JSON.stringify(datos),
       };
-      const resultado = await fetch("http://localhost:4000/noticias", cabecera);
+      const resultado = await fetch("https://rollingnewsbackend.herokuapp.com/noticias", cabecera);
       //Si la operacion fue exitosa, entonces...
-      if (resultado.status === 200) {
+      if (resultado.status === 201) {
         Swal.fire(
           "Noticia agregada!",
           "La noticia se agrego correctamente",

@@ -38,7 +38,7 @@ const AgregarCategoria = (props) => {
         body: JSON.stringify(datos),
       };
       const resultado = await fetch(
-        "http://localhost:4000/categorias",
+        "https://rollingnewsbackend.herokuapp.com/categorias",
         cabecera
       );
       //Si la operacion fue exitosa, entonces...

@@ -35,7 +35,7 @@ function App() {
   const consultarAPI = async () => {
     try {
       //obtener lista de categorias
-      const consulta = await fetch("http://localhost:4000/categorias");
+      const consulta = await fetch("https://rollingnewsbackend.herokuapp.com/categorias");
       const respuesta = await consulta.json();
       if (consulta.status !== 200) {
         Swal.fire({
@@ -51,7 +51,7 @@ function App() {
     }
     try {
       //obtener lista de noticias
-      const consulta = await fetch("http://localhost:4000/noticias");
+      const consulta = await fetch("https://rollingnewsbackend.herokuapp.com/noticias");
       const respuesta = await consulta.json();
       if (consulta.status !== 200) {
         Swal.fire({
@@ -67,7 +67,7 @@ function App() {
     }
     try {
       //obtener lista de usuarios
-      const consulta = await fetch("http://localhost:4000/users");
+      const consulta = await fetch("https://rollingnewsbackend.herokuapp.com/users");
       const respuesta = await consulta.json();
       if (consulta.status !== 200) {
         Swal.fire({
@@ -133,7 +133,7 @@ function App() {
             const idNoticia = (props.match.params.idNoticia);
             //buscar la noticia que coincida con el id
             const detalleSeleccionada = noticias.find(
-              (noticia) => noticia.id === Number (idNoticia)
+              (noticia) => noticia._id === idNoticia
             );
             //mostrar el componente DetalleNoticia
             return (
@@ -159,7 +159,7 @@ function App() {
             const idNoticia = props.match.params.idNoticia;
             //buscar el producto que coincida con el id
             const noticiaSeleccionada = noticias.find(
-              (noticia) => noticia.id === Number(idNoticia)
+              (noticia) => noticia._id === idNoticia
             );
             //mostrar el componente editarProducto
             return (
@@ -183,7 +183,7 @@ function App() {
             const idCategoria = props.match.params.idCategoria;
             //buscar el producto que coincida con el id
             const categoriaSeleccionada = categorias.find(
-              (categoria) => categoria.id === Number(idCategoria)
+              (categoria) => categoria._id === idCategoria
             );
             //mostrar el componente editarProducto
             return (

@@ -25,7 +25,7 @@ const NoticiaDestacada1 = (props) => {
 
       <div className="tituloDestacado pl-1 text-light text-left">
         <Link
-          to={`/noticia/${props.bodyNoticia[0].id}`}
+          to={`/noticia/${props.bodyNoticia[0]._id}`}
           style={{ color: "white", height: "100%" }}
         >
           <h3 className="m-0">{props.bodyNoticia[0].noticiaTitulo}</h3>

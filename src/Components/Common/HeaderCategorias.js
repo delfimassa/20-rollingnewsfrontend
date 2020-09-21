@@ -10,7 +10,7 @@ const HeaderCategorias = (props) => {
         <NavLink
           exact={true}
           to={`/categoria/${itemCategoria.nombreCategoria}`}
-          key={itemCategoria.id}
+          key={itemCategoria._id}
           className="text-light hover nav-link text-center"
         >
           {itemCategoria.nombreCategoria}

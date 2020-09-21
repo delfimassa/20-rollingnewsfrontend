@@ -76,7 +76,7 @@ const EditarNoticia = (props) => {
     // enviar cambios a la api
     try {
       const respuesta = await fetch(
-        `http://localhost:4000/noticias/${props.noticia.id}`,
+        `https://rollingnewsbackend.herokuapp.com/noticias/${props.noticia._id}`,
         {
           method: "PUT",
           headers: {
@@ -86,7 +86,7 @@ const EditarNoticia = (props) => {
         }
       );
       console.log(respuesta);
-      if (respuesta.status === 200) {
+      if (respuesta.status === 201) {
         // actualizar lista de noticias
         props.setRecargarTodo(true);
         Swal.fire(

@@ -10,7 +10,7 @@ const Noticias = (props) => {
       <Alert variant={"warning"}>Atencion! Sólo pueden destacarse hasta 3 noticias</Alert>
       <ListGroup>
         {props.noticias.map((itemNoticia) => (
-          <Noticia key={itemNoticia.id} noticia={itemNoticia} setRecargarTodo={props.setRecargarTodo}></Noticia>
+          <Noticia key={itemNoticia._id} noticia={itemNoticia} setRecargarTodo={props.setRecargarTodo}></Noticia>
         ))}
       </ListGroup>
     </section>

@@ -55,7 +55,7 @@ const Header = (props) => {
                 {props.categorias[0].nombreCategoria}
               </NavLink>
             ) : null}
-            {props.categorias.length > 0 ? (
+            {props.categorias.length > 1 ? (
               <NavLink
                 exact={true}
                 to={`/categoria/${props.categorias[1].nombreCategoria}`}
@@ -64,7 +64,7 @@ const Header = (props) => {
                 {props.categorias[1].nombreCategoria}
               </NavLink>
             ) : null}
-            {props.categorias.length > 0 ? (
+            {props.categorias.length > 2 ? (
               <NavLink
                 exact={true}
                 to={`/categoria/${props.categorias[2].nombreCategoria}`}
@@ -73,7 +73,7 @@ const Header = (props) => {
                 {props.categorias[2].nombreCategoria}
               </NavLink>
             ) : null}
-            {props.categorias.length > 0 ? (
+            {props.categorias.length > 3 ? (
               <NavLink
                 exact={true}
                 to={`/categoria/${props.categorias[3].nombreCategoria}`}

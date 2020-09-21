@@ -8,7 +8,7 @@ const Categorias = (props) => {
       <h1 className="text-center">Todas las Categorias</h1>
       <ListGroup>
         {props.categorias.map((itemCategoria) => (
-          <Categoria key={itemCategoria.id} categoria={itemCategoria} setRecargarTodo={props.setRecargarTodo}></Categoria>
+          <Categoria key={itemCategoria._id} categoria={itemCategoria} setRecargarTodo={props.setRecargarTodo}></Categoria>
         ))}
       </ListGroup>
     </section>

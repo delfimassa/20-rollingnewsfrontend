@@ -8,7 +8,6 @@ import { faTrash, faEdit, faStar } from "@fortawesome/free-solid-svg-icons";
 
 const Noticia = (props) => {
   const eliminarNoticia = (id) => {
-    console.log(id);
 
     Swal.fire({
       title: "¿Estas seguro de eliminar esta noticia?",
@@ -24,7 +23,7 @@ const Noticia = (props) => {
         //aqui tengo que eliminar el producto
         try {
           const resultado = await fetch(
-            `http://localhost:4000/noticias/${id}`,
+            `https://rollingnewsbackend.herokuapp.com/noticias/${id}`,
             {
               method: "DELETE",
               headers: {
@@ -34,7 +33,7 @@ const Noticia = (props) => {
           );
           console.log(resultado);
 
-          if (resultado.status === 200) {
+          if (resultado.status === 202) {
             props.setRecargarTodo(true);
             Swal.fire(
               "Noticia eliminada",
@@ -81,7 +80,7 @@ const Noticia = (props) => {
 
           <Link
             className="btn btn-dark botonNegro botonEditar mb-1 ml-1"
-            to={`/admin/editarnoticia/${props.noticia.id}`}
+            to={`/admin/editarnoticia/${props.noticia._id}`}
           >
             <FontAwesomeIcon icon={faEdit}></FontAwesomeIcon>
           </Link>
@@ -89,7 +88,7 @@ const Noticia = (props) => {
             className="botonRojo botonEditar mb-1 ml-1"
             variant="danger"
             type="button"
-            onClick={() => eliminarNoticia(props.noticia.id)}
+            onClick={() => eliminarNoticia(props.noticia._id)}
           >
             <FontAwesomeIcon icon={faTrash}></FontAwesomeIcon>
           </Button>

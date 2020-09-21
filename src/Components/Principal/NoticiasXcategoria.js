@@ -15,8 +15,8 @@ const NoticiasXcategoria = (props) => {
         <Card key={noticia.id} className="col-xs-12 col-sm-12 col-md-4 p-0">
           <Card.Img variant="top" src={noticia.noticiaImg} />
           <Card.Body>
-            <Card.Title><Link to={`/noticia/${noticia.id}`} style={{ color: "black", height: "100%" }}>{noticia.noticiaTitulo}</Link></Card.Title>
-            <Card.Text><Link to={`/noticia/${noticia.id}`} style={{ color: "black", height: "100%" }}>{noticia.noticiaDescripcionBreve}</Link></Card.Text>
+            <Card.Title><Link to={`/noticia/${noticia._id}`} style={{ color: "black", height: "100%" }}>{noticia.noticiaTitulo}</Link></Card.Title>
+            <Card.Text><Link to={`/noticia/${noticia._id}`} style={{ color: "black", height: "100%" }}>{noticia.noticiaDescripcionBreve}</Link></Card.Text>
           </Card.Body>
         </Card>
       ))}

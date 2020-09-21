@@ -22,7 +22,7 @@ const Categoria = (props) => {
         //aqui tengo que eliminar el producto
         try {
           const resultado = await fetch(
-            `http://localhost:4000/categorias/${id}`,
+            `https://rollingnewsbackend.herokuapp.com/categorias/${id}`,
             {
               method: "DELETE",
               headers: {
@@ -67,7 +67,7 @@ const Categoria = (props) => {
         </Link>
         <Link
           className="btn btn-dark botonNegro botonEditar mb-1 ml-1"
-          to={`/admin/editarcategoria/${props.categoria.id}`}
+          to={`/admin/editarcategoria/${props.categoria._id}`}
         >
           <FontAwesomeIcon icon={faEdit}></FontAwesomeIcon>
         </Link>
@@ -75,7 +75,7 @@ const Categoria = (props) => {
           className="botonRojo botonEditar mb-1 ml-1"
           variant="danger"
           type="button"
-          onClick={() => eliminarCategoria(props.categoria.id)}
+          onClick={() => eliminarCategoria(props.categoria._id)}
         >
           <FontAwesomeIcon icon={faTrash}></FontAwesomeIcon>
         </Button>

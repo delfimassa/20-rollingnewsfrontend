@@ -36,7 +36,7 @@ const EditarCategoria = (props) => {
 
     try {
         const respuesta = await fetch(
-          `http://localhost:4000/categorias/${props.categoria.id}`,
+          `https://rollingnewsbackend.herokuapp.com/categorias/${props.categoria._id}`,
           {
             method: "PUT",
             headers: {
@@ -45,8 +45,7 @@ const EditarCategoria = (props) => {
             body: JSON.stringify(categoriaEditada),
           }
         );
-        console.log(respuesta);
-        if (respuesta.status === 200) {
+        if (respuesta.status === 201) {
           // actualizar lista de noticias
           props.setRecargarTodo(true);
           Swal.fire(
