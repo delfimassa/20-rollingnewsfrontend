@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash, faEdit, faStar } from "@fortawesome/free-solid-svg-icons";
 
-
 const Noticia = (props) => {
   const eliminarNoticia = (id) => {
     console.log(id);
@@ -67,18 +66,19 @@ const Noticia = (props) => {
           <p>{props.noticia.noticiaTitulo}</p>
         </div>
         <div className="col-3 m-0 p-0 text-right">
-          {props.noticia.noticiaDestacada ? (<Button
-            className="botonEditar p-0 mb-1"
-            variant="warning"
-            type="button"
-            // onClick={() => eliminarNoticia(props.noticia.id)}
-          >
-            <FontAwesomeIcon
-              className="mx-auto"
-              icon={faStar}
-            ></FontAwesomeIcon>
-          </Button>):null}
-          
+          {props.noticia.noticiaDestacada ? (
+            <Button
+              className="botonEditar p-0 mb-1"
+              variant="warning"
+              type="button"
+            >
+              <FontAwesomeIcon
+                className="mx-auto"
+                icon={faStar}
+              ></FontAwesomeIcon>
+            </Button>
+          ) : null}
+
           <Link
             className="btn btn-dark botonNegro botonEditar mb-1 ml-1"
             to={`/admin/editarnoticia/${props.noticia.id}`}

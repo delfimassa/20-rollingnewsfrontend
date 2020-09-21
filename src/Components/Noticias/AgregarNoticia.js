@@ -21,8 +21,6 @@ const AgregarNoticia = (props) => {
   const [noticiaFecha, setNoticiaFecha] = useState("");
   const [noticiaDestacada, setNoticiaDestacada] = useState(false);
 
-  console.log(noticiaCategoria);
-
   const checkboxDestacar = (e) => {
     setNoticiaDestacada(e.target.checked);
   };
@@ -62,7 +60,6 @@ const AgregarNoticia = (props) => {
         body: JSON.stringify(datos),
       };
       const resultado = await fetch("http://localhost:4000/noticias", cabecera);
-      console.log(resultado);
       //Si la operacion fue exitosa, entonces...
       if (resultado.status === 200) {
         Swal.fire(

@@ -29,7 +29,6 @@ function App() {
     if (recargarTodo) {
       consultarAPI();
       setRecargarTodo(false);
-      console.log("Datos de categorias y noticias recargados");
     }
   }, [recargarTodo]);
 
@@ -132,12 +131,10 @@ function App() {
             //codigo a ejecutar antes de renderizar el componente
             //obtener el id de la ruta
             const idNoticia = (props.match.params.idNoticia);
-            console.log("El ID es: ", idNoticia);
             //buscar la noticia que coincida con el id
             const detalleSeleccionada = noticias.find(
               (noticia) => noticia.id === Number (idNoticia)
             );
-            console.log("** ", detalleSeleccionada);
             //mostrar el componente DetalleNoticia
             return (
               <DetalleNoticia
@@ -160,12 +157,10 @@ function App() {
             //codigo a ejecutar antes de renderizar el componente
             //obtener el id de la ruta
             const idNoticia = props.match.params.idNoticia;
-            console.log(typeof idNoticia);
             //buscar el producto que coincida con el id
             const noticiaSeleccionada = noticias.find(
               (noticia) => noticia.id === Number(idNoticia)
             );
-            console.log("=>", noticiaSeleccionada);
             //mostrar el componente editarProducto
             return (
               <EditarNoticia
@@ -186,12 +181,10 @@ function App() {
           path="/admin/editarcategoria/:idCategoria"
           render={(props) => {
             const idCategoria = props.match.params.idCategoria;
-            console.log(typeof idCategoria);
             //buscar el producto que coincida con el id
             const categoriaSeleccionada = categorias.find(
               (categoria) => categoria.id === Number(idCategoria)
             );
-            console.log("=>", categoriaSeleccionada);
             //mostrar el componente editarProducto
             return (
               <EditarCategoria

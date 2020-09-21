@@ -8,8 +8,6 @@ import { faTrash, faEdit } from "@fortawesome/free-solid-svg-icons";
 
 const Categoria = (props) => {
   const eliminarCategoria = (id) => {
-    console.log(id);
-
     Swal.fire({
       title: "¿Estas seguro de eliminar esta categoría?",
       text: "No puedes recuperar una categoría eliminada",
@@ -32,8 +30,6 @@ const Categoria = (props) => {
               },
             }
           );
-          console.log(resultado);
-
           if (resultado.status === 202) {
             props.setRecargarTodo(true);
             Swal.fire(

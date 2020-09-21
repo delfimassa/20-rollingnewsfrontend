@@ -41,7 +41,6 @@ const AgregarCategoria = (props) => {
         "http://localhost:4000/categorias",
         cabecera
       );
-      console.log(resultado);
       //Si la operacion fue exitosa, entonces...
       if ((resultado.status) === 201) {
         Swal.fire(

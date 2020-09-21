@@ -14,8 +14,7 @@ const TipoDeCambio = () => {
       const url = `https://v6.exchangerate-api.com/v6/${apikey}/latest/ARS`;
       const respuesta = await fetch(url);
       const resultado = await respuesta.json();
-      console.log(resultado);
-  
+
       if (resultado.result !== "success") {
         //Error en la busqueda
         return;
@@ -39,7 +38,6 @@ const TipoDeCambio = () => {
     consultarAPI();
   }, []);
 
-  
   return (
     <div className="container">
       <div className="row my-3">
