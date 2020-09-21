@@ -17,7 +17,7 @@ const EditarNoticia = (props) => {
   const noticiaDescripcionFullRef = useRef("");
   const noticiaImgRef = useRef("");
   const noticiaAutorRef = useRef("");
-  const noticiaFechaRef = useRef("");
+  const noticiaFechaRef = useRef();
   const [noticiaCategoria, setNoticiaCategoria] = useState("");
   const [error, setError] = useState(false);
   const [noticiaDestacada, setNoticiaDestacada] = useState();
@@ -207,7 +207,7 @@ const EditarNoticia = (props) => {
                 placeholder="dd/mm/aaaa"
                 type="date"
                 ref={noticiaFechaRef}
-                defaultValue={props.noticia?.noticiaFecha || ""}
+                defaultValue={props.noticia?.noticiaFecha.split(/[T ]/i, 1)[0] || ""}
               />
             </Form.Group>
           </Col>

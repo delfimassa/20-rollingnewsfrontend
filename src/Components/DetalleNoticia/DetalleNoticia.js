@@ -26,7 +26,7 @@ const DetalleNoticia = (props) => {
 
       <article>
         <Container>
-          <p className="text-right font-weight-bold">{props.detalleSeleccionada.noticiaFecha}</p>
+          <p className="text-right font-weight-bold">{props.detalleSeleccionada.noticiaFecha.split(/[T ]/i, 1)[0]}</p>
         </Container>
       </article>
     </div>
