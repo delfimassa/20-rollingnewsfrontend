@@ -16,7 +16,7 @@ const noticiasFiltradas = props.noticias.filter(
       <hr />
       <div className="row">
         {noticiasFiltradas.map((noticia) => (
-          <Card className="col-12 col-sm-12 col-md-6 col-lg-4 p-0 my-2 mx-1 noticiaCard">
+          <Card key={noticia.id} className="col-12 col-sm-12 col-md-6 col-lg-4 p-0 my-2 mx-1 noticiaCard">
             <Card.Img variant="top" src={noticia.noticiaImg} />
             <Card.Body>
               <Card.Title className="font-weight-bold"><Link to={`/noticia/${noticia.id}`} style={{ color: "black", height: "100%" }}>{noticia.noticiaTitulo}</Link></Card.Title>

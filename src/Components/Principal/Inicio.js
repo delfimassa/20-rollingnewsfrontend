@@ -5,6 +5,7 @@ import NoticiasDestacadas from "./NoticiasDestacadas";
 import NoticiasInicio from "./NoticiasInicio";
 import Publicidades from "./Publicidades";
 import TipoDeCambio from "./TipoDeCambio";
+import Clima from "../Common/Clima";
 
 const Inicio = (props) => {
   const [noticiasDestacadas, setNoticiasDestacadas] = useState([]);
@@ -26,6 +27,9 @@ const Inicio = (props) => {
 
   return (
     <div>
+      <div className="container p-0 text-light d-md-none text-center my-2">
+        <Clima datosClima={props.datosClima}></Clima>
+      </div>
       <TipoDeCambio></TipoDeCambio>
       <NoticiasDestacadas
         key={noticiasDestacadas.length}
