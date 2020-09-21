@@ -53,7 +53,7 @@
       "noticiaAutor": "Juan Perez",
       "noticiaFecha": "55454-04-05",
       "noticiaCategoria": "Actualidad",
-      "noticiaDestacada": true,
+      "noticiaDestacada": false,
       "id": 2
     },
     {
@@ -75,7 +75,7 @@
       "noticiaAutor": "delfi massa",
       "noticiaFecha": "0654-04-25",
       "noticiaCategoria": "Deportes",
-      "noticiaDestacada": false,
+      "noticiaDestacada": true,
       "id": 5
     },
     {
