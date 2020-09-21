@@ -54,7 +54,7 @@ const ModalLogin = (props) => {
       {/*Forma de acceder al modal - EJEMPLO CON UN BUTTON*/}
       <Button
         variant="danger"
-        className="px-0 my-2 mr-1 w-100"
+        className="botonRojo px-0 my-2 mr-1 w-100"
         onClick={handleShowLogin}
       >
         Login

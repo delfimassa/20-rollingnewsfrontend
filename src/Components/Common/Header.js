@@ -73,7 +73,7 @@ const Header = (props) => {
                 <Dropdown className="text-center">
                   <Dropdown.Toggle
                     variant="danger"
-                    className="px-0 mr-1 my-2 w-100"
+                    className="botonRojo px-0 mr-1 my-2 w-100"
                   >
                     Admin
                   </Dropdown.Toggle>
@@ -129,7 +129,7 @@ const Header = (props) => {
               {showLogin ? (
                 <Button
                   variant="danger"
-                  className="mr-1 my-2 w-100"
+                  className="botonRojo mr-1 my-2 w-100"
                   onClick={cerrarSesion}
                 >
                   Salir

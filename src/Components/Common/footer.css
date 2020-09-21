@@ -1,4 +1,6 @@
-
+.testoRojo{
+    background-color:#EC172D
+}
 .body{
     min-height: 100%;
     position: relative;

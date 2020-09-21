@@ -56,7 +56,7 @@ const ModalSubscribirse = () => {
 
       <Button
         variant="danger"
-        className="mr-1 my-2 w-100"
+        className="botonRojo mr-1 my-2 w-100"
         onClick={handleShowSub}
       >
         Subscribirse
