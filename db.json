@@ -46,13 +46,13 @@
   ],
   "noticias": [
     {
-      "noticiaTitulo": "Probando destacar, Cafayate",
+      "noticiaTitulo": "Probando destacar, Cafayateee",
       "noticiaDescripcionBreve": "Esta es una noticia para probar el destacar, Actualidad",
       "noticiaDescripcionFull": "Esta es una noticia para probar el destacar, Actualidad",
       "noticiaImg": "https://www.dexotic.com/wp-content/uploads/2015/07/cafayate.jpg",
-      "noticiaCategoria": "Actualidad",
       "noticiaAutor": "Juan Perez",
       "noticiaFecha": "55454-04-05",
+      "noticiaCategoria": "Actualidad",
       "noticiaDestacada": true,
       "id": 2
     },
@@ -66,17 +66,6 @@
       "noticiaFecha": "0045-05-24",
       "noticiaDestacada": true,
       "id": 3
-    },
-    {
-      "noticiaTitulo": "Probando agregar, economia",
-      "noticiaDescripcionBreve": "Esta es una noticia para probar el componente economia en inicio y en la categoria",
-      "noticiaDescripcionFull": "Esta es una noticia para probar el componente economia en inicio y en la categoria",
-      "noticiaImg": "https://static01.nyt.com/images/2020/05/12/multimedia/12Garcia-ES/merlin_170796432_4a4ecf33-5f07-4035-b748-f9a59201648b-articleLarge.jpg?quality=75&auto=webp&disable=upscale",
-      "noticiaAutor": "Juan Perez",
-      "noticiaFecha": "0454-05-24",
-      "noticiaCategoria": "Economía",
-      "noticiaDestacada": false,
-      "id": 4
     },
     {
       "noticiaTitulo": "Probando destacar!!!!, Tennis",

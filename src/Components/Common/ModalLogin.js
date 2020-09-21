@@ -42,7 +42,7 @@ const ModalLogin = (props) => {
         props.setAdminUser(true);
         handleCloseLogin();
         //Redireccionar a alguna pagina
-        props.history.push("/");
+        props.history.push("/admin");
       } else {
         setDatosErroneos(true);
       }

@@ -4,7 +4,8 @@ import { Button } from "react-bootstrap";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTrash, faEdit } from "@fortawesome/free-solid-svg-icons";
+import { faTrash, faEdit, faStar } from "@fortawesome/free-solid-svg-icons";
+
 
 const Noticia = (props) => {
   const eliminarNoticia = (id) => {
@@ -62,22 +63,36 @@ const Noticia = (props) => {
   return (
     <ListGroup.Item className="fondoLi">
       <div className="row d-flex justify-content-between m-0 p-0">
-        <div className="col-9 d-flex justify-content-between m-0 p-0"><p>{props.noticia.noticiaTitulo}</p></div>
+        <div className="col-9 d-flex justify-content-between m-0 p-0">
+          <p>{props.noticia.noticiaTitulo}</p>
+        </div>
         <div className="col-3 m-0 p-0 text-right">
+          {props.noticia.noticiaDestacada ? (<Button
+            className="botonEditar p-0 mb-1"
+            variant="warning"
+            type="button"
+            // onClick={() => eliminarNoticia(props.noticia.id)}
+          >
+            <FontAwesomeIcon
+              className="mx-auto"
+              icon={faStar}
+            ></FontAwesomeIcon>
+          </Button>):null}
+          
           <Link
-          className="btn btn-dark botonNegro botonEditar mb-1 ml-1"
-          to={`/admin/editarnoticia/${props.noticia.id}`}
-        >
-          <FontAwesomeIcon icon={faEdit}></FontAwesomeIcon>
-        </Link>
+            className="btn btn-dark botonNegro botonEditar mb-1 ml-1"
+            to={`/admin/editarnoticia/${props.noticia.id}`}
+          >
+            <FontAwesomeIcon icon={faEdit}></FontAwesomeIcon>
+          </Link>
           <Button
-          className="botonRojo botonEditar mb-1 ml-1"
-          variant="danger"
-          type="button"
-          onClick={() => eliminarNoticia(props.noticia.id)}
-        >
-          <FontAwesomeIcon icon={faTrash}></FontAwesomeIcon>
-        </Button>
+            className="botonRojo botonEditar mb-1 ml-1"
+            variant="danger"
+            type="button"
+            onClick={() => eliminarNoticia(props.noticia.id)}
+          >
+            <FontAwesomeIcon icon={faTrash}></FontAwesomeIcon>
+          </Button>
         </div>
       </div>
     </ListGroup.Item>

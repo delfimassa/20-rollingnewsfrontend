@@ -19,10 +19,9 @@ const EditarNoticia = (props) => {
   const noticiaImgRef = useRef("");
   const noticiaAutorRef = useRef("");
   const noticiaFechaRef = useRef("");
-  const noticiaDestacadaRef = useRef(false)
   const [noticiaCategoria, setNoticiaCategoria] = useState("");
   const [error, setError] = useState(false);
-  const [noticiaDestacada, setNoticiaDestacada] = useState(false);
+  const [noticiaDestacada, setNoticiaDestacada] = useState();
 
   const checkboxDestacar = (e) => {
     setNoticiaDestacada(e.target.checked);
@@ -214,8 +213,7 @@ const EditarNoticia = (props) => {
             label="Destacar"
             value="true"
             onChange={checkboxDestacar}
-            ref={noticiaDestacadaRef}
-            defaultValue={props.noticia?.noticiaDestacada}
+            defaultChecked={props.noticia.noticiaDestacada === true}
           />
         </Form.Group>
 
