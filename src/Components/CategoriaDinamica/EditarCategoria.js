@@ -7,10 +7,8 @@ import { withRouter } from "react-router-dom"; //Sirve para redireccionar a una 
 
 const EditarCategoria = (props) => {
   const nombreCategoriaRef = useRef("");
-  // const [ categoria, setCategoria] = useState("")
   const [error, setError] = useState(false);
   const [validated, setValidated] = useState(false);
-  const [nombreCategoria, setNombreCategoria] = useState("");
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -80,9 +78,6 @@ const EditarCategoria = (props) => {
         <Form.Group controlId="nombreCategoria">
           <Form.Label>Nombre de la categoria</Form.Label>
           <Form.Control
-            onChange={(e) => {
-              setNombreCategoria(e.target.value);
-            }}
             required
             type="text"
             placeholder="Ejemplo: Covid-19"

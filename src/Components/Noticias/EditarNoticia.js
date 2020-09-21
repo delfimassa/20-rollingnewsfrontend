@@ -12,7 +12,6 @@ const EditarNoticia = (props) => {
 
   const [validated, setValidated] = useState(false);
   const [caracterCount, setCaracterCount] = useState(0);
-
   const noticiaTituloRef = useRef("");
   const noticiaDescripcionBreveRef = useRef("");
   const noticiaDescripcionFullRef = useRef("");
@@ -38,9 +37,17 @@ const EditarNoticia = (props) => {
       noticiaCategoria === ""
         ? props.noticia.noticiaCategoria
         : noticiaCategoria;
-    console.log(_categoria);
-    console.log(noticiaTituloRef.current.value);
-    console.log(noticiaDescripcionBreveRef.current.value);
+
+    const form = e.currentTarget;
+    if (form.checkValidity() === false) {
+      e.stopPropagation();
+      setError(true);
+      setValidated(true);
+      return;
+    } else {
+      setError(false);
+      setValidated(true);
+    }
 
     if (
       noticiaTituloRef.current.value.trim() === "" ||
@@ -65,7 +72,6 @@ const EditarNoticia = (props) => {
       noticiaFecha: noticiaFechaRef.current.value,
       noticiaCategoria: _categoria,
       noticiaDestacada: noticiaDestacada,
-       
     };
     // enviar cambios a la api
     try {

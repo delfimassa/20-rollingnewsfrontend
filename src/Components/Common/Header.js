@@ -10,7 +10,7 @@ import { faPlus, faBars } from "@fortawesome/free-solid-svg-icons";
 import Fecha from "./Fecha";
 import Clima from "./Clima";
 import ModalLogin from "./ModalLogin";
-import HeaderCategorias from "./HeaderCategorias"
+import HeaderCategorias from "./HeaderCategorias";
 import ModalSubscribirse from "./ModalSubscribirse";
 
 const Header = (props) => {
@@ -46,29 +46,55 @@ const Header = (props) => {
         </Navbar.Toggle>
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto text-center">
-            <NavLink exact={true} to="/categoria/Actualidad" className="text-light nav-link">
-              Actualidad
-            </NavLink>
-            <NavLink exact={true} to="/categoria/Espectáculos" className="text-light nav-link">
-              Espectáculos
-            </NavLink>
-            <NavLink exact={true} to="/categoria/Tecnología" className="text-light nav-link">
-              Tecnología
-            </NavLink>
-            <NavLink exact={true} to="/categoria/Deportes" className="text-light nav-link">
-              Deportes
-            </NavLink>
+            {props.categorias.length > 0 ? (
+              <NavLink
+                exact={true}
+                to={`/categoria/${props.categorias[0].nombreCategoria}`}
+                className="text-light nav-link"
+              >
+                {props.categorias[0].nombreCategoria}
+              </NavLink>
+            ) : null}
+            {props.categorias.length > 0 ? (
+              <NavLink
+                exact={true}
+                to={`/categoria/${props.categorias[1].nombreCategoria}`}
+                className="text-light nav-link"
+              >
+                {props.categorias[1].nombreCategoria}
+              </NavLink>
+            ) : null}
+            {props.categorias.length > 0 ? (
+              <NavLink
+                exact={true}
+                to={`/categoria/${props.categorias[2].nombreCategoria}`}
+                className="text-light nav-link"
+              >
+                {props.categorias[2].nombreCategoria}
+              </NavLink>
+            ) : null}
+            {props.categorias.length > 0 ? (
+              <NavLink
+                exact={true}
+                to={`/categoria/${props.categorias[3].nombreCategoria}`}
+                className="text-light nav-link"
+              >
+                {props.categorias[3].nombreCategoria}
+              </NavLink>
+            ) : null}
             <Dropdown className="text-center">
               <Dropdown.Toggle id="fondo-categoria" className="ml-3">
                 <FontAwesomeIcon icon={faPlus}></FontAwesomeIcon>
               </Dropdown.Toggle>
               <Dropdown.Menu className="fondoLista">
-                <HeaderCategorias categorias={props.categorias}></HeaderCategorias>
+                <HeaderCategorias
+                  categorias={props.categorias}
+                ></HeaderCategorias>
               </Dropdown.Menu>
             </Dropdown>
           </Nav>
           <div className="row col-12 col-sm-12 col-md-12 col-lg-5 mx-0 justify-content-center">
-          {props.adminUser ? (
+            {props.adminUser ? (
               <div className="col-12 col-sm-12 col-md-12 col-lg-4 px-1">
                 <Dropdown className="text-center">
                   <Dropdown.Toggle
@@ -77,7 +103,7 @@ const Header = (props) => {
                   >
                     Admin
                   </Dropdown.Toggle>
-                  <Dropdown.Menu className="fondoLista">
+                  <Dropdown.Menu className="fondoLista w-100">
                     <NavLink
                       exact={true}
                       to="/admin"
