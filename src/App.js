@@ -119,13 +119,13 @@ function App() {
             console.log("El ID es: ", idNoticia);
             //buscar la noticia que coincida con el id
             const detalleSeleccionada = noticias.find(
-              (noticia) => noticia.idNoticia === (idNoticia)
+              (noticia) => noticia.id === Number (idNoticia)
             );
             console.log("** ", detalleSeleccionada);
             //mostrar el componente DetalleNoticia
             return (
               <DetalleNoticia
-                detalleSeleccionada={detalleSeleccionada}                
+                detalleSeleccionada={detalleSeleccionada}
               ></DetalleNoticia>
             );
           }}>

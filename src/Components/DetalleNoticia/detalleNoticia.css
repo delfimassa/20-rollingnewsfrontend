@@ -1,0 +1,36 @@
+/*MEDIA QUERIES*/
+
+/*X-SMALL DEVICES PUBLICIDAD*/
+@media all and (max-width: 576px) {
+    .titulo{
+        font-size: 30px;
+    }
+    .copete{
+        font-size: 20px;
+    }
+}
+
+/*SMALL DEVICES*/
+@media all and (min-width: 576px) and (max-width: 768px) {
+}
+
+/*MEDIUM DEVICES*/
+@media all and (min-width: 768px) and (max-width: 991px) {
+    .descripcion{
+        font-size: 20px;
+    }   
+}
+
+/*LARGE DEVICES*/
+@media all and (min-width: 991px) and (max-width: 1200px) {
+    .descripcion{
+        font-size: 20px;
+    }   
+}
+  
+  /*XTRA LARGE DEVICES*/
+@media all and (min-width: 1200px) {
+    .descripcion{
+        font-size: 20px;
+    }   
+}

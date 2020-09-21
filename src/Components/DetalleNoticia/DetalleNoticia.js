@@ -1,43 +1,36 @@
-import React, { useState } from "react";
+import React from "react";
 import { Container } from "react-bootstrap";
 import Jumbotron from "react-bootstrap/Jumbotron";
-import { withRouter } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "../DetalleNoticia/detalleNoticia.css";
 
 
-const DetalleNoticia = async(props) => {
-  const [detalleNoticia, setDetalleNoticia] = useState({});
-  try {
-    //obtener lista de noticias
-    const consulta = await fetch(`http://localhost:4000/noticia/${props.noticias.id}`);
-    const respuesta = consulta.json();
-    if (consulta.status !== 200) {
-      console.log("redireccionar a error404");
-    }
-    //Guardar en el state
-    setDetalleNoticia(respuesta);
-  } catch (error) {
-    console.log(error);
-  }
-  console.log(detalleNoticia);
+const DetalleNoticia = (props) => {
 
   return (
     <div>
       <Jumbotron fluid>
         <Container>
-          <h1>Fluid jumbotron</h1>
-          <p>
-            This is a modified jumbotron that occupies the entire horizontal
-            space of its parent.
-          </p>
+          <h1 className="titulo display-3 font-weight-bolder">{props.detalleSeleccionada.noticiaTitulo}</h1>
+          <h3 className="copete">{props.detalleSeleccionada.noticiaDescripcionBreve}</h3>
         </Container>
       </Jumbotron>
 
       <article>
-        <img src="" alt=""></img>
-        <p></p>
+       <Container>
+          <p className="mt-n2 text-right">Por <span className="font-weight-bold">{props.detalleSeleccionada.noticiaAutor}</span></p>
+          <img src={props.detalleSeleccionada.noticiaImg} alt="Imagen principal de la Noticia" className="w-100 shadow"></img>
+          <p className="descripcion py-4">{props.detalleSeleccionada.noticiaDescripcionFull}</p>
+       </Container>
+      </article>
+
+      <article>
+        <Container>
+          <p className="text-right font-weight-bold">{props.detalleSeleccionada.noticiaFecha}</p>
+        </Container>
       </article>
     </div>
   );
 };
 
-export default withRouter(DetalleNoticia);
+export default DetalleNoticia;
