@@ -8,17 +8,18 @@ import { withRouter } from "react-router-dom";
 import EditarNoticiaCategorias from "./EditarNoticiaCategorias";
 
 const EditarNoticia = (props) => {
-  const [noticia, setNoticia] = useState({});
+  // const [noticia, setNoticia] = useState({});
 
   const [validated, setValidated] = useState(false);
   const [caracterCount, setCaracterCount] = useState(0);
-  
+
   const noticiaTituloRef = useRef("");
   const noticiaDescripcionBreveRef = useRef("");
   const noticiaDescripcionFullRef = useRef("");
   const noticiaImgRef = useRef("");
   const noticiaAutorRef = useRef("");
   const noticiaFechaRef = useRef("");
+  const noticiaDestacadaRef = useRef(false)
   const [noticiaCategoria, setNoticiaCategoria] = useState("");
   const [error, setError] = useState(false);
   const [noticiaDestacada, setNoticiaDestacada] = useState(false);
@@ -27,26 +28,29 @@ const EditarNoticia = (props) => {
     setNoticiaDestacada(e.target.checked);
   };
 
-  useEffect(()=>{
-    setNoticiaCategoria(props.noticia?.noticiaCategoria||"")
-  },[props])
+  useEffect(() => {
+    setNoticiaCategoria(props.noticia?.noticiaCategoria || "");
+  }, [props]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     // validar los datos
-    const _categoria = noticiaCategoria === "" ? props.noticia.noticiaCategoria : noticiaCategoria;
+    const _categoria =
+      noticiaCategoria === ""
+        ? props.noticia.noticiaCategoria
+        : noticiaCategoria;
     console.log(_categoria);
     console.log(noticiaTituloRef.current.value);
     console.log(noticiaDescripcionBreveRef.current.value);
 
     if (
-        noticiaTituloRef.current.value.trim() === "" ||
-        noticiaDescripcionBreveRef.current.value.trim() === "" ||
-        noticiaDescripcionFullRef.current.value.trim() === "" ||
-        noticiaImgRef.current.value.trim() === "" ||
-        noticiaAutorRef.current.value.trim() === "" ||
-        noticiaFechaRef.current.value.trim() === "" ||
-        _categoria === ""
+      noticiaTituloRef.current.value.trim() === "" ||
+      noticiaDescripcionBreveRef.current.value.trim() === "" ||
+      noticiaDescripcionFullRef.current.value.trim() === "" ||
+      noticiaImgRef.current.value.trim() === "" ||
+      noticiaAutorRef.current.value.trim() === "" ||
+      noticiaFechaRef.current.value.trim() === "" ||
+      _categoria === ""
     ) {
       setError(true);
       return;
@@ -54,13 +58,15 @@ const EditarNoticia = (props) => {
     // preparar el objeto a enviar
     setError(false);
     const noticiaEditada = {
-        noticiaTitulo: noticiaTituloRef.current.value,
-        noticiaDescripcionBreve: noticiaDescripcionBreveRef.current.value,
-        noticiaDescripcionFull: noticiaDescripcionFullRef.current.value,
-        noticiaImg: noticiaImgRef.current.value,
-        noticiaAutor: noticiaAutorRef.current.value,
-        noticiaFecha: noticiaFechaRef.current.value,
-        categoria: _categoria,
+      noticiaTitulo: noticiaTituloRef.current.value,
+      noticiaDescripcionBreve: noticiaDescripcionBreveRef.current.value,
+      noticiaDescripcionFull: noticiaDescripcionFullRef.current.value,
+      noticiaImg: noticiaImgRef.current.value,
+      noticiaAutor: noticiaAutorRef.current.value,
+      noticiaFecha: noticiaFechaRef.current.value,
+      noticiaCategoria: _categoria,
+      noticiaDestacada: noticiaDestacada,
+       
     };
     // enviar cambios a la api
     try {
@@ -75,7 +81,7 @@ const EditarNoticia = (props) => {
         }
       );
       console.log(respuesta);
-      if (respuesta.status === 201) {
+      if (respuesta.status === 200) {
         // actualizar lista de noticias
         props.setRecargarTodo(true);
         Swal.fire(
@@ -110,14 +116,13 @@ const EditarNoticia = (props) => {
         noValidate
         validated={validated}
         onSubmit={handleSubmit}
-      > 
+      >
         {error ? (
           <Alert variant={"danger"}>Todos los campos son obligatorios</Alert>
         ) : null}
         <Form.Group controlId="tituloNoticia">
           <Form.Label>Titulo de la noticia</Form.Label>
           <Form.Control
-            
             required
             type="text"
             placeholder="Ejemplo: Nuevas medidas contra el corona virus"
@@ -132,7 +137,6 @@ const EditarNoticia = (props) => {
             rows="2"
             className="descripcionBreveForm"
             onKeyUp={(e) => descripcionBreveValidator(e.target)}
-            
             required
             maxLength="200"
             type="text"
@@ -148,7 +152,6 @@ const EditarNoticia = (props) => {
           <Form.Label>Descripcion completa</Form.Label>
           <Form.Control
             required
-            
             as="textarea"
             rows="8"
             type="text"
@@ -161,7 +164,6 @@ const EditarNoticia = (props) => {
           <Form.Label>Imagen relevante</Form.Label>
           <Form.Control
             required
-            
             type="url"
             placeholder="Introduzca la direccion URL que lleva a la imagen a utilizar"
             ref={noticiaImgRef}
@@ -173,7 +175,7 @@ const EditarNoticia = (props) => {
           <EditarNoticiaCategorias
             setNoticiaCategoria={setNoticiaCategoria}
             categorias={props.categorias}
-            defaultValue = {noticiaCategoria}
+            defaultValue={props.noticia?.noticiaCategoria || ""}
           ></EditarNoticiaCategorias>
           <Form.Text id="listaCategoriaHelpBlock" muted>
             Seleccione una categoria
@@ -184,7 +186,6 @@ const EditarNoticia = (props) => {
             <Form.Group controlId="autorNoticia">
               <Form.Label>Autor</Form.Label>
               <Form.Control
-                
                 required
                 type="text"
                 placeholder="Ejemplo: Maximiliano Costa"
@@ -197,7 +198,6 @@ const EditarNoticia = (props) => {
             <Form.Group controlId="fechaNoticia">
               <Form.Label>Fecha</Form.Label>
               <Form.Control
-                
                 required
                 placeholder="dd/mm/aaaa"
                 type="date"
@@ -214,6 +214,8 @@ const EditarNoticia = (props) => {
             label="Destacar"
             value="true"
             onChange={checkboxDestacar}
+            ref={noticiaDestacadaRef}
+            defaultValue={props.noticia?.noticiaDestacada}
           />
         </Form.Group>
 

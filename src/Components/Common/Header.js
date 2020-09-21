@@ -49,11 +49,11 @@ const Header = (props) => {
             <NavLink exact={true} to="/categoria/Actualidad" className="text-light nav-link">
               Actualidad
             </NavLink>
-            <NavLink exact={true} to="/categoria/Espectaculos" className="text-light nav-link">
-              Espectaculos
+            <NavLink exact={true} to="/categoria/Espectáculos" className="text-light nav-link">
+              Espectáculos
             </NavLink>
-            <NavLink exact={true} to="/categoria/Tecnologia" className="text-light nav-link">
-              Tecnologia
+            <NavLink exact={true} to="/categoria/Tecnología" className="text-light nav-link">
+              Tecnología
             </NavLink>
             <NavLink exact={true} to="/categoria/Deportes" className="text-light nav-link">
               Deportes
@@ -108,7 +108,7 @@ const Header = (props) => {
                       eventKey="3"
                       className="nav-link text-light hover text-center"
                     >
-                      Categorias
+                      Categorías
                     </NavLink>
                     <NavLink
                       exact={true}
@@ -116,7 +116,7 @@ const Header = (props) => {
                       eventKey="4"
                       className="nav-link text-light hover text-center"
                     >
-                      Nueva categoria
+                      Nueva categoría
                     </NavLink>
                   </Dropdown.Menu>
                 </Dropdown>

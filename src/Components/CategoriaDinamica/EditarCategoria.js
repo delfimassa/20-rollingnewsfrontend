@@ -7,7 +7,7 @@ import { withRouter } from "react-router-dom"; //Sirve para redireccionar a una 
 
 const EditarCategoria = (props) => {
   const nombreCategoriaRef = useRef("");
-  const [ categoria, setCategoria] = useState("")
+  // const [ categoria, setCategoria] = useState("")
   const [error, setError] = useState(false);
   const [validated, setValidated] = useState(false);
   const [nombreCategoria, setNombreCategoria] = useState("");
@@ -48,7 +48,7 @@ const EditarCategoria = (props) => {
           }
         );
         console.log(respuesta);
-        if (respuesta.status === 201) {
+        if (respuesta.status === 200) {
           // actualizar lista de noticias
           props.setRecargarTodo(true);
           Swal.fire(
@@ -67,7 +67,7 @@ const EditarCategoria = (props) => {
 
   return (
     <div className="container my-3">
-      <h1 className="text-center my-5">Editar Categoria</h1>
+      <h1 className="text-center my-5">Editar Categoría</h1>
       <Form
         className="fondoLi rounded formContainer p-4"
         noValidate
@@ -95,7 +95,7 @@ const EditarCategoria = (props) => {
         </Form.Text>
         <div className="text-right my-4">
           <Button variant="danger" type="submit" className="ml-auto botonRojo">
-            Editar Categoria
+            Editar Categoría
           </Button>
         </div>
       </Form>

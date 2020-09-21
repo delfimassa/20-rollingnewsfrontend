@@ -8,12 +8,12 @@
   ],
   "categorias": [
     {
-      "id": 1,
-      "nombreCategoria": "Actualidad"
+      "nombreCategoria": "Actualidad",
+      "id": 1
     },
     {
       "id": 2,
-      "nombreCategoria": "Espectaculos"
+      "nombreCategoria": "Espectáculos"
     },
     {
       "nombreCategoria": "Tecnología",
@@ -24,7 +24,7 @@
       "id": 4
     },
     {
-      "nombreCategoria": "Politica",
+      "nombreCategoria": "Política",
       "id": 5
     },
     {
@@ -32,12 +32,12 @@
       "id": 6
     },
     {
-      "id": 7,
-      "nombreCategoria": "Salud"
+      "nombreCategoria": "Salud",
+      "id": 7
     },
     {
       "id": 8,
-      "nombreCategoria": "Fotografia"
+      "nombreCategoria": "Fotografía"
     },
     {
       "nombreCategoria": "Testing",
@@ -46,111 +46,59 @@
   ],
   "noticias": [
     {
-      "id": 1,
-      "noticiaTitulo": "Noticia para testing",
-      "noticiaDescripcionBreve": "Esta es una noticia realizada para testear los componentesaaaaaaaa aaaaaaaaaaaaa aaaaaaaaaaaaaaa aaaaaaaaaaaa aaaaaaaaaaaaaaa",
-      "noticiaDescripcionFull": "Esta es una noticia realizada para testear los componentes",
-      "noticiaImg": "https://img.lagaceta.com.ar/fotos/notas/2020/09/14/ministerio-de-salud-pblica-de-la-provincia-860494-183522.jpg?_ga=2.243858629.1155574805.1600123280-748976915.1588117706",
-      "noticiaAutor": "Maximiliano Diaz2",
-      "noticiaFecha": "2020-09-13",
+      "noticiaTitulo": "Probando destacar, Cafayate",
+      "noticiaDescripcionBreve": "Esta es una noticia para probar el destacar, Actualidad",
+      "noticiaDescripcionFull": "Esta es una noticia para probar el destacar, Actualidad",
+      "noticiaImg": "https://www.dexotic.com/wp-content/uploads/2015/07/cafayate.jpg",
       "noticiaCategoria": "Actualidad",
-      "noticiaDestacada": true
-    },
-    {
-      "noticiaTitulo": "Segunda noticia para testingeditada2",
-      "noticiaDescripcionBreve": "Esta es una noticia realizada para testear los componentes",
-      "noticiaDescripcionFull": "Esta es una noticia realizada para testear los componentes",
-      "noticiaImg": "https://img.lagaceta.com.ar/fotos/notas/2020/09/14/ministerio-de-salud-pblica-de-la-provincia-860494-183522.jpg?_ga=2.243858629.1155574805.1600123280-748976915.1588117706",
-      "noticiaAutor": "Maximiliano Diaz",
-      "noticiaFecha": "2020-09-13",
-      "noticiaCategoria": "Espectaculos",
-      "id": 2,
-      "noticiaDestacada": true
-    },
-    {
-      "noticiaTitulo": "Tercera noticia para testinggggg",
-      "noticiaDescripcionBreve": "Esta es una noticia realizada para testear los componentes",
-      "noticiaDescripcionFull": "Esta es una noticia realizada para testear los componentes",
-      "noticiaImg": "https://img.lagaceta.com.ar/fotos/notas/2020/09/14/ministerio-de-salud-pblica-de-la-provincia-860494-183522.jpg?_ga=2.243858629.1155574805.1600123280-748976915.1588117706",
-      "noticiaAutor": "Maximiliano Diaz2",
-      "noticiaFecha": "2020-09-13",
-      "noticiaCategoria": "Deportes",
-      "id": 3,
-      "noticiaDestacada": true
-    },
-    {
-      "id": 4,
-      "noticiaTitulo": "Tucumán superó los 8.000 casos de coronavirus desde que comenzó la pandemia",
-      "noticiaDescripcionBreve": "La provincia registró 577 contagios en las últimas 24 horas.",
-      "noticiaDescripcionFull": "Tucumán sumó 577 nuevos contagios de covid-19 en las ultimas 24 horas y llegó a los 8.091 casos confirmados desde que comenzó la pandemia, informó el Ministerio de Salud de la Provincia.",
-      "noticiaImg": "https://img.lagaceta.com.ar/fotos/notas/2020/09/14/ministerio-de-salud-pblica-de-la-provincia-860494-183522.jpg?_ga=2.243858629.1155574805.1600123280-748976915.1588117706",
-      "noticiaCategoria": "Salud",
       "noticiaAutor": "Juan Perez",
-      "noticiaFecha": "2020-09-14"
+      "noticiaFecha": "55454-04-05",
+      "noticiaDestacada": true,
+      "id": 2
     },
     {
-      "noticiaTitulo": "gggg",
-      "noticiaDescripcionBreve": "hhhh",
-      "noticiaDescripcionFull": "jjjjj",
-      "noticiaImg": "https://www.lagaceta.com.ar/",
-      "noticiaCategoria": "Politica",
-      "noticiaAutor": "pepe",
-      "noticiaFecha": "46543-04-05",
+      "noticiaTitulo": "Probando destacar,  protesta",
+      "noticiaDescripcionBreve": "Esta es una noticia para probar destacar, politica",
+      "noticiaDescripcionFull": "Esta es una noticia para probar destacar, politica",
+      "noticiaImg": "https://www.conclusion.com.ar/wp-content/uploads/2015/08/Marcha-Tucum%C3%A1n.jpg",
+      "noticiaCategoria": "Política",
+      "noticiaAutor": "Maximiliano Diaz",
+      "noticiaFecha": "0045-05-24",
+      "noticiaDestacada": true,
+      "id": 3
+    },
+    {
+      "noticiaTitulo": "Probando agregar, economia",
+      "noticiaDescripcionBreve": "Esta es una noticia para probar el componente economia en inicio y en la categoria",
+      "noticiaDescripcionFull": "Esta es una noticia para probar el componente economia en inicio y en la categoria",
+      "noticiaImg": "https://static01.nyt.com/images/2020/05/12/multimedia/12Garcia-ES/merlin_170796432_4a4ecf33-5f07-4035-b748-f9a59201648b-articleLarge.jpg?quality=75&auto=webp&disable=upscale",
+      "noticiaAutor": "Juan Perez",
+      "noticiaFecha": "0454-05-24",
+      "noticiaCategoria": "Economía",
+      "noticiaDestacada": false,
+      "id": 4
+    },
+    {
+      "noticiaTitulo": "Probando destacar!!!!, Tennis",
+      "noticiaDescripcionBreve": "Esta es una noticia para testing del destacar y categoria deportes",
+      "noticiaDescripcionFull": "Esta es una noticia para testing del destacar y categoria deportes",
+      "noticiaImg": "https://sporttechie-prod.s3.amazonaws.com/2019/09/rafael-nadal-us-open.png",
+      "noticiaAutor": "delfi massa",
+      "noticiaFecha": "0654-04-25",
+      "noticiaCategoria": "Deportes",
+      "noticiaDestacada": false,
       "id": 5
     },
     {
-      "noticiaTitulo": "Nueva noticia delfi",
-      "noticiaDescripcionBreve": "ultima prueba",
-      "noticiaDescripcionFull": "wkflwekflwkeflwfe",
-      "noticiaImg": "https://img.lagaceta.com.ar/fotos/notas/2020/09/14/ministerio-de-salud-pblica-de-la-provincia-860494-183522.jpg?_ga=2.243858629.1155574805.1600123280-748976915.1588117706",
-      "noticiaCategoria": "Deportes",
+      "noticiaTitulo": "Probando editar categoria salud",
+      "noticiaDescripcionBreve": "creamos una noticia de salud y la destacamos para ver como refleja los cambios de editar el nombre de la categ a la  que pertenece",
+      "noticiaDescripcionFull": "creamos una noticia de salud y la destacamos para ver como refleja los cambios de editar el nombre de la categ a la  que pertenece",
+      "noticiaImg": "https://www.esic.edu/sites/default/files/rethink/2dd51396-salud-digital.jpg",
       "noticiaAutor": "delfi massa",
-      "noticiaFecha": "0022-02-22",
+      "noticiaFecha": "5454-04-05",
+      "noticiaCategoria": "Salud",
+      "noticiaDestacada": true,
       "id": 6
-    },
-    {
-      "noticiaTitulo": "Testing",
-      "noticiaDescripcionBreve": "Testing",
-      "noticiaDescripcionFull": "Testing",
-      "noticiaImg": "http://localhost:3000/admin/agregarnoticia",
-      "noticiaCategoria": "Actualidad",
-      "noticiaAutor": "asas",
-      "noticiaFecha": "2020-09-15",
-      "noticiaDestacada": false,
-      "id": 7
-    },
-    {
-      "id": 8,
-      "noticiaTitulo": "Noticia para testing",
-      "noticiaDescripcionBreve": "Esta es una noticia realizada para testear los componentesaaaaaaaa aaaaaaaaaaaaa aaaaaaaaaaaaaaa aaaaaaaaaaaa aaaaaaaaaaaaaaa",
-      "noticiaDescripcionFull": "Esta es una noticia realizada para testear los componentes",
-      "noticiaImg": "https://img.lagaceta.com.ar/fotos/notas/2020/09/14/ministerio-de-salud-pblica-de-la-provincia-860494-183522.jpg?_ga=2.243858629.1155574805.1600123280-748976915.1588117706",
-      "noticiaAutor": "Maximiliano Diaz2",
-      "noticiaFecha": "2020-09-13",
-      "noticiaCategoria": "Actualidad",
-      "noticiaDestacada": true
-    },
-    {
-      "id": 9,
-      "noticiaTitulo": "Noticia para testing",
-      "noticiaDescripcionBreve": "Esta es una noticia realizada para testear los componentesaaaaaaaa aaaaaaaaaaaaa aaaaaaaaaaaaaaa aaaaaaaaaaaa aaaaaaaaaaaaaaa",
-      "noticiaDescripcionFull": "Esta es una noticia realizada para testear los componentes",
-      "noticiaImg": "https://img.lagaceta.com.ar/fotos/notas/2020/09/14/ministerio-de-salud-pblica-de-la-provincia-860494-183522.jpg?_ga=2.243858629.1155574805.1600123280-748976915.1588117706",
-      "noticiaAutor": "Maximiliano Diaz2",
-      "noticiaFecha": "2020-09-13",
-      "noticiaCategoria": "Actualidad",
-      "noticiaDestacada": true
-    },
-    {
-      "id": 10,
-      "noticiaTitulo": "Noticia para testing",
-      "noticiaDescripcionBreve": "Esta es una noticia realizada para testear los componentesaaaaaaaa aaaaaaaaaaaaa aaaaaaaaaaaaaaa aaaaaaaaaaaa aaaaaaaaaaaaaaa",
-      "noticiaDescripcionFull": "Esta es una noticia realizada para testear los componentes",
-      "noticiaImg": "https://img.lagaceta.com.ar/fotos/notas/2020/09/14/ministerio-de-salud-pblica-de-la-provincia-860494-183522.jpg?_ga=2.243858629.1155574805.1600123280-748976915.1588117706",
-      "noticiaAutor": "Maximiliano Diaz2",
-      "noticiaFecha": "2020-09-13",
-      "noticiaCategoria": "Actualidad",
-      "noticiaDestacada": true
     }
   ]
 }

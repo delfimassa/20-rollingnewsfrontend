@@ -32,6 +32,9 @@
         width: 38px;
         height: 37px;
     }
+    .listaCategs{
+        display: flex;
+    }
 }
 
 /*LARGE DEVICES*/
@@ -39,7 +42,10 @@
     .botonEditar{
         width: 38px;
         height: 37px;
-    }  
+    } 
+    .listaCategs{
+        display: flex;
+    } 
 }
   
   /*XTRA LARGE DEVICES*/
@@ -47,5 +53,8 @@
     .botonEditar{
         width: 38px;
         height: 37px;
+    }
+    .listaCategs{
+        display: flex;
     }
 }

@@ -60,9 +60,15 @@ const Categoria = (props) => {
     });
   };
   return (
-    <ListGroup.Item className="d-flex justify-content-between fondoLi">
+    <ListGroup.Item className="fondoLi justify-content-between listaCategs">
       <p>{props.categoria.nombreCategoria}</p>
-      <div>
+      <div className="text-right">
+        <Link
+          className="btn btn-danger botonRojo mb-1 ml-1"
+          to={`/categoria/${props.categoria.nombreCategoria}`}
+        >
+          Ver noticias
+        </Link>
         <Link
           className="btn btn-dark botonNegro botonEditar mb-1 ml-1"
           to={`/admin/editarcategoria/${props.categoria.id}`}

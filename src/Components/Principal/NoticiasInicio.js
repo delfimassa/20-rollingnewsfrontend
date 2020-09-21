@@ -26,7 +26,7 @@ const NoticiasInicio = (props) => {
         <p className="p-0">POLITICA</p>
       </Link>
       <NoticiasXcategoria
-        categoria="Politica"
+        categoria="Política"
         noticiasReversed={noticiasReversed}
       ></NoticiasXcategoria>
       <Link
@@ -36,7 +36,7 @@ const NoticiasInicio = (props) => {
         <p className="p-0">ECONOMIA</p>
       </Link>
       <NoticiasXcategoria
-        categoria="Economia"
+        categoria="Economía"
         noticiasReversed={noticiasReversed}
       ></NoticiasXcategoria>
     </div>
