@@ -210,7 +210,7 @@ function App() {
             setRecargarTodo={setRecargarTodo}
           ></Categorias>
         </Route>
-        <Route exact path="/error404">
+        <Route exact path="*">
           <PaginaError></PaginaError>
         </Route>
       </Switch>

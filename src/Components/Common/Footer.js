@@ -8,6 +8,7 @@ import {
   faYoutube,
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -137,9 +138,11 @@ const Footer = () => {
         <p>Tel +549 381 510 0000</p>
         <p>Email: rollingnews@rollingnews.com.ar</p>
         <hr className="bg-white" />
-        <p className="text-center">
+        <Link to={"/error404"}>
+        <p className="text-center text-decoration-none text-light">
           Copyright 2020 - Rolling News - Todos los derechos reservados
         </p>
+        </Link>
       </div>
     </div>
   );
