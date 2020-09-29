@@ -5,7 +5,7 @@ import "./Header.css";
 const CardClima = ({ resultado }) => {
   return (
     <div>
-      <Card className="fondo">
+      <Card className="fondo cardcli">
         <Card.Body className="h-1 p-0 m-0">
           <Card.Title className="Letra mt-2"></Card.Title>
           <Card.Text className="Letra font-weight-bold">
