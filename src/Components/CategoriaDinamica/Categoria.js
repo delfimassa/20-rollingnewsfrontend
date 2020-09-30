@@ -61,7 +61,7 @@ const Categoria = (props) => {
       <div className="text-right">
         <Link
           className="btn btn-danger botonRojo mb-1 ml-1"
-          to={`/categoria/${props.categoria.nombreCategoria}`}
+          to={`/lista/${props.categoria.nombreCategoria}`}
         >
           Ver noticias
         </Link>

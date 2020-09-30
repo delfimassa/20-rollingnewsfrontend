@@ -62,7 +62,7 @@ const Noticia = (props) => {
     <ListGroup.Item className="fondoLi">
       <div className="row d-flex justify-content-between m-0 p-0">
         <div className="col-9 d-flex justify-content-between m-0 p-0">
-          <p>{props.noticia.noticiaTitulo}</p>
+          <Link className="text-dark"to={`/noticia/${props.noticia._id}`}><p>{props.noticia.noticiaTitulo}</p></Link>
         </div>
         <div className="col-3 m-0 p-0 text-right">
           {props.noticia.noticiaDestacada ? (

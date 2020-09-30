@@ -15,6 +15,7 @@ import Admin from "./Components/Admin/Admin";
 import Noticias from "./Components/Noticias/Noticias";
 import PaginaError from "./Components/Error404/PaginaError";
 import Categorias from "./Components/CategoriaDinamica/Categorias";
+import ListaNoticiasxCategoria from "./Components/Noticias/ListaNoticiasxCategoria";
 import Swal from "sweetalert2";
 
 function App() {
@@ -122,6 +123,26 @@ function App() {
                 categoriaSeleccionada={categoriaSeleccionada}
                 noticias={noticias}
               ></CategoriaDinamica>
+            );
+          }}>
+        </Route>
+        <Route
+          exact
+          path="/lista/:nombreCategoria"
+          render={(props) => {
+            //codigo a ejecutar antes de renderizar el componente
+            //obtener el id de la ruta
+            const nombreCategoria = props.match.params.nombreCategoria;
+            //buscar el producto que coincida con el id
+            const categoriaSeleccionada = categorias.find(
+              (categoria) => categoria.nombreCategoria === nombreCategoria
+            );
+            //mostrar el componente categoriaSeleccionada
+            return (
+              <ListaNoticiasxCategoria
+                categoriaSeleccionada={categoriaSeleccionada}
+                noticias={noticias}
+              ></ListaNoticiasxCategoria>
             );
           }}>
         </Route>

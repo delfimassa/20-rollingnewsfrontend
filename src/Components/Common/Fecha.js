@@ -15,7 +15,7 @@ const Fecha = () => {
 
   return (
     <div className="text-light letraFecha my-2 font-weight-bold">
-      <p className="my-0 font-weight-bold">San Miguel de Tucuman</p>
+      <p className="my-0 font-weight-bold">San Miguel de Tucumán</p>
       {fechaActual}
     </div>
   );
