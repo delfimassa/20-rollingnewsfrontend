@@ -16,6 +16,7 @@ import Noticias from "./Components/Noticias/Noticias";
 import PaginaError from "./Components/Error404/PaginaError";
 import Categorias from "./Components/CategoriaDinamica/Categorias";
 import ListaNoticiasxCategoria from "./Components/Noticias/ListaNoticiasxCategoria";
+import Nosotros from "./Components/Common/Nosotros";
 import Swal from "sweetalert2";
 
 function App() {
@@ -230,6 +231,10 @@ function App() {
             categorias={categorias}
             setRecargarTodo={setRecargarTodo}
           ></Categorias>
+        </Route>
+        <Route exact path="/nosotros">
+          <Nosotros
+          ></Nosotros>
         </Route>
         <Route exact path="*">
           <PaginaError></PaginaError>

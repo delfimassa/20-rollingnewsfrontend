@@ -1,5 +1,9 @@
-.testoRojo{
-    background-color:#f52000
+.botonnosotros{
+    background-color:#f52000;
+    color: white;
+  }
+.textoRojo{
+    color:#f52000;
 }
 .body{
     min-height: 100%;
@@ -13,4 +17,69 @@
   }
 .bg-black{
     background-color: black;
+}
+
+/*MEDIA QUERIES*/
+
+/*X-SMALL DEVICES PUBLICIDAD*/
+@media all and (max-width: 576px) {
+    .footergrande{
+        display: none;
+    }
+    .footerchico{
+        text-align: center;
+    }
+    .enchico{
+        text-align: center;
+    }
+    .nosotroschico{
+        justify-content: center;
+    }
+}
+
+/*SMALL DEVICES*/
+@media all and (min-width: 576px) and (max-width: 767px) {
+    .footergrande{
+        display: none;
+    }
+    .footerchico{
+        text-align: center;
+    }
+    .enchico{
+        text-align: center;
+    }
+    .nosotroschico{
+        justify-content: center;
+    }
+}
+
+/*MEDIUM DEVICES*/
+@media all and (min-width: 768px) and (max-width: 991px) {
+    .footerchico{
+        display: none;
+    }
+    .engrande{
+        text-align: left;
+    }
+}
+
+/*LARGE DEVICES*/
+@media all and (min-width: 991px) and (max-width: 1200px) {
+    .footerchico{
+        display: none;
+    }
+    .engrande{
+        text-align: left;
+    }
+    
+}
+  
+/*XTRA LARGE DEVICES*/
+@media all and (min-width: 1200px) {
+    .footerchico{
+        display: none;
+    }
+    .engrande{
+        text-align: left;
+    }
 }
