@@ -122,8 +122,6 @@ const Footer = () => {
                 </p>
               </Link>
             </div>
-          
-
 
         </div>
       </div>
