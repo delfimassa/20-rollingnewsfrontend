@@ -43,7 +43,7 @@ const Footer = () => {
               </Button>
             </Link>
 
-            <a href="https://www.facebook.com" target="_blank">
+            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
               <FontAwesomeIcon
                 className="mr-3"
                 icon={faFacebook}
@@ -51,7 +51,7 @@ const Footer = () => {
                 size="2x"
               />
             </a>
-            <a href="https://www.instagram.com/" target="_blank">
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
               <FontAwesomeIcon
                 className="mx-3"
                 icon={faInstagram}
@@ -59,7 +59,7 @@ const Footer = () => {
                 size="2x"
               />
             </a>
-            <a href="https://www.youtube.com" target="_blank">
+            <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">
               <FontAwesomeIcon
                 className="mx-3"
                 icon={faYoutube}
@@ -67,7 +67,7 @@ const Footer = () => {
                 size="2x"
               />
             </a>
-            <a href="https://twitter.com" target="_blank">
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
               <FontAwesomeIcon
                 className="ml-3"
                 icon={faTwitter}

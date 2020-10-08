@@ -44,8 +44,9 @@ const Nosotros = () => {
                 className="text-dark font-weight-bold"
                 href="https://www.linkedin.com/in/roberto-maximiliano-diaz-huerta-51323a149/"
                 target="blank"
+                rel="noopener noreferrer"
               >
-                <img class="rounded-circle mb-3" src={maxi} width="150px"></img>
+                <img class="rounded-circle mb-3" src={maxi} width="150px" alt="Maximiliano Diaz"></img>
                 <br />
                 Maximiliano Diaz
               </a>
@@ -55,11 +56,13 @@ const Nosotros = () => {
                 className="text-dark font-weight-bold"
                 href="https://www.linkedin.com/in/delfinamassa/"
                 target="blank"
+                rel="noopener noreferrer"
               >
                 <img
                   class="rounded-circle my-3"
                   src={delfi}
                   width="150px"
+                  alt="Delfina Massa"
                 ></img>
                 <br />
                 Delfina Massa
@@ -70,33 +73,47 @@ const Nosotros = () => {
                 className="text-dark font-weight-bold"
                 href="https://www.linkedin.com/in/juan-manuel-pacheco-274a771a9"
                 target="blank"
+                rel="noopener noreferrer"
               >
                 <img
                   class="rounded-circle my-3"
                   src={pache}
                   width="150px"
+                  alt="Juan Manuel Pacheco"
                 ></img>
                 <br />
                 Juan Pacheco
               </a>
             </div>
             <div className="col-lg-2 col-md-4 col-sm-12">
-              <a className="text-dark font-weight-bold" href="" target="blank">
+              <a
+                className="text-dark font-weight-bold"
+                href="https://www.linkedin.com/in/diego-caucota-6068791a2/"
+                target="blank"
+                rel="noopener noreferrer"
+              >
                 <img
                   class="rounded-circle my-3"
                   src={diego}
                   width="150px"
+                  alt="Diego Caucota"
                 ></img>
                 <br />
                 Diego Caucota
               </a>
             </div>
             <div className="col-lg-2 col-md-4 col-sm-12">
-              <a className="text-dark font-weight-bold" href="https://www.linkedin.com/in/eliseo-baroni-b14314164" target="blank">
+              <a
+                className="text-dark font-weight-bold"
+                href="https://www.linkedin.com/in/eliseo-baroni-b14314164"
+                target="blank"
+                rel="noopener noreferrer"
+              >
                 <img
                   class="rounded-circle my-3"
                   src={eliseo}
                   width="150px"
+                  alt="Eliseo Baroni"
                 ></img>
                 <br />
                 Eliseo Baroni
