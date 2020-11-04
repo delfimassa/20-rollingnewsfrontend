@@ -27,7 +27,9 @@ const EditarNoticia = (props) => {
   };
 
   useEffect(() => {
-    setNoticiaCategoria(props.noticia?.noticiaCategoria || "");
+    if(props.adminUser !== true){
+      props.history.push("/");
+    }else{setNoticiaCategoria(props.noticia?.noticiaCategoria || "");}
   }, [props]);
 
   const handleSubmit = async (e) => {

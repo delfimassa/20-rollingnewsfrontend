@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Alert from "react-bootstrap/Alert";
@@ -9,6 +9,12 @@ const AgregarCategoria = (props) => {
   const [error, setError] = useState(false);
   const [validated, setValidated] = useState(false);
   const [nombreCategoria, setNombreCategoria] = useState("");
+
+  useEffect(() => {
+    if(props.adminUser !== true){
+      props.history.push("/");
+    }
+  });
 
   const handleSubmit = async (event) => {
     event.preventDefault();

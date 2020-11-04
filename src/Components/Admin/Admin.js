@@ -1,10 +1,16 @@
-import React from "react";
+import React,{useEffect} from "react";
 import Button from "react-bootstrap/Button";
 import Jumbotron from "react-bootstrap/Jumbotron";
+import { withRouter } from "react-router-dom"; //Sirve para redireccionar a una pagina
 import { Link } from "react-router-dom";
 import "./admin.css";
 
-const Admin = () => {
+const Admin = (props) => {
+  useEffect(() => {
+    if(props.adminUser !== true){
+      props.history.push("/");
+    }
+  });
   return (
     <div>
       <Jumbotron fluid className="px-2 mb-3">
@@ -52,4 +58,4 @@ const Admin = () => {
   );
 };
 
-export default Admin;
+export default withRouter(Admin);

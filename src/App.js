@@ -37,7 +37,9 @@ function App() {
   const consultarAPI = async () => {
     try {
       //obtener lista de categorias
-      const consulta = await fetch("https://rollingnewsbackend.herokuapp.com/categorias");
+      const consulta = await fetch(
+        "https://rollingnewsbackend.herokuapp.com/categorias"
+      );
       const respuesta = await consulta.json();
       if (consulta.status !== 200) {
         Swal.fire({
@@ -53,7 +55,9 @@ function App() {
     }
     try {
       //obtener lista de noticias
-      const consulta = await fetch("https://rollingnewsbackend.herokuapp.com/noticias");
+      const consulta = await fetch(
+        "https://rollingnewsbackend.herokuapp.com/noticias"
+      );
       const respuesta = await consulta.json();
       if (consulta.status !== 200) {
         Swal.fire({
@@ -69,7 +73,9 @@ function App() {
     }
     try {
       //obtener lista de usuarios
-      const consulta = await fetch("https://rollingnewsbackend.herokuapp.com/users");
+      const consulta = await fetch(
+        "https://rollingnewsbackend.herokuapp.com/users"
+      );
       const respuesta = await consulta.json();
       if (consulta.status !== 200) {
         Swal.fire({
@@ -78,8 +84,8 @@ function App() {
           text: "Ocurrio un error, intentelo nuevamente",
         });
       }
-    //Guardar en el state
-    setUsuarios(respuesta);
+      //Guardar en el state
+      setUsuarios(respuesta);
     } catch (error) {
       console.log(error);
     }
@@ -125,8 +131,8 @@ function App() {
                 noticias={noticias}
               ></CategoriaDinamica>
             );
-          }}>
-        </Route>
+          }}
+        ></Route>
         <Route
           exact
           path="/lista/:nombreCategoria"
@@ -145,14 +151,16 @@ function App() {
                 noticias={noticias}
               ></ListaNoticiasxCategoria>
             );
-          }}>
-        </Route>
-       
-        <Route exact path="/noticia/:idNoticia"
-            render={(props) => {
+          }}
+        ></Route>
+
+        <Route
+          exact
+          path="/noticia/:idNoticia"
+          render={(props) => {
             //codigo a ejecutar antes de renderizar el componente
             //obtener el id de la ruta
-            const idNoticia = (props.match.params.idNoticia);
+            const idNoticia = props.match.params.idNoticia;
             //buscar la noticia que coincida con el id
             const detalleSeleccionada = noticias.find(
               (noticia) => noticia._id === idNoticia
@@ -163,13 +171,14 @@ function App() {
                 detalleSeleccionada={detalleSeleccionada}
               ></DetalleNoticia>
             );
-          }}>
-        </Route>
-    
+          }}
+        ></Route>
+
         <Route exact path="/admin/agregarnoticia">
           <AgregarNoticia
             setRecargarTodo={setRecargarTodo}
             categorias={categorias}
+            adminUser={adminUser}
           ></AgregarNoticia>
         </Route>
         <Route
@@ -189,12 +198,14 @@ function App() {
                 categorias={categorias}
                 noticia={noticiaSeleccionada}
                 setRecargarTodo={setRecargarTodo}
+                adminUser={adminUser}
               ></EditarNoticia>
             );
           }}
         ></Route>
         <Route exact path="/admin/agregarcategoria">
           <AgregarCategoria
+            adminUser={adminUser}
             setRecargarTodo={setRecargarTodo}
           ></AgregarCategoria>
         </Route>
@@ -213,28 +224,30 @@ function App() {
                 categorias={categorias}
                 categoria={categoriaSeleccionada}
                 setRecargarTodo={setRecargarTodo}
+                adminUser={adminUser}
               ></EditarCategoria>
             );
           }}
         ></Route>
         <Route exact path="/admin">
-          <Admin></Admin>
+          <Admin adminUser={adminUser}></Admin>
         </Route>
         <Route exact path="/noticias">
           <Noticias
             noticias={noticias}
             setRecargarTodo={setRecargarTodo}
+            adminUser={adminUser}
           ></Noticias>
         </Route>
         <Route exact path="/categorias">
           <Categorias
             categorias={categorias}
             setRecargarTodo={setRecargarTodo}
+            adminUser={adminUser}
           ></Categorias>
         </Route>
         <Route exact path="/nosotros">
-          <Nosotros
-          ></Nosotros>
+          <Nosotros></Nosotros>
         </Route>
         <Route exact path="*">
           <PaginaError></PaginaError>

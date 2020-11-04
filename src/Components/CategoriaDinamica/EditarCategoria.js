@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Alert from "react-bootstrap/Alert";
@@ -9,6 +9,12 @@ const EditarCategoria = (props) => {
   const nombreCategoriaRef = useRef("");
   const [error, setError] = useState(false);
   const [validated, setValidated] = useState(false);
+
+  useEffect(() => {
+    if (props.adminUser !== true) {
+      props.history.push("/");
+    }
+  });
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -35,32 +41,32 @@ const EditarCategoria = (props) => {
     };
 
     try {
-        const respuesta = await fetch(
-          `https://rollingnewsbackend.herokuapp.com/categorias/${props.categoria._id}`,
-          {
-            method: "PUT",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(categoriaEditada),
-          }
-        );
-        if (respuesta.status === 201) {
-          // actualizar lista de noticias
-          props.setRecargarTodo(true);
-          Swal.fire(
-            "Categoría editada",
-            "El nombre de tu categoría se ha editado correctamente",
-            "success"
-          );
-          //rediccionar a la lista
-          props.history.push("/categorias");
+      const respuesta = await fetch(
+        `https://rollingnewsbackend.herokuapp.com/categorias/${props.categoria._id}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(categoriaEditada),
         }
-      } catch (datosError) {
-        console.log(datosError);
-        // cartel swal para el usuarip
+      );
+      if (respuesta.status === 201) {
+        // actualizar lista de noticias
+        props.setRecargarTodo(true);
+        Swal.fire(
+          "Categoría editada",
+          "El nombre de tu categoría se ha editado correctamente",
+          "success"
+        );
+        //rediccionar a la lista
+        props.history.push("/categorias");
       }
+    } catch (datosError) {
+      console.log(datosError);
+      // cartel swal para el usuarip
     }
+  };
 
   return (
     <div className="container my-3">
