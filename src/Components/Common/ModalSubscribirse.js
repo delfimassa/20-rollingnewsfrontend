@@ -6,6 +6,7 @@ import "./modalSubscribirse.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelopeOpenText } from "@fortawesome/free-solid-svg-icons";
 import Alert from "react-bootstrap/Alert";
+import emailjs from "emailjs-com";
 import Swal from "sweetalert2";
 
 const ModalSubscribirse = () => {
@@ -36,11 +37,6 @@ const ModalSubscribirse = () => {
       setError(false);
       setValidated(true);
       handleCloseSub();
-      Swal.fire(
-        "Enhorabuena!",
-        "Tus datos fueron enviados correctamente. Pronto se contactara un administrador para confirmar la suscripcion.",
-        "success"
-      );
       //Guardamos los datos en un objeto
       const suscriptor = {
         nombreSubscriptor : nombreSubscriptor,
@@ -50,7 +46,30 @@ const ModalSubscribirse = () => {
         telefonoSubscriptor: telefonoSubscriptor,
         emailSubscriptor: emailSubscriptor,
       } 
-      //Enviamos los datos - NO IMPLEMENTADO - Retornamos suscriptor para evitar el warning de React hasta futura implementacion
+      //Enviamos los datos a backend - NO IMPLEMENTADO
+      emailjs
+      .sendForm(
+        "rolling_news",
+        "template_6ayflhv",
+        e.target,
+        "user_DtcUJgfK1Y8S9N1xokp8c"
+      )
+      .then(
+        (result) => {
+          Swal.fire(
+            "Enhorabuena!",
+            "Tus datos fueron enviados correctamente. Pronto se contactara un administrador para confirmar la suscripcion.",
+            "success"
+          );
+        },
+        (error) => {
+          Swal.fire(
+            "Ups!",
+            "Hubo un problema al confirmar tu subscripcion. Por favor intentalo nuevamente.",
+            "error"
+          );
+        }
+      );
       return suscriptor;
     }
   };
@@ -99,6 +118,7 @@ const ModalSubscribirse = () => {
                 onChange={(e) => setNombreSubscriptor(e.target.value)}
                 type="text"
                 placeholder="Ejemplo: Perez Nahuel"
+                name="user_name"
               />
             </Form.Group>
             <Form.Group controlId="direccion">
@@ -144,6 +164,7 @@ const ModalSubscribirse = () => {
                 onChange={(e) => setEmailSubscriptor(e.target.value)}
                 type="email"
                 placeholder="Ejemplo: rollingnews@gmail.com"
+                name="user_email"
               />
             </Form.Group>
             <Form.Text className="text-muted">
