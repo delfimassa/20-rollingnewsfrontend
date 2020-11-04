@@ -41,12 +41,17 @@ const ModalSubscribirse = () => {
         "Tus datos fueron enviados correctamente. Pronto se contactara un administrador para confirmar la suscripcion.",
         "success"
       );
-      console.log(nombreSubscriptor);
-      console.log(direccion);
-      console.log(localidad);
-      console.log(codigoPostal);
-      console.log(telefonoSubscriptor);
-      console.log(emailSubscriptor);
+      //Guardamos los datos en un objeto
+      const suscriptor = {
+        nombreSubscriptor : nombreSubscriptor,
+        direccion: direccion,
+        localidad: localidad,
+        codigoPostal: codigoPostal,
+        telefonoSubscriptor: telefonoSubscriptor,
+        emailSubscriptor: emailSubscriptor,
+      } 
+      //Enviamos los datos - NO IMPLEMENTADO - Retornamos suscriptor para evitar el warning de React hasta futura implementacion
+      return suscriptor;
     }
   };
 

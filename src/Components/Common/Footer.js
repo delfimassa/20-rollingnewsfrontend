@@ -18,7 +18,7 @@ const Footer = () => {
       <div className="container">
         <div className="row">
           <div className="col-md-6 col-sm-12 pt-1 pb-5 enchico engrande">
-            <Link exact={true} to="/">
+            <Link to="/">
               <img
                 src={process.env.PUBLIC_URL + "LogoFooter.png"}
                 alt="logo del Footer"
